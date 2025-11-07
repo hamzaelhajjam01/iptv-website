@@ -30,8 +30,8 @@ const BlogPage = async ({ searchParams }: BlogPageProps) => {
     <div>
       <h1 className="text-4xl font-bold mb-2">Blog</h1>
       <p className="text-gray-400 mb-6">Latest articles and tutorials from StreamVerse.</p>
-      {/* Search bar component at the top */}
-      <div className="mb-6">
+      {/* Search bar component - visible only on mobile (hidden on lg screens and up) */}
+      <div className="mb-6 lg:hidden">
         <SearchForm />
       </div>
       {/* BlogFilters is a client component that handles search and category filtering */}
