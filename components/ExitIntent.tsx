@@ -10,6 +10,31 @@ const ExitModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isOpen,
     const [mounted, setMounted] = useState(false);
     useEffect(() => setMounted(true), []);
 
+    // Get WhatsApp number from environment
+    const WHATSAPP_NUMBER = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '1234567890';
+
+    const handleFreeTrial = () => {
+        // Create WhatsApp message for free trial
+        const message = `Hello! I'm interested in the 24-Hour Free Trial for $0.99.
+
+📦 *Offer:* 24-Hour Trial Access
+💰 *Price:* $0.99
+
+Please send me the payment details and setup instructions to get started immediately!`;
+
+        // Encode message for URL
+        const encodedMessage = encodeURIComponent(message);
+        
+        // Create WhatsApp link
+        const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodedMessage}`;
+        
+        // Open WhatsApp in new tab
+        window.open(whatsappUrl, '_blank');
+        
+        // Close the modal
+        onClose();
+    };
+
     if (!mounted) return null;
 
     return createPortal(
@@ -40,9 +65,9 @@ const ExitModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isOpen,
                             <button onClick={onClose} className="absolute top-4 right-4 text-gray-400 hover:text-white text-3xl" aria-label="Close modal">&times;</button>
                             <h2 className="text-3xl font-bold text-cyan-300 mb-4">{t('modalTitle')}</h2>
                             <p className="text-lg mb-6">{t('modalSubtitle')}</p>
-                            <a href="https://pay.sumup.com/b2c/Q4O2KWGA" target="_blank" rel="noopener noreferrer" className="w-full block bg-green-500 hover:bg-green-600 text-white font-extrabold py-4 px-8 rounded-lg text-xl cta-button">
+                            <button onClick={handleFreeTrial} className="w-full block bg-green-500 hover:bg-green-600 text-white font-extrabold py-4 px-8 rounded-lg text-xl cta-button">
                                 {t('modalCTA')}
-                            </a>
+                            </button>
                             <p className="text-sm mt-4 text-gray-400">{t('modalUrgency')}</p>
                         </motion.div>
                     </div>
