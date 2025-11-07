@@ -10,7 +10,8 @@
     "images:responsive": "node ./process-responsive-images.js",
     "check:og": "node ./scripts/validate-og-images.js",
     "build:strict": "npm run check:og; npm run build",
-    "batch:images": "node ./scripts/batch-generate-images.js"
+    "batch:images": "node ./scripts/batch-generate-images.js",
+    "sheets:help": "node -e \"console.log('\\n📋 GOOGLE SHEETS SETUP GUIDE\\n'); console.log('Full guide: Open GOOGLE-SHEETS-SETUP.md\\n'); console.log('Quick steps:\\n1. Go to https://sheets.google.com\\n2. Create new sheet named StreamVerse Leads\\n3. Add headers: Email | Phone | Country | Plan | Price | Timestamp | Source\\n4. Extensions → Apps Script → Paste code from GOOGLE-SHEETS-SETUP.md\\n5. Deploy → Web app → Anyone can access\\n6. Copy URL and add to .env.local\\n')\""
   },
   "dependencies": {
     "@google/genai": "^1.28.0",

@@ -171,7 +171,7 @@ body {
 .comparison-table-container {
     border-radius: 0.75rem;
     border: 1px solid #374151;
-    overflow: hidden;
+    /* Do NOT force overflow hidden here; it breaks horizontal scroll */
 }
 .comparison-table {
     background-color: #121c33;
@@ -241,8 +241,13 @@ body {
 .comparison-table-container::-webkit-scrollbar-thumb:hover {
     background: #4b5563; /* gray-600 */
 }
+/* Bottom scrollbar spacer width driven by CSS var set in component */
+.bottom-scrollbar .bottom-scroll-spacer {
+    width: var(--scroll-width, 0px);
+}
 .marquee {
   overflow: hidden;
+    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
   mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
 }
 .track {
