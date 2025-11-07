@@ -1,0 +1,92 @@
+---
+title: "How to Fix a 'No EPG Data' or 'TV Guide Empty' Error"
+excerpt: "Is your TV Guide empty or showing 'No Information'? Learn how to fix the 'No EPG Data' error in TiviMate, IPTV Smarters, and other players. It's usually a simple fix."
+date: "2025-11-06"
+category: "Troubleshooting"
+featuredImage: "/images/blog/how-to-fix-a-no-epg-data-or-tv-guide-empty-error.jpg"
+faqs:
+  - q: "What is an EPG link or XMLTV URL?"
+    a: "An EPG (Electronic Program Guide) is the data for your TV guide. An EPG link (or XMLTV URL) is a specific web address that your app downloads this data from."
+  - q: "Why do I not need an EPG link?"
+    a: "If you use the 'Xtream Codes' login method, you do not need a separate EPG link. The app automatically fetches the EPG using your main login credentials."
+  - q: "Why is only one channel missing EPG data?"
+    a: "This is usually not a problem on your end. It means your provider's EPG data for that specific channel is temporarily unavailable or doesn't exist."
+toc:
+  - level: 2
+    text: "What is an EPG and Why Is It Empty?"
+    slug: "what-is-epg-and-why-empty"
+  - level: 2
+    text: "How to Fix an Empty TV Guide"
+    slug: "how-to-fix-empty-tv-guide"
+  - level: 3
+    text: "Fix 1: Reload/Refresh the EPG in Your App"
+    slug: "fix-1-reload-epg"
+  - level: 3
+    text: "Fix 2: (Xtream Codes) Re-Check Your Login"
+    slug: "fix-2-recheck-login"
+  - level: 3
+    text: "Fix 3: (M3U Link) Check Your EPG URL"
+    slug: "fix-3-check-epg-url"
+  - level: 3
+    text: "Fix 4: Clear Your App's Cache"
+    slug: "fix-4-clear-cache"
+  - level: 3
+    text: "Fix 5: Wait and Be Patient"
+    slug: "fix-5-wait"
+  - level: 3
+    text: "Fix 6: Contact Your Provider"
+    slug: "fix-6-contact-provider"
+---
+
+You turn on your IPTV and all your channels are working, but when you open the TV guide (EPG), it's completely blank. It just says "No Information" or "No EPG Data" for every channel.
+
+This is a common, frustrating issue. Here’s how to fix it.
+
+## What is an EPG and Why Is It Empty? {#what-is-epg-and-why-empty}
+
+EPG stands for **Electronic Program Guide**. It's the data that tells your app what show is on "HBO" at 8:00 PM. This data is downloaded from a separate URL (an "EPG link" or "XMLTV file").
+
+Your guide is empty for one of three reasons:
+1.  Your app failed to download the EPG data.
+2.  Your app doesn't know *where* to get the data (a bad link).
+3.  Your provider's EPG data is temporarily offline.
+
+## How to Fix an Empty TV Guide {#how-to-fix-empty-tv-guide}
+
+### Fix 1: Reload/Refresh the EPG in Your App {#fix-1-reload-epg}
+
+This is the most common fix. Your app may have just failed its daily EPG update.
+* **On IPTV Smarters:** Go to **Settings** > **EPG** > **Refresh EPG**.
+* **On TiviMate:** Go to **Settings** > **EPG** > **Update EPG**.
+
+Wait for the download to complete and check your guide again.
+
+### Fix 2: (Xtream Codes) Re-Check Your Login {#fix-2-recheck-login}
+
+If you used the "Xtream Codes API" to log in, your EPG is loaded automatically. A "No EPG" error can mean your main login failed. Go to your user settings, log out, and log back in, carefully checking your Username, Password, and Server URL for typos.
+
+### Fix 3: (M3U Link) Check Your EPG URL {#fix-3-check-epg-url}
+
+If you logged in using an M3U link, you likely had to enter a *second* link for the EPG (or XMLTV URL).
+1.  Go to your app's playlist settings.
+2.  Find the "EPG URL" field.
+3.  Carefully check it for typos. Copy and paste it from your welcome email if possible.
+
+### Fix 4: Clear Your App's Cache {#fix-4-clear-cache}
+
+Sometimes, a corrupted EPG file is "stuck" in your app's cache.
+1.  Go to your device's **Settings** (on your Firestick or Android Box).
+2.  Go to **Apps** > **Manage Applications**.
+3.  Find your IPTV player (e.g., TiviMate).
+4.  Select **"Clear Cache"**. (Do **NOT** select "Clear Data," as this will erase your login).
+5.  Re-open the app. It will be forced to download a fresh copy of the EPG.
+
+### Fix 5: Wait and Be Patient {#fix-5-wait}
+
+Downloading EPG data for 10,000+ channels can take time. When you first log in, it's normal for the EPG to be empty for 5-10 minutes while it downloads in the background.
+
+### Fix 6: Contact Your Provider {#fix-6-contact-provider}
+
+If you've tried all these steps and the guide is still empty, the EPG link from your provider may be offline. Contact support at our [Help Center](/help) and let them know.
+
+<AuthorBio />

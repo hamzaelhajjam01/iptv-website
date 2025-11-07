@@ -1,0 +1,79 @@
+---
+title: "Why Is My Audio Out of Sync? (And How to Fix It)"
+excerpt: "Is your audio track ahead of or behind the video? Learn the common causes of audio sync (latency) issues and how to fix them in your IPTV player or TV settings."
+date: "2025-11-06"
+category: "Troubleshooting"
+featuredImage: "/images/blog/why-is-my-audio-out-of-sync-and-how-to-fix-it.jpg"
+faqs:
+  - q: "Is audio sync a provider or device problem?"
+    a: "It is almost always a device or player app problem. It happens when your device's video decoder and audio decoder are not processing the data at the same speed."
+  - q: "How do I adjust the 'audio offset' in my app?"
+    a: "In many players (like VLC or Perfect Player), go to the Audio Settings while a channel is playing. Look for 'Audio Delay' or 'Audio Offset' and adjust it by milliseconds (ms) until the sound matches the video."
+  - q: "Why does this only happen on some channels?"
+    a: "This can be an issue with the channel's broadcast source, especially on international channels. However, it's more likely that your device is struggling with that specific channel's video or audio codec."
+toc:
+  - level: 2
+    text: "What Causes Audio Sync (Latency) Issues?"
+    slug: "what-causes-audio-sync"
+  - level: 2
+    text: "How to Fix Audio Sync Problems"
+    slug: "how-to-fix-audio-sync"
+  - level: 3
+    text: "Fix 1: The Quick Fix (Change Channels and Come Back)"
+    slug: "fix-1-change-channels"
+  - level: 3
+    text: "Fix 2: Check Your IPTV Player Settings"
+    slug: "fix-2-player-settings"
+  - level: 3
+    text: "Fix 3: Adjust the 'Audio Offset' Manually"
+    slug: "fix-3-adjust-audio-offset"
+  - level: 3
+    text: "Fix 4: Check Your TV's Audio Settings (Soundbar/AVR)"
+    slug: "fix-4-check-tv-settings"
+  - level: 3
+    text: "Fix 5: Reboot Your Streaming Device"
+    slug: "fix-5-reboot-device"
+---
+
+You're watching a movie, and you notice something is "off." The actor's lips move, and a fraction of a second later, you hear the words. This audio sync (or latency) issue is a common problem that can make streaming unwatchable.
+
+Here’s what causes it and how to fix it.
+
+## What Causes Audio Sync (Latency) Issues? {#what-causes-audio-sync}
+
+This problem is almost always a **client-side** issue, meaning it's happening on your device, not with the provider. The video and audio for a stream are sent as two separate packets of data. Your device (Firestick, Android Box) must "decode" both packets and play them at the exact same time.
+
+Sometimes, the video packet is more complex and takes a few milliseconds longer to decode than the audio, causing the audio to play first. This can also be caused by Bluetooth speakers, soundbars, or AV receivers that add their own processing delay.
+
+## How to Fix Audio Sync Problems {#how-to-fix-audio-sync}
+
+### Fix 1: The Quick Fix (Change Channels and Come Back) {#fix-1-change-channels}
+
+The simplest solution often works. Change the channel, wait for it to load, and then change back. This forces your player to re-sync the audio and video streams from scratch and often clears the issue.
+
+### Fix 2: Check Your IPTV Player Settings {#fix-2-player-settings}
+
+Some IPTV players have settings that can cause this.
+* **Check Hardware vs. Software Decoder:** In your app's settings, you may see an option for "Decoder." Try switching from "Hardware Decoder" to "Software Decoder" (or vice-versa). One may be more stable for your specific device.
+* **Buffer Size:** If you're using a player like TiviMate, try increasing the buffer size in the settings.
+
+### Fix 3: Adjust the 'Audio Offset' Manually {#fix-3-adjust-audio-offset}
+
+Many advanced players (like VLC, Perfect Player, or TiviMate) have a built-in feature to fix this.
+1.  While the channel is playing, open the **Audio Options** or **Settings**.
+2.  Look for a setting called **"Audio Delay"** or **"Audio Offset"**.
+3.  If the audio is *ahead* of the video (you hear it first), add a *positive* delay (e.g., +100ms).
+4.  If the audio is *behind* the video (you see it first), add a *negative* delay (e.g., -100ms).
+5.  Adjust this number until the audio and video are perfectly synced.
+
+### Fix 4: Check Your TV's Audio Settings (Soundbar/AVR) {#fix-4-check-tv-settings}
+
+If you are using an external soundbar or AV Receiver, your TV may have its own "Audio Delay" setting. Check your TV's main **Sound Settings** menu. If this setting is misconfigured, it will affect *all* apps, not just IPTV.
+
+### Fix 5: Reboot Your Streaming Device {#fix-5-reboot-device}
+
+A full reboot (unplugging the power for 60 seconds) can clear the temporary processing files on your Firestick or Android Box and resolve many minor glitches, including audio sync.
+
+If you've tried all these steps and the problem persists, please contact our support team via the [Help Center](/help).
+
+<AuthorBio />

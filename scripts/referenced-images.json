@@ -1,0 +1,485 @@
+[
+  {
+    "expectedPath": "/images/blog/a-beginners-guide-to-xtream-codes-what-they-are-and-how-to-use-them.jpg",
+    "relPath": "images/blog/a-beginners-guide-to-xtream-codes-what-they-are-and-how-to-use-them.jpg",
+    "filename": "a-beginners-guide-to-xtream-codes-what-they-are-and-how-to-use-them.jpg",
+    "exists": true,
+    "fullPath": "C:\\Users\\hp\\Downloads\\streamverse-iptv\\public\\images\\blog\\a-beginners-guide-to-xtream-codes-what-they-are-and-how-to-use-them.jpg",
+    "referencedBy": [
+      "content\\posts\\a-beginners-guide-to-xtream-codes-what-they-are-and-how-to-use-them.mdx"
+    ]
+  },
+  {
+    "expectedPath": "/images/blog/a-travelers-guide-how-to-watch-your-home-tv-channels-from-anywhere.jpg",
+    "relPath": "images/blog/a-travelers-guide-how-to-watch-your-home-tv-channels-from-anywhere.jpg",
+    "filename": "a-travelers-guide-how-to-watch-your-home-tv-channels-from-anywhere.jpg",
+    "exists": true,
+    "fullPath": "C:\\Users\\hp\\Downloads\\streamverse-iptv\\public\\images\\blog\\a-travelers-guide-how-to-watch-your-home-tv-channels-from-anywhere.jpg",
+    "referencedBy": [
+      "content\\posts\\a-travelers-guide-how-to-watch-your-home-tv-channels-from-anywhere.mdx"
+    ]
+  },
+  {
+    "expectedPath": "/images/blog/amazon-firestick-vs-android-tv-box-whats-the-best-for-iptv.jpg",
+    "relPath": "images/blog/amazon-firestick-vs-android-tv-box-whats-the-best-for-iptv.jpg",
+    "filename": "amazon-firestick-vs-android-tv-box-whats-the-best-for-iptv.jpg",
+    "exists": true,
+    "fullPath": "C:\\Users\\hp\\Downloads\\streamverse-iptv\\public\\images\\blog\\amazon-firestick-vs-android-tv-box-whats-the-best-for-iptv.jpg",
+    "referencedBy": [
+      "content\\posts\\amazon-firestick-vs-android-tv-box-whats-the-best-for-iptv.mdx"
+    ]
+  },
+  {
+    "expectedPath": "/images/blog/how-to-set-up-iptv-on-an-lg-smart-tv.jpg",
+    "relPath": "images/blog/how-to-set-up-iptv-on-an-lg-smart-tv.jpg",
+    "filename": "how-to-set-up-iptv-on-an-lg-smart-tv.jpg",
+    "exists": true,
+    "fullPath": "C:\\Users\\hp\\Downloads\\streamverse-iptv\\public\\images\\blog\\how-to-set-up-iptv-on-an-lg-smart-tv.jpg",
+    "referencedBy": [
+      "content\\posts\\can-i-get-my-regional-sports-network-rsn-on-iptv.mdx",
+      "content\\posts\\how-to-set-up-iptv-on-an-lg-smart-tv-smart-iptv-app.mdx",
+      "content\\posts\\how-to-set-up-iptv-on-an-lg-smart-tv.mdx"
+    ]
+  },
+  {
+    "expectedPath": "/images/blog/can-i-watch-iptv-in-a-hotel-or-while-traveling.jpg",
+    "relPath": "images/blog/can-i-watch-iptv-in-a-hotel-or-while-traveling.jpg",
+    "filename": "can-i-watch-iptv-in-a-hotel-or-while-traveling.jpg",
+    "exists": true,
+    "fullPath": "C:\\Users\\hp\\Downloads\\streamverse-iptv\\public\\images\\blog\\can-i-watch-iptv-in-a-hotel-or-while-traveling.jpg",
+    "referencedBy": [
+      "content\\posts\\can-i-watch-iptv-in-a-hotel-or-while-traveling.mdx"
+    ]
+  },
+  {
+    "expectedPath": "/images/blog/can-i-watch-iptv-on-an-iphone-or-ipad-yes-heres-how.jpg",
+    "relPath": "images/blog/can-i-watch-iptv-on-an-iphone-or-ipad-yes-heres-how.jpg",
+    "filename": "can-i-watch-iptv-on-an-iphone-or-ipad-yes-heres-how.jpg",
+    "exists": true,
+    "fullPath": "C:\\Users\\hp\\Downloads\\streamverse-iptv\\public\\images\\blog\\can-i-watch-iptv-on-an-iphone-or-ipad-yes-heres-how.jpg",
+    "referencedBy": [
+      "content\\posts\\can-i-watch-iptv-on-an-iphone-or-ipad-yes-heres-how.mdx"
+    ]
+  },
+  {
+    "expectedPath": "/images/blog/case-study-how-one-family-cut-their-cable-bill-by-150-a-month.jpg",
+    "relPath": "images/blog/case-study-how-one-family-cut-their-cable-bill-by-150-a-month.jpg",
+    "filename": "case-study-how-one-family-cut-their-cable-bill-by-150-a-month.jpg",
+    "exists": true,
+    "fullPath": "C:\\Users\\hp\\Downloads\\streamverse-iptv\\public\\images\\blog\\case-study-how-one-family-cut-their-cable-bill-by-150-a-month.jpg",
+    "referencedBy": [
+      "content\\posts\\case-study-how-one-family-cut-their-cable-bill-by-150-a-month.mdx"
+    ]
+  },
+  {
+    "expectedPath": "/images/blog/channels-not-loading-how-to-fix-this-common-iptv-error.jpg",
+    "relPath": "images/blog/channels-not-loading-how-to-fix-this-common-iptv-error.jpg",
+    "filename": "channels-not-loading-how-to-fix-this-common-iptv-error.jpg",
+    "exists": true,
+    "fullPath": "C:\\Users\\hp\\Downloads\\streamverse-iptv\\public\\images\\blog\\channels-not-loading-how-to-fix-this-common-iptv-error.jpg",
+    "referencedBy": [
+      "content\\posts\\channels-not-loading-how-to-fix-this-common-iptv-error.mdx"
+    ]
+  },
+  {
+    "expectedPath": "/images/blog/do-i-need-a-separate-box-for-each-tv-in-my-house.jpg",
+    "relPath": "images/blog/do-i-need-a-separate-box-for-each-tv-in-my-house.jpg",
+    "filename": "do-i-need-a-separate-box-for-each-tv-in-my-house.jpg",
+    "exists": true,
+    "fullPath": "C:\\Users\\hp\\Downloads\\streamverse-iptv\\public\\images\\blog\\do-i-need-a-separate-box-for-each-tv-in-my-house.jpg",
+    "referencedBy": [
+      "content\\posts\\do-i-need-a-separate-box-for-each-tv-in-my-house.mdx"
+    ]
+  },
+  {
+    "expectedPath": "/images/blog/how-sports-fans-use-iptv-to-watch-every-game-from-every-league.jpg",
+    "relPath": "images/blog/how-sports-fans-use-iptv-to-watch-every-game-from-every-league.jpg",
+    "filename": "how-sports-fans-use-iptv-to-watch-every-game-from-every-league.jpg",
+    "exists": true,
+    "fullPath": "C:\\Users\\hp\\Downloads\\streamverse-iptv\\public\\images\\blog\\how-sports-fans-use-iptv-to-watch-every-game-from-every-league.jpg",
+    "referencedBy": [
+      "content\\posts\\how-sports-fans-use-iptv-to-watch-every-game-from-every-league.mdx"
+    ]
+  },
+  {
+    "expectedPath": "/images/blog/how-to-check-your-internet-speed-for-iptv-and-what-it-means.jpg",
+    "relPath": "images/blog/how-to-check-your-internet-speed-for-iptv-and-what-it-means.jpg",
+    "filename": "how-to-check-your-internet-speed-for-iptv-and-what-it-means.jpg",
+    "exists": true,
+    "fullPath": "C:\\Users\\hp\\Downloads\\streamverse-iptv\\public\\images\\blog\\how-to-check-your-internet-speed-for-iptv-and-what-it-means.jpg",
+    "referencedBy": [
+      "content\\posts\\how-to-check-your-internet-speed-for-iptv-and-what-it-means.mdx"
+    ]
+  },
+  {
+    "expectedPath": "/images/blog/how-to-clear-the-cache-on-your-firestick-to-improve-speed.jpg",
+    "relPath": "images/blog/how-to-clear-the-cache-on-your-firestick-to-improve-speed.jpg",
+    "filename": "how-to-clear-the-cache-on-your-firestick-to-improve-speed.jpg",
+    "exists": true,
+    "fullPath": "C:\\Users\\hp\\Downloads\\streamverse-iptv\\public\\images\\blog\\how-to-clear-the-cache-on-your-firestick-to-improve-speed.jpg",
+    "referencedBy": [
+      "content\\posts\\how-to-clear-the-cache-on-your-firestick-to-improve-speed.mdx"
+    ]
+  },
+  {
+    "expectedPath": "/images/blog/how-to-create-and-manage-a-favorites-list-in-your-tv-guide.jpg",
+    "relPath": "images/blog/how-to-create-and-manage-a-favorites-list-in-your-tv-guide.jpg",
+    "filename": "how-to-create-and-manage-a-favorites-list-in-your-tv-guide.jpg",
+    "exists": true,
+    "fullPath": "C:\\Users\\hp\\Downloads\\streamverse-iptv\\public\\images\\blog\\how-to-create-and-manage-a-favorites-list-in-your-tv-guide.jpg",
+    "referencedBy": [
+      "content\\posts\\how-to-create-and-manage-a-favorites-list-in-your-tv-guide.mdx"
+    ]
+  },
+  {
+    "expectedPath": "/images/blog/how-to-fix-a-no-epg-data-or-tv-guide-empty-error.jpg",
+    "relPath": "images/blog/how-to-fix-a-no-epg-data-or-tv-guide-empty-error.jpg",
+    "filename": "how-to-fix-a-no-epg-data-or-tv-guide-empty-error.jpg",
+    "exists": true,
+    "fullPath": "C:\\Users\\hp\\Downloads\\streamverse-iptv\\public\\images\\blog\\how-to-fix-a-no-epg-data-or-tv-guide-empty-error.jpg",
+    "referencedBy": [
+      "content\\posts\\how-to-fix-a-no-epg-data-or-tv-guide-empty-error.mdx"
+    ]
+  },
+  {
+    "expectedPath": "/images/blog/how-to-fix-common-iptv-buffering-and-freezing-10-easy-steps.jpg",
+    "relPath": "images/blog/how-to-fix-common-iptv-buffering-and-freezing-10-easy-steps.jpg",
+    "filename": "how-to-fix-common-iptv-buffering-and-freezing-10-easy-steps.jpg",
+    "exists": true,
+    "fullPath": "C:\\Users\\hp\\Downloads\\streamverse-iptv\\public\\images\\blog\\how-to-fix-common-iptv-buffering-and-freezing-10-easy-steps.jpg",
+    "referencedBy": [
+      "content\\posts\\how-to-fix-common-iptv-buffering-and-freezing-10-easy-steps.mdx"
+    ]
+  },
+  {
+    "expectedPath": "/images/blog/how-to-install-and-configure-iptv-smarters-pro-the-easy-way.jpg",
+    "relPath": "images/blog/how-to-install-and-configure-iptv-smarters-pro-the-easy-way.jpg",
+    "filename": "how-to-install-and-configure-iptv-smarters-pro-the-easy-way.jpg",
+    "exists": true,
+    "fullPath": "C:\\Users\\hp\\Downloads\\streamverse-iptv\\public\\images\\blog\\how-to-install-and-configure-iptv-smarters-pro-the-easy-way.jpg",
+    "referencedBy": [
+      "content\\posts\\how-to-install-and-configure-iptv-smarters-pro-the-easy-way.mdx"
+    ]
+  },
+  {
+    "expectedPath": "/images/blog/how-to-install-and-configure-the-tivimate-iptv-player.jpg",
+    "relPath": "images/blog/how-to-install-and-configure-the-tivimate-iptv-player.jpg",
+    "filename": "how-to-install-and-configure-the-tivimate-iptv-player.jpg",
+    "exists": true,
+    "fullPath": "C:\\Users\\hp\\Downloads\\streamverse-iptv\\public\\images\\blog\\how-to-install-and-configure-the-tivimate-iptv-player.jpg",
+    "referencedBy": [
+      "content\\posts\\how-to-install-and-configure-the-tivimate-iptv-player.mdx"
+    ]
+  },
+  {
+    "expectedPath": "/images/blog/how-to-pay-for-iptv-safely-and-securely.jpg",
+    "relPath": "images/blog/how-to-pay-for-iptv-safely-and-securely.jpg",
+    "filename": "how-to-pay-for-iptv-safely-and-securely.jpg",
+    "exists": true,
+    "fullPath": "C:\\Users\\hp\\Downloads\\streamverse-iptv\\public\\images\\blog\\how-to-pay-for-iptv-safely-and-securely.jpg",
+    "referencedBy": [
+      "content\\posts\\how-to-pay-for-iptv-safely-and-securely.mdx"
+    ]
+  },
+  {
+    "expectedPath": "/images/blog/how-to-record-your-favorite-shows-on-iptv-dvr-setup.jpg",
+    "relPath": "images/blog/how-to-record-your-favorite-shows-on-iptv-dvr-setup.jpg",
+    "filename": "how-to-record-your-favorite-shows-on-iptv-dvr-setup.jpg",
+    "exists": true,
+    "fullPath": "C:\\Users\\hp\\Downloads\\streamverse-iptv\\public\\images\\blog\\how-to-record-your-favorite-shows-on-iptv-dvr-setup.jpg",
+    "referencedBy": [
+      "content\\posts\\how-to-record-your-favorite-shows-on-iptv-dvr-setup.mdx"
+    ]
+  },
+  {
+    "expectedPath": "/images/blog/how-to-set-up-iptv-on-a-samsung-smart-tv-smart-iptv-app.jpg",
+    "relPath": "images/blog/how-to-set-up-iptv-on-a-samsung-smart-tv-smart-iptv-app.jpg",
+    "filename": "how-to-set-up-iptv-on-a-samsung-smart-tv-smart-iptv-app.jpg",
+    "exists": true,
+    "fullPath": "C:\\Users\\hp\\Downloads\\streamverse-iptv\\public\\images\\blog\\how-to-set-up-iptv-on-a-samsung-smart-tv-smart-iptv-app.jpg",
+    "referencedBy": [
+      "content\\posts\\how-to-set-up-iptv-on-a-samsung-smart-tv-smart-iptv-app.mdx"
+    ]
+  },
+  {
+    "expectedPath": "/images/blog/how-to-set-up-iptv-on-an-apple-tv-4k.jpg",
+    "relPath": "images/blog/how-to-set-up-iptv-on-an-apple-tv-4k.jpg",
+    "filename": "how-to-set-up-iptv-on-an-apple-tv-4k.jpg",
+    "exists": true,
+    "fullPath": "C:\\Users\\hp\\Downloads\\streamverse-iptv\\public\\images\\blog\\how-to-set-up-iptv-on-an-apple-tv-4k.jpg",
+    "referencedBy": [
+      "content\\posts\\how-to-set-up-iptv-on-an-apple-tv-4k.mdx"
+    ]
+  },
+  {
+    "expectedPath": "/images/blog/how-to-set-up-iptv-on-any-android-tv-box-step-by-step.jpg",
+    "relPath": "images/blog/how-to-set-up-iptv-on-any-android-tv-box-step-by-step.jpg",
+    "filename": "how-to-set-up-iptv-on-any-android-tv-box-step-by-step.jpg",
+    "exists": true,
+    "fullPath": "C:\\Users\\hp\\Downloads\\streamverse-iptv\\public\\images\\blog\\how-to-set-up-iptv-on-any-android-tv-box-step-by-step.jpg",
+    "referencedBy": [
+      "content\\posts\\how-to-set-up-iptv-on-any-android-tv-box-step-by-step.mdx",
+      "content\\posts\\the-5-best-android-tv-boxes-for-iptv-budget-and-premium.mdx"
+    ]
+  },
+  {
+    "expectedPath": "/images/blog/how-to-use-parental-controls-on-your-iptv-player.jpg",
+    "relPath": "images/blog/how-to-use-parental-controls-on-your-iptv-player.jpg",
+    "filename": "how-to-use-parental-controls-on-your-iptv-player.jpg",
+    "exists": true,
+    "fullPath": "C:\\Users\\hp\\Downloads\\streamverse-iptv\\public\\images\\blog\\how-to-use-parental-controls-on-your-iptv-player.jpg",
+    "referencedBy": [
+      "content\\posts\\how-to-use-parental-controls-on-your-iptv-player.mdx"
+    ]
+  },
+  {
+    "expectedPath": "/images/blog/how-to-use-the-catch-up-replay-feature-on-your-iptv-service.jpg",
+    "relPath": "images/blog/how-to-use-the-catch-up-replay-feature-on-your-iptv-service.jpg",
+    "filename": "how-to-use-the-catch-up-replay-feature-on-your-iptv-service.jpg",
+    "exists": true,
+    "fullPath": "C:\\Users\\hp\\Downloads\\streamverse-iptv\\public\\images\\blog\\how-to-use-the-catch-up-replay-feature-on-your-iptv-service.jpg",
+    "referencedBy": [
+      "content\\posts\\how-to-use-the-catch-up-replay-feature-on-your-iptv-service.mdx"
+    ]
+  },
+  {
+    "expectedPath": "/images/blog/how-to-watch-every-nba-game-with-your-iptv-service.jpg",
+    "relPath": "images/blog/how-to-watch-every-nba-game-with-your-iptv-service.jpg",
+    "filename": "how-to-watch-every-nba-game-with-your-iptv-service.jpg",
+    "exists": true,
+    "fullPath": "C:\\Users\\hp\\Downloads\\streamverse-iptv\\public\\images\\blog\\how-to-watch-every-nba-game-with-your-iptv-service.jpg",
+    "referencedBy": [
+      "content\\posts\\how-to-watch-every-nba-game-with-your-iptv-service.mdx"
+    ]
+  },
+  {
+    "expectedPath": "/images/blog/how-to-watch-iptv-on-a-windows-pc-or-mac-vlc-player-guide.jpg",
+    "relPath": "images/blog/how-to-watch-iptv-on-a-windows-pc-or-mac-vlc-player-guide.jpg",
+    "filename": "how-to-watch-iptv-on-a-windows-pc-or-mac-vlc-player-guide.jpg",
+    "exists": true,
+    "fullPath": "C:\\Users\\hp\\Downloads\\streamverse-iptv\\public\\images\\blog\\how-to-watch-iptv-on-a-windows-pc-or-mac-vlc-player-guide.jpg",
+    "referencedBy": [
+      "content\\posts\\how-to-watch-iptv-on-a-windows-pc-or-mac-vlc-player-guide.mdx"
+    ]
+  },
+  {
+    "expectedPath": "/images/blog/how-to-watch-local-news-and-weather-channels-on-iptv.jpg",
+    "relPath": "images/blog/how-to-watch-local-news-and-weather-channels-on-iptv.jpg",
+    "filename": "how-to-watch-local-news-and-weather-channels-on-iptv.jpg",
+    "exists": true,
+    "fullPath": "C:\\Users\\hp\\Downloads\\streamverse-iptv\\public\\images\\blog\\how-to-watch-local-news-and-weather-channels-on-iptv.jpg",
+    "referencedBy": [
+      "content\\posts\\how-to-watch-local-news-and-weather-channels-on-iptv.mdx"
+    ]
+  },
+  {
+    "expectedPath": "/images/blog/how-to-watch-ppv-events-ufc-boxing-on-iptv.jpg",
+    "relPath": "images/blog/how-to-watch-ppv-events-ufc-boxing-on-iptv.jpg",
+    "filename": "how-to-watch-ppv-events-ufc-boxing-on-iptv.jpg",
+    "exists": true,
+    "fullPath": "C:\\Users\\hp\\Downloads\\streamverse-iptv\\public\\images\\blog\\how-to-watch-ppv-events-ufc-boxing-on-iptv.jpg",
+    "referencedBy": [
+      "content\\posts\\how-to-watch-ppv-events-ufc-boxing-on-iptv.mdx"
+    ]
+  },
+  {
+    "expectedPath": "/images/blog/how-to-watch-the-nfl-season-on-iptv-no-blackouts.jpg",
+    "relPath": "images/blog/how-to-watch-the-nfl-season-on-iptv-no-blackouts.jpg",
+    "filename": "how-to-watch-the-nfl-season-on-iptv-no-blackouts.jpg",
+    "exists": true,
+    "fullPath": "C:\\Users\\hp\\Downloads\\streamverse-iptv\\public\\images\\blog\\how-to-watch-the-nfl-season-on-iptv-no-blackouts.jpg",
+    "referencedBy": [
+      "content\\posts\\how-to-watch-the-nfl-season-on-iptv-no-blackouts.mdx"
+    ]
+  },
+  {
+    "expectedPath": "/images/blog/iptv-vs-cable-tv-in-2025-a-full-cost-and-feature-comparison.jpg",
+    "relPath": "images/blog/iptv-vs-cable-tv-in-2025-a-full-cost-and-feature-comparison.jpg",
+    "filename": "iptv-vs-cable-tv-in-2025-a-full-cost-and-feature-comparison.jpg",
+    "exists": true,
+    "fullPath": "C:\\Users\\hp\\Downloads\\streamverse-iptv\\public\\images\\blog\\iptv-vs-cable-tv-in-2025-a-full-cost-and-feature-comparison.jpg",
+    "referencedBy": [
+      "content\\posts\\iptv-vs-cable-tv-in-2025-a-full-cost-and-feature-comparison.mdx"
+    ]
+  },
+  {
+    "expectedPath": "/images/blog/iptv-vs-satellite-tv-which-is-better-for-reliability-and-content.jpg",
+    "relPath": "images/blog/iptv-vs-satellite-tv-which-is-better-for-reliability-and-content.jpg",
+    "filename": "iptv-vs-satellite-tv-which-is-better-for-reliability-and-content.jpg",
+    "exists": true,
+    "fullPath": "C:\\Users\\hp\\Downloads\\streamverse-iptv\\public\\images\\blog\\iptv-vs-satellite-tv-which-is-better-for-reliability-and-content.jpg",
+    "referencedBy": [
+      "content\\posts\\iptv-vs-satellite-tv-which-is-better-for-reliability-and-content.mdx"
+    ]
+  },
+  {
+    "expectedPath": "/images/blog/is-iptv-legal-in-the-usa-and-canada-a-2025-guide.jpg",
+    "relPath": "images/blog/is-iptv-legal-in-the-usa-and-canada-a-2025-guide.jpg",
+    "filename": "is-iptv-legal-in-the-usa-and-canada-a-2025-guide.jpg",
+    "exists": true,
+    "fullPath": "C:\\Users\\hp\\Downloads\\streamverse-iptv\\public\\images\\blog\\is-iptv-legal-in-the-usa-and-canada-a-2025-guide.jpg",
+    "referencedBy": [
+      "content\\posts\\is-iptv-legal-in-the-usa-and-canada-a-2025-guide.mdx"
+    ]
+  },
+  {
+    "expectedPath": "/images/blog/m3u-link-vs-xtream-codes-whats-the-difference.jpg",
+    "relPath": "images/blog/m3u-link-vs-xtream-codes-whats-the-difference.jpg",
+    "filename": "m3u-link-vs-xtream-codes-whats-the-difference.jpg",
+    "exists": true,
+    "fullPath": "C:\\Users\\hp\\Downloads\\streamverse-iptv\\public\\images\\blog\\m3u-link-vs-xtream-codes-whats-the-difference.jpg",
+    "referencedBy": [
+      "content\\posts\\m3u-link-vs-xtream-codes-whats-the-difference.mdx"
+    ]
+  },
+  {
+    "expectedPath": "/images/blog/never-miss-a-race-how-to-watch-f1-on-iptv.jpg",
+    "relPath": "images/blog/never-miss-a-race-how-to-watch-f1-on-iptv.jpg",
+    "filename": "never-miss-a-race-how-to-watch-f1-on-iptv.jpg",
+    "exists": true,
+    "fullPath": "C:\\Users\\hp\\Downloads\\streamverse-iptv\\public\\images\\blog\\never-miss-a-race-how-to-watch-f1-on-iptv.jpg",
+    "referencedBy": [
+      "content\\posts\\never-miss-a-race-how-to-watch-f1-on-iptv.mdx"
+    ]
+  },
+  {
+    "expectedPath": "/images/blog/streamversetv-vs-your-top-competitor-an-honest-comparison.jpg",
+    "relPath": "images/blog/streamversetv-vs-your-top-competitor-an-honest-comparison.jpg",
+    "filename": "streamversetv-vs-your-top-competitor-an-honest-comparison.jpg",
+    "exists": true,
+    "fullPath": "C:\\Users\\hp\\Downloads\\streamverse-iptv\\public\\images\\blog\\streamversetv-vs-your-top-competitor-an-honest-comparison.jpg",
+    "referencedBy": [
+      "content\\posts\\streamversetv-vs-your-top-competitor-an-honest-comparison.mdx"
+    ]
+  },
+  {
+    "expectedPath": "/images/blog/the-3-best-iptv-player-apps-for-amazon-firestick.jpg",
+    "relPath": "images/blog/the-3-best-iptv-player-apps-for-amazon-firestick.jpg",
+    "filename": "the-3-best-iptv-player-apps-for-amazon-firestick.jpg",
+    "exists": true,
+    "fullPath": "C:\\Users\\hp\\Downloads\\streamverse-iptv\\public\\images\\blog\\the-3-best-iptv-player-apps-for-amazon-firestick.jpg",
+    "referencedBy": [
+      "content\\posts\\the-3-best-iptv-player-apps-for-amazon-firestick.mdx"
+    ]
+  },
+  {
+    "expectedPath": "/images/blog/the-5-best-vpns-for-iptv-streaming-in-2025.jpg",
+    "relPath": "images/blog/the-5-best-vpns-for-iptv-streaming-in-2025.jpg",
+    "filename": "the-5-best-vpns-for-iptv-streaming-in-2025.jpg",
+    "exists": true,
+    "fullPath": "C:\\Users\\hp\\Downloads\\streamverse-iptv\\public\\images\\blog\\the-5-best-vpns-for-iptv-streaming-in-2025.jpg",
+    "referencedBy": [
+      "content\\posts\\the-5-best-vpns-for-iptv-streaming-in-2025.mdx"
+    ]
+  },
+  {
+    "expectedPath": "/images/blog/the-ultimate-2025-guide-to-installing-iptv-on-amazon-firestick.jpg",
+    "relPath": "images/blog/the-ultimate-2025-guide-to-installing-iptv-on-amazon-firestick.jpg",
+    "filename": "the-ultimate-2025-guide-to-installing-iptv-on-amazon-firestick.jpg",
+    "exists": true,
+    "fullPath": "C:\\Users\\hp\\Downloads\\streamverse-iptv\\public\\images\\blog\\the-ultimate-2025-guide-to-installing-iptv-on-amazon-firestick.jpg",
+    "referencedBy": [
+      "content\\posts\\the-ultimate-2025-guide-to-installing-iptv-on-amazon-firestick.mdx"
+    ]
+  },
+  {
+    "expectedPath": "/images/blog/the-ultimate-guide-to-watching-premier-league-epl-on-iptv.jpg",
+    "relPath": "images/blog/the-ultimate-guide-to-watching-premier-league-epl-on-iptv.jpg",
+    "filename": "the-ultimate-guide-to-watching-premier-league-epl-on-iptv.jpg",
+    "exists": true,
+    "fullPath": "C:\\Users\\hp\\Downloads\\streamverse-iptv\\public\\images\\blog\\the-ultimate-guide-to-watching-premier-league-epl-on-iptv.jpg",
+    "referencedBy": [
+      "content\\posts\\the-ultimate-guide-to-watching-premier-league-epl-on-iptv.mdx"
+    ]
+  },
+  {
+    "expectedPath": "/images/blog/tivimate-vs-iptv-smarters-pro-which-player-is-right-for-you.jpg",
+    "relPath": "images/blog/tivimate-vs-iptv-smarters-pro-which-player-is-right-for-you.jpg",
+    "filename": "tivimate-vs-iptv-smarters-pro-which-player-is-right-for-you.jpg",
+    "exists": true,
+    "fullPath": "C:\\Users\\hp\\Downloads\\streamverse-iptv\\public\\images\\blog\\tivimate-vs-iptv-smarters-pro-which-player-is-right-for-you.jpg",
+    "referencedBy": [
+      "content\\posts\\tivimate-vs-iptv-smarters-pro-which-player-is-right-for-you.mdx"
+    ]
+  },
+  {
+    "expectedPath": "/images/blog/top-10-must-have-features-to-look-for-in-an-iptv-service.jpg",
+    "relPath": "images/blog/top-10-must-have-features-to-look-for-in-an-iptv-service.jpg",
+    "filename": "top-10-must-have-features-to-look-for-in-an-iptv-service.jpg",
+    "exists": true,
+    "fullPath": "C:\\Users\\hp\\Downloads\\streamverse-iptv\\public\\images\\blog\\top-10-must-have-features-to-look-for-in-an-iptv-service.jpg",
+    "referencedBy": [
+      "content\\posts\\top-10-must-have-features-to-look-for-in-an-iptv-service.mdx"
+    ]
+  },
+  {
+    "expectedPath": "/images/blog/what-does-multi-connection-mean-in-an-iptv-plan.jpg",
+    "relPath": "images/blog/what-does-multi-connection-mean-in-an-iptv-plan.jpg",
+    "filename": "what-does-multi-connection-mean-in-an-iptv-plan.jpg",
+    "exists": true,
+    "fullPath": "C:\\Users\\hp\\Downloads\\streamverse-iptv\\public\\images\\blog\\what-does-multi-connection-mean-in-an-iptv-plan.jpg",
+    "referencedBy": [
+      "content\\posts\\what-does-multi-connection-mean-in-an-iptv-plan.mdx"
+    ]
+  },
+  {
+    "expectedPath": "/images/blog/what-is-an-epg-how-to-use-your-electronic-program-guide.jpg",
+    "relPath": "images/blog/what-is-an-epg-how-to-use-your-electronic-program-guide.jpg",
+    "filename": "what-is-an-epg-how-to-use-your-electronic-program-guide.jpg",
+    "exists": true,
+    "fullPath": "C:\\Users\\hp\\Downloads\\streamverse-iptv\\public\\images\\blog\\what-is-an-epg-how-to-use-your-electronic-program-guide.jpg",
+    "referencedBy": [
+      "content\\posts\\what-is-an-epg-how-to-use-your-electronic-program-guide.mdx"
+    ]
+  },
+  {
+    "expectedPath": "/images/blog/what-is-catch-up-tv-and-how-does-it-work.jpg",
+    "relPath": "images/blog/what-is-catch-up-tv-and-how-does-it-work.jpg",
+    "filename": "what-is-catch-up-tv-and-how-does-it-work.jpg",
+    "exists": true,
+    "fullPath": "C:\\Users\\hp\\Downloads\\streamverse-iptv\\public\\images\\blog\\what-is-catch-up-tv-and-how-does-it-work.jpg",
+    "referencedBy": [
+      "content\\posts\\what-is-catch-up-tv-and-how-does-it-work.mdx"
+    ]
+  },
+  {
+    "expectedPath": "/images/blog/what-is-vod-and-how-is-it-different-from-live-tv.jpg",
+    "relPath": "images/blog/what-is-vod-and-how-is-it-different-from-live-tv.jpg",
+    "filename": "what-is-vod-and-how-is-it-different-from-live-tv.jpg",
+    "exists": true,
+    "fullPath": "C:\\Users\\hp\\Downloads\\streamverse-iptv\\public\\images\\blog\\what-is-vod-and-how-is-it-different-from-live-tv.jpg",
+    "referencedBy": [
+      "content\\posts\\what-is-vod-and-how-is-it-different-from-live-tv.mdx"
+    ]
+  },
+  {
+    "expectedPath": "/images/blog/what-to-do-if-your-iptv-login-fails-username-password-error.jpg",
+    "relPath": "images/blog/what-to-do-if-your-iptv-login-fails-username-password-error.jpg",
+    "filename": "what-to-do-if-your-iptv-login-fails-username-password-error.jpg",
+    "exists": true,
+    "fullPath": "C:\\Users\\hp\\Downloads\\streamverse-iptv\\public\\images\\blog\\what-to-do-if-your-iptv-login-fails-username-password-error.jpg",
+    "referencedBy": [
+      "content\\posts\\what-to-do-if-your-iptv-login-fails-username-password-error.mdx"
+    ]
+  },
+  {
+    "expectedPath": "/images/blog/why-is-my-audio-out-of-sync-and-how-to-fix-it.jpg",
+    "relPath": "images/blog/why-is-my-audio-out-of-sync-and-how-to-fix-it.jpg",
+    "filename": "why-is-my-audio-out-of-sync-and-how-to-fix-it.jpg",
+    "exists": true,
+    "fullPath": "C:\\Users\\hp\\Downloads\\streamverse-iptv\\public\\images\\blog\\why-is-my-audio-out-of-sync-and-how-to-fix-it.jpg",
+    "referencedBy": [
+      "content\\posts\\why-is-my-audio-out-of-sync-and-how-to-fix-it.mdx"
+    ]
+  },
+  {
+    "expectedPath": "/images/blog/why-is-my-isp-throttling-my-iptv-speed.jpg",
+    "relPath": "images/blog/why-is-my-isp-throttling-my-iptv-speed.jpg",
+    "filename": "why-is-my-isp-throttling-my-iptv-speed.jpg",
+    "exists": true,
+    "fullPath": "C:\\Users\\hp\\Downloads\\streamverse-iptv\\public\\images\\blog\\why-is-my-isp-throttling-my-iptv-speed.jpg",
+    "referencedBy": [
+      "content\\posts\\why-is-my-isp-throttling-my-iptv-speed.mdx"
+    ]
+  }
+]

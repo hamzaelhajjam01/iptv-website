@@ -1,0 +1,43 @@
+{
+  "name": "streamverse-iptv",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "images:responsive": "node ./process-responsive-images.js",
+    "check:og": "node ./scripts/validate-og-images.js",
+    "build:strict": "npm run check:og; npm run build",
+    "batch:images": "node ./scripts/batch-generate-images.js"
+  },
+  "dependencies": {
+    "@google/genai": "^1.28.0",
+    "framer-motion": "^10.16.4",
+    "gray-matter": "^4.0.3",
+    "next": "14.2.5",
+    "react": "^18",
+    "react-dom": "^18",
+    "remark": "^14.0.2",
+    "remark-gfm": "^3.0.1",
+    "remark-heading-id": "^1.0.1",
+    "remark-html": "^15.0.1",
+    "remark-slug": "^7.0.1",
+    "schema-dts": "^1.1.5",
+    "unist-util-visit": "^5.0.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/typography": "^0.5.19",
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "autoprefixer": "^10.4.21",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.5",
+    "postcss": "^8",
+    "sharp": "^0.34.4",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5"
+  }
+}
