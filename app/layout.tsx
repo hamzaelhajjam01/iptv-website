@@ -13,6 +13,13 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "StreamVerse - The Ultimate IPTV Subscription Service",
   description: "A minimal, fast-loading affiliate website that promotes the StreamVerse IPTV service. It showcases digital products, educates visitors with AI-powered guides, and guides visitors to affiliate links to generate commissions.",
+  icons: {
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/icon.png', type: 'image/png', sizes: '32x32' },
+    ],
+    apple: '/apple-icon.png',
+  },
 };
 
 export default function RootLayout({
