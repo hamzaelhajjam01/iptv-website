@@ -17,7 +17,7 @@ const ChannelsFeaturesPage: React.FC = () => {
                     <img src="/images/bg-entertainment.jpg" alt="Abstract background" className="w-full h-full object-cover opacity-10" />
                 </div>
                 <div className="container mx-auto text-center relative z-10">
-                    <h2 className="text-3xl md:text-4xl font-bold mb-4">{t('featuresTitle')}</h2>
+                    <h1 className="text-3xl md:text-4xl font-bold mb-4">{t('featuresTitle')}</h1>
                     <p className="text-gray-400 mb-12 max-w-2xl mx-auto">{t('featuresSubtitle')}</p>
                     <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                         <div className="bg-card-dark p-8 rounded-lg feature-card"><h3 className="text-xl font-bold mb-2 text-blue-400">{t('feature1Title')}</h3><p className="text-gray-300">{t('feature1Desc')}</p></div>

@@ -30,7 +30,7 @@ const PricingPage: React.FC = () => {
                 whatsappNumber={WHATSAPP_NUMBER}
             />
             <div className="container mx-auto text-center">
-                <h2 className="text-3xl md:text-4xl font-bold text-cyan-400 mb-4">{t('pricingTitle')}</h2>
+                <h1 className="text-3xl md:text-4xl font-bold text-cyan-400 mb-4">{t('pricingTitle')}</h1>
                 <p className="text-lg font-semibold mb-2">{t('countdownTitle')}</p>
                 <CountdownTimer />
             
