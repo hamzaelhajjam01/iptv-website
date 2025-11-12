@@ -63,6 +63,29 @@ const PostPage = async ({ params }: Props) => {
     url: postUrl,
   };
 
+  // WebPage schema with table of contents for Google
+  const webPageJsonLd = headings && headings.length > 0 ? {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    '@id': postUrl,
+    url: postUrl,
+    name: meta.title,
+    description: meta.excerpt,
+    speakable: {
+      '@type': 'SpeakableSpecification',
+      cssSelector: ['h1', 'h2', 'h3', '#table-of-contents']
+    },
+    mainEntity: {
+      '@type': 'Article',
+      headline: meta.title,
+      tableOfContents: headings.map((h: any) => ({
+        '@type': 'ListItem',
+        name: h.text,
+        url: `${postUrl}#${h.slug}`
+      }))
+    }
+  } : null;
+
   return (
     <>
       {/* Add FAQ Schema to head */}
@@ -72,6 +95,10 @@ const PostPage = async ({ params }: Props) => {
         <Breadcrumbs category={meta.category} postTitle={meta.title} />
         {/* JSON-LD Article Schema */}
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }} />
+        {/* JSON-LD WebPage Schema with Table of Contents */}
+        {webPageJsonLd && (
+          <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageJsonLd) }} />
+        )}
 
         <h1 className="text-4xl font-bold mb-2">{meta.title}</h1>
         <div className="mb-4">

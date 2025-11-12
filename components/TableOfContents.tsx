@@ -32,24 +32,31 @@ export function TableOfContents({ headings }: { headings: Heading[] }) {
   };
 
   return (
-    <nav className="mb-8 p-4 bg-gray-800 rounded-lg border border-gray-700">
-      <h2 className="text-lg font-bold mb-3 text-white">Table of Contents</h2>
-      <ul className="space-y-2">
-        {headings.map((heading) => (
-          <li
-            key={heading.slug}
-            className={heading.level === 3 ? 'ml-4' : ''}
-          >
-            <a
-              href={`#${heading.slug}`}
-              onClick={(e) => handleScroll(e, heading.slug)}
-              className="text-gray-300 hover:text-blue-400 transition-colors"
+    <nav className="mb-8 p-6 bg-card-dark rounded-xl border border-gray-700" aria-label="Table of Contents">
+      <h2 className="text-xl font-bold mb-4 text-white" id="table-of-contents">Table of Contents</h2>
+      <ol className="space-y-2 list-none">
+        {headings.map((heading, index) => {
+          // Calculate indentation based on heading level
+          // level 2 = no indent, level 3 = 1rem, level 4 = 2rem, etc.
+          const indent = heading.level === 2 ? 0 : (heading.level - 2) * 1;
+          
+          return (
+            <li
+              key={heading.slug || index}
+              style={{ marginLeft: `${indent}rem` }}
+              className="leading-relaxed"
             >
-              {heading.text}
-            </a>
-          </li>
-        ))}
-      </ul>
+              <a
+                href={`#${heading.slug}`}
+                onClick={(e) => handleScroll(e, heading.slug)}
+                className="text-gray-300 hover:text-blue-400 transition-colors duration-200 inline-block py-1"
+              >
+                {heading.text}
+              </a>
+            </li>
+          );
+        })}
+      </ol>
     </nav>
   );
 }

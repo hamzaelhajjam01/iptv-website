@@ -4,7 +4,6 @@ import matter from 'gray-matter';
 import { remark } from 'remark';
 import html from 'remark-html';
 import gfm from 'remark-gfm';
-import headingId from 'remark-heading-id';
 
 export type PostMeta = {
   title: string;
@@ -45,13 +44,18 @@ export async function getPostBySlug(slug: string) {
   const fileContents = fs.readFileSync(fullPath, 'utf8');
   const { data, content } = matter(fileContents);
 
+  // Process markdown with remark-html
   const processed = await remark()
-    .use(gfm) // Parse GFM features and {#slug} syntax
-    .use(headingId) // Add IDs to headings based on {#slug}
-    .use(html as any)
+    .use(gfm)
+    .use(html, { sanitize: false })
     .process(content);
 
-  const contentHtml = processed.toString();
+  let contentHtml = processed.toString();
+  
+  // Manually add IDs to headings based on {#slug} syntax
+  // Replace patterns like: <h2>Title {#my-slug}</h2> with <h2 id="my-slug">Title</h2>
+  contentHtml = contentHtml.replace(/<(h[2-6])>(.*?)\s*\{#([a-z0-9-]+)\}\s*<\/\1>/gi, '<$1 id="$3">$2</$1>');
+  
   const headings = (data.toc as Heading[]) || []; // Read ToC from frontmatter
   const faqs = (data.faqs as FAQ[]) || []; // Read FAQs from frontmatter
 
