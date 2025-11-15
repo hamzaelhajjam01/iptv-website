@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Script from "next/script";
+import { Suspense } from "react";
 import "./globals.css";
 import { LanguageProvider } from "../contexts/LanguageContext";
 import Header from "../components/Header";
@@ -47,7 +48,9 @@ export default function RootLayout({
       </head>
       <body className={inter.className}>
         <LanguageProvider>
-          <TopLoadingBar />
+          <Suspense fallback={null}>
+            <TopLoadingBar />
+          </Suspense>
           <ReferralTopBar />
           <Header />
           <PageTransition>

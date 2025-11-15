@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { getAllPostsMeta } from '../lib/posts';
@@ -32,7 +32,9 @@ async function WidgetCategories() {
     <div className="bg-card-dark rounded-xl p-6">
       <h3 className="text-lg font-semibold mb-4">Categories</h3>
       {/* Client subcomponent handles active highlight based on current URL */}
-      <CategoriesList categories={categories} />
+      <Suspense fallback={<div className="text-gray-400 text-sm">Loading...</div>}>
+        <CategoriesList categories={categories} />
+      </Suspense>
     </div>
   );
 }
@@ -83,7 +85,11 @@ async function WidgetPopularPosts() {
 
 // Widget: Simple search form sending users to /blog?q=
 function WidgetSearch() {
-  return <SearchForm />;
+  return (
+    <Suspense fallback={<div className="bg-card-dark rounded-xl p-4 h-[60px] animate-pulse"></div>}>
+      <SearchForm />
+    </Suspense>
+  );
 }
 
 export default async function Sidebar() {

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import { getAllPostsMeta } from '../../lib/posts';
 import BlogFilters from '../../components/BlogFilters';
 import BackToTopButton from '../../components/BackToTopButton';
@@ -32,7 +32,9 @@ const BlogPage = async ({ searchParams }: BlogPageProps) => {
       <p className="text-gray-400 mb-6">Latest articles and tutorials from StreamVerse.</p>
       {/* Search bar component - visible only on mobile (hidden on lg screens and up) */}
       <div className="mb-6 lg:hidden">
-        <SearchForm />
+        <Suspense fallback={<div className="bg-card-dark rounded-xl p-4 h-[60px] animate-pulse"></div>}>
+          <SearchForm />
+        </Suspense>
       </div>
       {/* BlogFilters is a client component that handles search and category filtering */}
       <BlogFilters posts={posts} initialCategory={initialCategory} initialQuery={initialQuery} initialPage={searchParams?.page ?? 1} />
