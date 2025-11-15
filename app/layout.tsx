@@ -7,6 +7,8 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import ExitIntent from "../components/ExitIntent";
 import PageTransition from "../components/PageTransition";
+import TopLoadingBar from "../components/TopLoadingBar";
+import ReferralTopBar from "../components/ReferralTopBar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -45,6 +47,8 @@ export default function RootLayout({
       </head>
       <body className={inter.className}>
         <LanguageProvider>
+          <TopLoadingBar />
+          <ReferralTopBar />
           <Header />
           <PageTransition>
             <main>{children}</main>

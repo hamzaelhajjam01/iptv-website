@@ -4,6 +4,9 @@ import Image from 'next/image';
 import { getAllPostsMeta } from '../lib/posts';
 import CategoriesList from './CategoriesList';
 import SearchForm from './SearchForm';
+import dynamic from 'next/dynamic';
+
+const ReferralCard = dynamic(() => import('./ReferralCard'), { ssr: false });
 
 // Widget: CTA to main product/pricing
 function WidgetCTA() {
@@ -89,7 +92,8 @@ export default async function Sidebar() {
       <WidgetSearch />
       <WidgetCategories />
       <WidgetPopularPosts />
-      <div className="sticky top-20">
+      <div className="sticky top-20 space-y-6">
+        <ReferralCard />
         <WidgetCTA />
       </div>
     </aside>

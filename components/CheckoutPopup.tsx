@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from 'react';
+import Image from 'next/image';
 import { AnimatePresence, motion } from 'framer-motion';
 
 type CheckoutPopupProps = {
@@ -8,6 +9,7 @@ type CheckoutPopupProps = {
   onClose: () => void;
   planTitle: string;
   planPrice: string;
+  planImage: string;
   whatsappNumber: string; // Your WhatsApp business number (international format without +)
 };
 
@@ -16,6 +18,7 @@ const CheckoutPopup: React.FC<CheckoutPopupProps> = ({
   onClose,
   planTitle,
   planPrice,
+  planImage,
   whatsappNumber,
 }) => {
   const [email, setEmail] = useState('');
@@ -122,7 +125,12 @@ Please send me the payment details and setup instructions.`;
         </div>
 
         {/* Plan Summary */}
-        <div className="bg-blue-600/10 border border-blue-500/30 rounded-lg p-4 mb-6">
+        <div className="bg-blue-600/10 border border-blue-500/30 rounded-lg p-4 mb-6 text-center">
+          {planImage && (
+            <div className="relative w-full h-40 mb-3 mx-auto">
+              <Image src={planImage} alt={planTitle} fill className="object-contain" />
+            </div>
+          )}
           <p className="text-sm text-gray-400 mb-1">Selected Plan</p>
           <p className="text-xl font-bold text-white">{planTitle}</p>
           <p className="text-2xl font-extrabold text-blue-400 mt-2">{planPrice}</p>
