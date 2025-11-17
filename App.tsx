@@ -385,8 +385,31 @@ const DeviceGrid: React.FC = () => (
 // --- PAGE COMPONENTS ---
 
 const HomePage: React.FC<{ setPage: (page: Page) => void }> = ({ setPage }) => {
-    const { t } = useLanguage();
+    const { t, lang } = useLanguage();
     const [videoError, setVideoError] = useState(false);
+    const [interests, setInterests] = useState('');
+    const [guideResult, setGuideResult] = useState('');
+    const [isLoading, setIsLoading] = useState(false);
+
+    const handleGenerateGuide = async () => {
+        if (!interests.trim()) {
+            setGuideResult(`<p class="text-yellow-400">${t('geminiEmpty')}</p>`);
+            return;
+        }
+        setIsLoading(true);
+        setGuideResult('');
+        
+        const prompt = `You are an expert entertainment guide for an IPTV service called StreamVerse which has over 16,000 channels. A potential customer is interested in the following topics: "${interests}". Your task is to generate a personalized recommendation list to show them the value they'll get. Your response MUST be in the same language as the user's query, which is ${lang}. Please provide: 1. A list of 4-5 relevant LIVE TV channels they would love. 2. A list of 3 relevant on-demand movies or TV series they can binge-watch. For each item, provide a one-sentence explanation for why it's a great match for their interests. Format the entire output as clean HTML. Use <h3> for titles and an unordered list (<ul><li>) for the recommendations. Make the channel/movie titles bold using <strong>.`;
+
+        try {
+            const responseText = await callGeminiApi(prompt);
+            setGuideResult(responseText);
+        } catch (error) {
+            setGuideResult(`<p class="text-red-500">${t('geminiError')}</p>`);
+        } finally {
+            setIsLoading(false);
+        }
+    };
 
     return (
         <main>
@@ -506,7 +529,10 @@ const HomePage: React.FC<{ setPage: (page: Page) => void }> = ({ setPage }) => {
                 </div>
             </section>
         </main>
-    };
+    );
+};
+
+const ChannelsFeaturesPage: React.FC = () => {
     const { t, lang } = useLanguage();
     const [interests, setInterests] = useState('');
     const [guideResult, setGuideResult] = useState('');
