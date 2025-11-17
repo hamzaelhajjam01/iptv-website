@@ -135,9 +135,6 @@ const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ children })
         </LanguageContext.Provider>
     );
 };
-        modalTitle: "ATTENDEZ ! Ne partez pas les mains vides !", modalSubtitle: "Vous êtes à quelques secondes de résoudre vos problèmes de TV pour toujours. Profitez d'une offre spéciale unique : un essai pour $0.99 pour 24H.", modalCTA: "OUI ! JE VEUX MON ESSAI DE 24H", modalUrgency: "Aucune carte de crédit requise. Cette offre n'apparaîtra plus.",
-        
-        
 // --- SHARED UI COMPONENTS (Defined outside main App to prevent re-renders) ---
 
 interface HeaderProps {

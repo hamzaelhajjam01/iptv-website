@@ -100,46 +100,49 @@ Please send me the payment details and setup instructions.`;
           onClick={onClose}
         >
           <motion.div
-            initial={{ scale: 0.9, opacity: 0, y: 20 }}
-            animate={{ scale: 1, opacity: 1, y: 0 }}
-            exit={{ scale: 0.9, opacity: 0, y: 20 }}
-            transition={{ type: "spring", duration: 0.3, bounce: 0.2 }}
-            className="bg-card-dark rounded-2xl shadow-2xl max-w-md w-full p-8 relative border border-gray-700"
-            onClick={(e) => e.stopPropagation()}
+              initial={{ scale: 0.92, opacity: 0, y: 16 }}
+              animate={{ scale: 1, opacity: 1, y: 0 }}
+              exit={{ scale: 0.92, opacity: 0, y: 16 }}
+              transition={{ type: "spring", duration: 0.35, bounce: 0.18 }}
+              role="dialog"
+              aria-modal="true"
+              aria-labelledby="checkout-heading"
+              className="bg-card-dark rounded-2xl shadow-xl w-full max-w-sm md:max-w-md p-6 relative border border-gray-700 max-h-[90vh] overflow-y-auto"
+              onClick={(e) => e.stopPropagation()}
+            >
+          {/* Close button (persistent, easier to see on mobile) */}
+          <button
+            onClick={onClose}
+            className="sticky top-2 ml-auto float-right flex items-center justify-center w-9 h-9 rounded-full bg-[#0b162b] text-gray-400 hover:text-white hover:bg-[#132545] transition-colors"
+            aria-label="Close checkout popup"
           >
-        {/* Close button */}
-        <button
-          onClick={onClose}
-          className="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors"
-          aria-label="Close"
-        >
-          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
-          </svg>
-        </button>
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
 
         {/* Header */}
-        <div className="mb-6">
-          <h2 className="text-2xl font-bold text-white mb-2">Complete Your Order</h2>
-          <p className="text-gray-400 text-sm">You're one step away from premium entertainment</p>
+        <div className="mb-5 pr-10" id="checkout-heading">
+          <h2 className="text-xl font-bold text-white mb-1">Complete Your Order</h2>
+          <p className="text-gray-400 text-xs">You're one step away from premium entertainment</p>
         </div>
 
         {/* Plan Summary */}
-        <div className="bg-blue-600/10 border border-blue-500/30 rounded-lg p-4 mb-6 text-center">
+        <div className="bg-blue-600/10 border border-blue-500/30 rounded-lg p-3 mb-5 text-center">
           {planImage && (
-            <div className="relative w-full h-40 mb-3 mx-auto">
-              <Image src={planImage} alt={planTitle} fill className="object-contain" />
+            <div className="relative w-full h-32 mb-2 mx-auto">
+              <Image src={planImage} alt={planTitle} fill className="object-contain" priority />
             </div>
           )}
-          <p className="text-sm text-gray-400 mb-1">Selected Plan</p>
-          <p className="text-xl font-bold text-white">{planTitle}</p>
-          <p className="text-2xl font-extrabold text-blue-400 mt-2">{planPrice}</p>
+          <p className="text-xs text-gray-400 mb-0">Selected Plan</p>
+          <p className="text-lg font-bold text-white">{planTitle}</p>
+          <p className="text-xl font-extrabold text-blue-400 mt-1">{planPrice}</p>
         </div>
 
         {/* Form */}
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
-            <label htmlFor="email" className="block text-sm font-semibold text-gray-300 mb-2">
+            <label htmlFor="email" className="block text-xs font-semibold text-gray-300 mb-1">
               Email Address *
             </label>
             <input
@@ -149,12 +152,12 @@ Please send me the payment details and setup instructions.`;
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="your@email.com"
-              className="w-full bg-[#050a19] text-white placeholder-gray-500 rounded-lg px-4 py-3 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"
+              className="w-full bg-[#050a19] text-white placeholder-gray-500 rounded-lg px-3 py-2.5 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent text-sm"
             />
           </div>
 
           <div>
-            <label htmlFor="country" className="block text-sm font-semibold text-gray-300 mb-2">
+            <label htmlFor="country" className="block text-xs font-semibold text-gray-300 mb-1">
               Country *
             </label>
             <select
@@ -162,7 +165,7 @@ Please send me the payment details and setup instructions.`;
               required
               value={country}
               onChange={(e) => setCountry(e.target.value)}
-              className="w-full bg-[#050a19] text-white rounded-lg px-4 py-3 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"
+              className="w-full bg-[#050a19] text-white rounded-lg px-3 py-2.5 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent text-sm"
             >
               <option value="">Select your country</option>
               <option value="Afghanistan">Afghanistan</option>
@@ -364,7 +367,7 @@ Please send me the payment details and setup instructions.`;
           </div>
 
           <div>
-            <label htmlFor="phone" className="block text-sm font-semibold text-gray-300 mb-2">
+            <label htmlFor="phone" className="block text-xs font-semibold text-gray-300 mb-1">
               Phone Number (with country code) *
             </label>
             <input
@@ -374,7 +377,7 @@ Please send me the payment details and setup instructions.`;
               value={phone}
               onChange={(e) => setPhone(e.target.value)}
               placeholder="+1 234 567 8900"
-              className="w-full bg-[#050a19] text-white placeholder-gray-500 rounded-lg px-4 py-3 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"
+              className="w-full bg-[#050a19] text-white placeholder-gray-500 rounded-lg px-3 py-2.5 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent text-sm"
             />
           </div>
 
@@ -382,7 +385,7 @@ Please send me the payment details and setup instructions.`;
           <button
             type="submit"
             disabled={isSubmitting}
-            className="w-full bg-gradient-to-r from-blue-600 to-violet-600 hover:from-blue-700 hover:to-violet-700 text-white font-bold py-4 px-6 rounded-lg transition-all transform hover:scale-[1.02] disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+            className="w-full bg-gradient-to-r from-blue-600 to-violet-600 hover:from-blue-700 hover:to-violet-700 text-white font-semibold py-3 px-5 rounded-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 text-sm"
           >
             {isSubmitting ? (
               <>
@@ -404,9 +407,16 @@ Please send me the payment details and setup instructions.`;
         </form>
 
         {/* Footer Note */}
-        <p className="text-xs text-gray-500 text-center mt-4">
+        <p className="text-[10px] text-gray-500 text-center mt-3">
           🔒 Your information is secure. We'll contact you via WhatsApp to complete your order.
         </p>
+        <button
+          type="button"
+          onClick={onClose}
+          className="mt-4 w-full text-xs text-gray-400 hover:text-white underline"
+        >
+          Close
+        </button>
           </motion.div>
         </motion.div>
       )}
