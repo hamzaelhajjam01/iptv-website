@@ -34,7 +34,7 @@ const translations = {
         aiHelpPlaceholder: "e.g., 'Samsung Smart TV', 'Amazon Firestick 4K', 'iPhone 15', 'Windows Laptop' ...", aiHelpCTA: "🤖 Generate My Installation Steps", aiHelpError: "Sorry, we couldn't generate instructions right now. Please try again later.", aiHelpEmpty: "Please enter your device name first!",
         faqTitle: "Frequently Asked Questions", faq1q: "Is IPTV legal?", faq1a: "Yes, our service is legal. We provide access to content that is publicly available on the internet and do not host any content ourselves. It's important for users to be aware of the copyright laws in their respective countries.", faq2q: "What devices can I use?", faq2a: "StreamVerse works on almost any device! This includes Smart TVs (Samsung, LG), Amazon Firestick, Android Boxes, Apple TV, iPhones, Android smartphones, and computers. If you can install an app, you can use StreamVerse.", faq3q: "How fast does my internet need to be?", faq3a: "For a smooth experience, we recommend a minimum of 25 Mbps for HD streaming and 50 Mbps for 4K streaming. Our Anti-Freeze™ technology helps optimize the stream for your connection speed.", faq4q: "Can I watch in multiple locations?", faq4a: "Our standard plans are for a single connection at one time. However, we offer affordable add-ons for multiple connections if you need to watch on several devices simultaneously in different locations.",
         modalTitle: "WAIT! Don't Leave Empty-Handed!", modalSubtitle: "You're seconds away from solving your TV problems forever. As a special one-time offer, try us out $0.99 for 24H.", modalCTA: "YES! GIVE ME MY FREE 24-HOUR TRIAL", modalUrgency: "No credit card required. This offer will not appear again.",
-        footerCopyright: "&copy; 2024 StreamVerse. All Rights Reserved. We are a premium IPTV subscription provider.", footerDisclaimer: "Disclaimer: StreamVerse does not host or distribute any content. We provide a service to access content that is already available on the internet."
+        footerCopyright: "&copy; 2025 StreamVerse. All Rights Reserved. We are a premium IPTV subscription provider.", footerDisclaimer: "Disclaimer: StreamVerse does not host or distribute any content. We provide a service to access content that is already available on the internet."
     },
     es: {
         navHome: "Inicio", navChannelsFeatures: "Canales y Funciones", navPricing: "Precios", navAbout: "Sobre Nosotros", navHelp: "Ayuda", navBlog: "Blog", getStarted: "Empezar",
@@ -64,7 +64,7 @@ const translations = {
         aiHelpPlaceholder: "Ej: 'Smart TV Samsung', 'Amazon Firestick 4K', 'iPhone 15', 'Portátil con Windows' ...", aiHelpCTA: "🤖 Generar mis pasos de instalación", aiHelpError: "Lo sentimos, no pudimos generar las instrucciones ahora. Inténtalo de nuevo más tarde.", aiHelpEmpty: "¡Por favor, introduce el nombre de tu dispositivo!",
         faqTitle: "Preguntas frecuentes", faq1q: "¿Es legal el IPTV?", faq1a: "Sí, nuestro servicio es legal. Brindamos acceso a contenido que está disponible públicamente en Internet. Es responsabilidad de los usuarios cumplir con las leyes de derechos de autor de su país.", faq2q: "¿Qué dispositivos puedo usar?", faq2a: "¡StreamVerse funciona en casi cualquier dispositivo! Esto incluye Smart TVs, Amazon Firestick, Cajas Android, Apple TV, iPhones, smartphones Android y computadoras.", faq3q: "¿Qué tan rápido debe ser mi internet?", faq3a: "Para una experiencia fluida, recomendamos un mínimo de 25 Mbps para HD y 50 Mbps para 4K. Nuestra tecnología Anti-Freeze™ ayuda a optimizar la transmisión.", faq4q: "¿Puedo ver en múltiples lugares?", faq4a: "Nuestros planes estándar son para una conexión a la vez. Sin embargo, ofrecemos complementos asequibles para múltiples conexiones si lo necesitas.",
         modalTitle: "¡ESPERA! ¡No te vayas con las manos vacías!", modalSubtitle: "Estás a segundos de resolver tus problemas de TV para siempre. Como oferta especial única, pruébanos $0.99 por 24H.", modalCTA: "¡SÍ! QUIERO MI PRUEBA DE 24 HORAS", modalUrgency: "No se requiere tarjeta de crédito. Esta oferta no volverá a aparecer.",
-        footerCopyright: "&copy; 2024 StreamVerse. Todos los derechos reservados. Somos un proveedor premium de suscripciones IPTV.", footerDisclaimer: "Aviso: StreamVerse no aloja ni distribuye ningún contenido. Proporcionamos un servicio para acceder a contenido que ya está disponible en Internet."
+        footerCopyright: "&copy; 2025 StreamVerse. Todos los derechos reservados. Somos un proveedor premium de suscripciones IPTV.", footerDisclaimer: "Aviso: StreamVerse no aloja ni distribuye ningún contenido. Proporcionamos un servicio para acceder a contenido que ya está disponible en Internet."
     },
     fr: {
         navHome: "Accueil", navChannelsFeatures: "Chaînes et Fonctionnalités", navPricing: "Tarifs", navAbout: "À Propos", navHelp: "Aide", navBlog: "Blog", getStarted: "Commencer",
@@ -95,7 +95,7 @@ const translations = {
         aiHelpEmpty: "Veuillez d'abord entrer le nom de votre appareil !",
         faqTitle: "Questions fréquentes", faq1q: "L'IPTV est-il légal ?", faq1a: "Oui, notre service est légal. Nous donnons accès à du contenu disponible publiquement sur Internet. Il incombe aux utilisateurs de respecter les lois sur le droit d'auteur de leur pays.", faq2q: "Quels appareils puis-je utiliser ?", faq2a: "StreamVerse fonctionne sur presque tous les appareils ! Cela inclut les Smart TV, Amazon Firestick, les boîtiers Android, Apple TV, les iPhones, les smartphones Android et les ordinateurs.", faq3q: "Quelle vitesse Internet est nécessaire ?", faq3a: "Pour une expérience fluide, nous recommençons un minimum de 25 Mbps pour la HD et 50 Mbps pour la 4K. Notre technologie Anti-Freeze™ aide à optimiser le flux.", faq4q: "Puis-je regarder depuis plusieurs endroits ?", faq4a: "Nos forfaits standard sont pour une seule connexion à la fois. Cependant, nous proposons des options abordables pour des connexions multiples.",
         modalTitle: "ATTENDEZ ! Ne partez pas les mains vides !", modalSubtitle: "Vous êtes à quelques secondes de résoudre vos problèmes de TV pour toujours. Profitez d'une offre spéciale unique : un essai pour $0.99 pour 24H.", modalCTA: "OUI ! JE VEUX MON ESSAI DE 24H", modalUrgency: "Aucune carte de crédit requise. Cette offre n'apparaîtra plus.",
-        footerCopyright: "&copy; 2024 StreamVerse. Tous droits réservés. Nous sommes un fournisseur d'abonnements IPTV premium.", footerDisclaimer: "Avis de non-responsabilité : StreamVerse n'héberge ni ne distribue aucun contenu. Nous fournissons un service pour accéder à du contenu déjà disponible sur Internet."
+        footerCopyright: "&copy; 2025 StreamVerse. Tous droits réservés. Nous sommes un fournisseur d'abonnements IPTV premium.", footerDisclaimer: "Avis de non-responsabilité : StreamVerse n'héberge ni ne distribue aucun contenu. Nous fournissons un service pour accéder à du contenu déjà disponible sur Internet."
     }
 };
 
@@ -135,8 +135,9 @@ const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ children })
         </LanguageContext.Provider>
     );
 };
-
-
+        modalTitle: "ATTENDEZ ! Ne partez pas les mains vides !", modalSubtitle: "Vous êtes à quelques secondes de résoudre vos problèmes de TV pour toujours. Profitez d'une offre spéciale unique : un essai pour $0.99 pour 24H.", modalCTA: "OUI ! JE VEUX MON ESSAI DE 24H", modalUrgency: "Aucune carte de crédit requise. Cette offre n'apparaîtra plus.",
+        
+        
 // --- SHARED UI COMPONENTS (Defined outside main App to prevent re-renders) ---
 
 interface HeaderProps {
@@ -382,8 +383,8 @@ const DeviceGrid: React.FC = () => (
         </div>
     </div>
 );
-
-
+        
+        
 // --- PAGE COMPONENTS ---
 
 const HomePage: React.FC<{ setPage: (page: Page) => void }> = ({ setPage }) => {
@@ -508,10 +509,7 @@ const HomePage: React.FC<{ setPage: (page: Page) => void }> = ({ setPage }) => {
                 </div>
             </section>
         </main>
-    );
-};
-
-const ChannelsFeaturesPage: React.FC = () => {
+    };
     const { t, lang } = useLanguage();
     const [interests, setInterests] = useState('');
     const [guideResult, setGuideResult] = useState('');

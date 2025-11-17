@@ -14,9 +14,16 @@ const Footer: React.FC = () => {
                     <Link href="/privacy-policy" className="hover:text-blue-300 transition-colors">Privacy Policy</Link>
                     <Link href="/terms-of-use" className="hover:text-blue-300 transition-colors">Terms of Use</Link>
                 </nav>
-                 <div className="mb-4">
-                     <img src="https://i.ibb.co/Qfvn4z6/payment.png" alt="Accepted Payment Methods" className="h-8 mx-auto" onError={(e) => { const target = e.target as HTMLImageElement; target.src='https://placehold.co/300x40/0c1427/e5e7eb?text=Payments+Accepted'; }}/>
-                 </div>
+                                 <div className="mb-4">
+                                         <img
+                                             src="https://i.ibb.co/Qfvn4z6/payment.png"
+                                             alt="Accepted Payment Methods"
+                                             className="h-5 md:h-6 mx-auto"
+                                             loading="lazy"
+                                             decoding="async"
+                                             onError={(e) => { const target = e.target as HTMLImageElement; target.src='https://placehold.co/300x40/0c1427/e5e7eb?text=Payments+Accepted'; }}
+                                         />
+                                 </div>
                 <p className="text-gray-500" dangerouslySetInnerHTML={{ __html: t('footerCopyright') }}></p>
                 <p className="text-gray-600 text-sm mt-2">{t('footerDisclaimer')}</p>
             </div>

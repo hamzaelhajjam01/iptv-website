@@ -44,7 +44,7 @@ export const translations = {
     faq19q: "How do I get support if a channel is buffering or not working?", faq19a: "Contact our 24/7 support via email or ticket. Many issues can be resolved with a quick router reboot or using a VPN.",
     faq20q: "How many simultaneous connections can I have?", faq20a: "Standard plans allow a single concurrent connection; multi-connection add-ons are available on request.",
         modalTitle: "WAIT! Don't Leave Empty-Handed!", modalSubtitle: "You're seconds away from solving your TV problems forever. As a special one-time offer, try us out $0.99 for 24H.", modalCTA: "YES! GIVE ME MY FREE 24-HOUR TRIAL", modalUrgency: "No credit card required. This offer will not appear again.",
-        footerCopyright: "&copy; 2024 StreamVerse. All Rights Reserved. We are a premium IPTV subscription provider.", footerDisclaimer: "Disclaimer: StreamVerse does not host or distribute any content. We provide a service to access content that is already available on the internet."
+        footerCopyright: "&copy; 2025 StreamVerse. All Rights Reserved. We are a premium IPTV subscription provider.", footerDisclaimer: "Disclaimer: StreamVerse does not host or distribute any content. We provide a service to access content that is already available on the internet."
     },
     es: {
         navHome: "Inicio", navChannelsFeatures: "Canales y Funciones", navPricing: "Precios", navAbout: "Sobre Nosotros", navHelp: "Ayuda", navBlog: "Blog", getStarted: "Empezar",
@@ -91,7 +91,7 @@ export const translations = {
     faq19q: `¿Cuál es su política de reembolso?`, faq19a: `Respaldamos nuestro servicio al 100%. Si no estás satisfecho por cualquier motivo, ofrecemos una garantía de devolución de dinero de 7 días en todas las nuevas suscripciones. Sin hacer preguntas.`,
     faq20q: `¿Cómo obtengo soporte si un canal está en búfer o no funciona?`, faq20a: `¡Estás en el lugar correcto! Nuestro equipo de soporte 24/7 está aquí para ayudar. Puedes enviarnos un correo electrónico o abrir un ticket de soporte directamente desde esta página. La mayoría de los problemas (como el búfer) se pueden resolver con un reinicio rápido del router o usando una VPN.`,
         modalTitle: "¡ESPERA! ¡No te vayas con las manos vacías!", modalSubtitle: "Estás a segundos de resolver tus problemas de TV para siempre. Como oferta especial única, pruébanos $0.99 por 24H.", modalCTA: "¡SÍ! QUIERO MI PRUEBA DE 24 HORAS", modalUrgency: "No se requiere tarjeta de crédito. Esta oferta no volverá a aparecer.",
-        footerCopyright: "&copy; 2024 StreamVerse. Todos los derechos reservados. Somos un proveedor premium de suscripciones IPTV.", footerDisclaimer: "Aviso: StreamVerse no aloja ni distribuye ningún contenido. Proporcionamos un servicio para acceder a contenido que ya está disponible en Internet."
+        footerCopyright: "&copy; 2025 StreamVerse. Todos los derechos reservados. Somos un proveedor premium de suscripciones IPTV.", footerDisclaimer: "Aviso: StreamVerse no aloja ni distribuye ningún contenido. Proporcionamos un servicio para acceder a contenido que ya está disponible en Internet."
     },
     fr: {
         navHome: "Accueil", navChannelsFeatures: "Chaînes et Fonctionnalités", navPricing: "Tarifs", navAbout: "À Propos", navHelp: "Aide", navBlog: "Blog", getStarted: "Commencer",
@@ -140,7 +140,7 @@ export const translations = {
     faq19q: `Quelle est votre politique de remboursement?`, faq19a: `Nous soutenons notre service à 100%. Si vous n'êtes pas satisfait pour une raison quelconque, nous offrons une garantie de remboursement de 7 jours sur tous les nouveaux abonnements. Sans poser de questions.`,
     faq20q: `Comment obtenir de l'aide si une chaîne est en mise en mémoire tampon ou ne fonctionne pas?`, faq20a: `Vous êtes au bon endroit! Notre équipe de support 24/7 est là pour vous aider. Vous pouvez nous envoyer un e-mail ou ouvrir un ticket de support directement depuis cette page. La plupart des problèmes (comme la mise en mémoire tampon) peuvent être résolus par un simple redémarrage de votre routeur ou en utilisant un VPN.`,
         modalTitle: "ATTENDEZ ! Ne partez pas les mains vides !", modalSubtitle: "Vous êtes à quelques secondes de résoudre vos problèmes de TV pour toujours. Profitez d'une offre spéciale unique : un essai pour $0.99 pour 24H.", modalCTA: "OUI ! JE VEUX MON ESSAI DE 24H", modalUrgency: "Aucune carte de crédit requise. Cette offre n'apparaîtra plus.",
-        footerCopyright: "&copy; 2024 StreamVerse. Tous droits réservés. Nous sommes un fournisseur d'abonnements IPTV premium.", footerDisclaimer: "Avis de non-responsabilité : StreamVerse n'héberge ni ne distribue aucun contenu. Nous fournissons un service pour accéder à du contenu déjà disponible sur Internet."
+        footerCopyright: "&copy; 2025 StreamVerse. Tous droits réservés. Nous sommes un fournisseur d'abonnements IPTV premium.", footerDisclaimer: "Avis de non-responsabilité : StreamVerse n'héberge ni ne distribue aucun contenu. Nous fournissons un service pour accéder à du contenu déjà disponible sur Internet."
     }
 };
 
