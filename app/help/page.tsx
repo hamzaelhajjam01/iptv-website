@@ -2,17 +2,18 @@
 
 import React, { useState } from 'react';
 import GeminiClientForm from '../../components/GeminiClientForm';
+import InstallationGuide from '../../components/InstallationGuide';
 import { useLanguage } from '../../contexts/LanguageContext';
 
 const HelpPage: React.FC = () => {
     const { t, lang } = useLanguage();
 
     const faqKeyPairs: [string, string][] = [
-        ['faq1q','faq1a'], ['faq2q','faq2a'], ['faq3q','faq3a'], ['faq4q','faq4a'],
-        ['faq5q','faq5a'], ['faq6q','faq6a'], ['faq7q','faq7a'], ['faq8q','faq8a'],
-        ['faq9q','faq9a'], ['faq10q','faq10a'], ['faq11q','faq11a'], ['faq12q','faq12a'],
-        ['faq13q','faq13a'], ['faq14q','faq14a'], ['faq15q','faq15a'], ['faq16q','faq16a'],
-        ['faq17q','faq17a'], ['faq18q','faq18a'], ['faq19q','faq19a'], ['faq20q','faq20a'],
+        ['faq1q', 'faq1a'], ['faq2q', 'faq2a'], ['faq3q', 'faq3a'], ['faq4q', 'faq4a'],
+        ['faq5q', 'faq5a'], ['faq6q', 'faq6a'], ['faq7q', 'faq7a'], ['faq8q', 'faq8a'],
+        ['faq9q', 'faq9a'], ['faq10q', 'faq10a'], ['faq11q', 'faq11a'], ['faq12q', 'faq12a'],
+        ['faq13q', 'faq13a'], ['faq14q', 'faq14a'], ['faq15q', 'faq15a'], ['faq16q', 'faq16a'],
+        ['faq17q', 'faq17a'], ['faq18q', 'faq18a'], ['faq19q', 'faq19a'], ['faq20q', 'faq20a'],
     ];
 
     const faqList = faqKeyPairs.map(([qk, ak]) => ({ q: t(qk as any), a: t(ak as any) }));
@@ -46,19 +47,19 @@ const HelpPage: React.FC = () => {
                     <div className="bg-card-dark p-8 rounded-lg flex flex-col items-center"><svg className="w-16 h-16 text-blue-400 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg><h3 className="text-2xl font-bold mb-2">{t('helpEmailTitle')}</h3><p className="text-gray-400 mb-4">{t('helpEmailDesc')}</p><a href="mailto:support@streamversetv.com" className="w-full bg-violet-600 hover:bg-violet-700 text-white font-bold py-2 px-6 rounded-lg cta-button">{t('helpEmailCTA')}</a></div>
                     <div className="bg-card-dark p-8 rounded-lg flex flex-col items-center"><svg className="w-16 h-16 text-blue-400 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a2 2 0 01-2-2V7a2 2 0 012-2h2.586a1 1 0 01.707.293l2.414 2.414a1 1 0 01.293.707V8z"></path></svg><h3 className="text-2xl font-bold mb-2">{t('helpTelegramTitle')}</h3><p className="text-gray-400 mb-4">{t('helpTelegramDesc')}</p><a href="#" className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-lg cta-button">{t('helpTelegramCTA')}</a></div>
                 </div>
-                 <div className="section-divider my-16"></div>
+                <InstallationGuide />
+
                 <section id="ai-installer" className="text-center mb-16">
-                     <h2 className="text-3xl md:text-4xl font-bold mb-4">{t('aiHelpTitle')}</h2>
-                     <p className="text-gray-300 mb-8 text-lg max-w-3xl mx-auto">{t('aiHelpSubtitle')}</p>
-                     <div className="max-w-3xl mx-auto">
-                         <GeminiClientForm
-                             placeholder={t('aiHelpPlaceholder')}
-                             buttonText={t('aiHelpCTA')}
-                             promptTemplate={installerPrompt}
-                         />
-                     </div>
+                    <h2 className="text-3xl md:text-4xl font-bold mb-4">{t('aiHelpTitle')}</h2>
+                    <p className="text-gray-300 mb-8 text-lg max-w-3xl mx-auto">{t('aiHelpSubtitle')}</p>
+                    <div className="max-w-3xl mx-auto">
+                        <GeminiClientForm
+                            placeholder={t('aiHelpPlaceholder')}
+                            buttonText={t('aiHelpCTA')}
+                            promptTemplate={installerPrompt}
+                        />
+                    </div>
                 </section>
-                <div className="section-divider my-16"></div>
                 <h3 className="text-3xl font-bold mb-6 text-center">{t('faqTitle')}</h3>
 
                 <div className="space-y-4">

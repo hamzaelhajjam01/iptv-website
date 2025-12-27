@@ -1,14 +1,13 @@
 
 import React, { useState, useEffect, useCallback, createContext, useContext } from 'react';
 import type { Page } from './types';
-import { callGeminiApi } from './services/geminiService';
 
 // --- TRANSLATIONS & LANGUAGE CONTEXT ---
 
 const translations = {
     en: {
         navHome: "Home", navChannelsFeatures: "Channels & Features", navPricing: "Pricing", navAbout: "About Us", navHelp: "Help Center", navBlog: "Blog", getStarted: "Get Started",
-        heroTitle: "Tired of Overpriced Cable and Missing Your Favorite Shows?", heroSubtitle: "Stop paying a fortune for hundreds of channels you don't watch, only to face frustrating blackouts during the big game.", heroSolve: "Get Instant Access to over 16,000+ Live Channels, Movies, and Sports in crystal-clear 4K HD for one low monthly price.", heroCTA: "GET INSTANT ACCESS NOW", heroUrgency: "Special Launch Offer: 50% OFF for the first 100 customers!",
+        heroTitle: "Stop Overpaying for Cable. <span class='text-cyan-400'>Start StreamVerse.</span>", heroSubtitle: "16,000+ Live Channels, Movies, and Series in Stunning 4K/HD. No Contracts. No Hidden Fees.", heroSolve: "The Ultimate Entertainment Universe", heroCTA: "GET STARTED NOW", heroUrgency: "Join 50,000+ Happy Streamers",
         socialProof: "Join over <span class='font-bold text-white'>15,000+</span> satisfied streamers in the USA who have cut the cord forever.",
         howItWorksTitle: "Entertainment Freedom is a Few Clicks Away",
         step1Title: "Choose Your Plan", step1Desc: "Select the perfect subscription that fits your needs.", step2Title: "Get Instant Login Details", step2Desc: "Your access is sent to your email immediately after payment.", step3Title: "Start Watching", step3Desc: "Log in on your favorite device and enjoy limitless entertainment.",
@@ -24,7 +23,9 @@ const translations = {
         comparisonTitle: "Stop Overpaying, Start Overwatching", comparisonSubtitle: "See how StreamVerse stacks up against the services you're probably paying way too much for.",
         pricingTitle: "Lock In Your Price Before It's Too Late!", countdownTitle: "Launch Offer Ends In:",
         plan1Title: "1 Month", plan1Desc: "Perfect for trying us out.", plan2Title: "12 Months", plan2Desc: "Ultimate savings and entertainment.", plan3Title: "6 Months", plan3Desc: "Great value for committed streamers.",
-        planCTA: "START MY SUBSCRIPTION", bestValue: "BEST VALUE", pricingScarcity: "Due to high demand, subscription spots are filling up fast. This price is not guaranteed.",
+        planCTA: "START MY SUBSCRIPTION", bestValue: "🎁+ 3 months free", pricingScarcity: "Due to high demand, subscription spots are filling up fast. This price is not guaranteed.",
+        pricingBenefit1: "16,000+ Live Channels", pricingBenefit2: "Stunning 4K/HD Quality", pricingBenefit3: "Anti-Freeze™ Technology", pricingBenefit4: "Multi-Device Compatibility", pricingBenefit5: "24/7 Premium Support", pricingBenefit6: "Movies & Series VOD", pricingBenefit7: "Catch-up & EPG", pricingBenefit8: "No Buffer Technology", pricingBenefit9: "Safe & Secure Payment", pricingBenefit10: "Instant Activation",
+        screens1: "1 Screen", screens2: "2 Screens", screens3: "3 Screens",
         testimonialsTitle: "Don't Just Take Our Word For It...",
         finalCtaTitle: "Your Favorite Team Is Playing Tonight. Are You Going to Miss It... <span class='text-red-500'>Again?</span>", finalCtaSubtitle: "Don't let cable blackouts and high prices dictate your entertainment. Take control now.", finalCTA: "YES! I WANT INSTANT ACCESS", guarantee: "100% Satisfaction Guarantee",
         guaranteeDetails: "Try StreamVerse risk-free for 7 days. If you don't love it, get a full refund. No questions asked.",
@@ -33,15 +34,15 @@ const translations = {
         aiHelpTitle: "AI Installation Assistant", aiHelpSubtitle: "Confused about setup? Tell our AI what device you're using, and it will generate simple, step-by-step installation instructions for you.",
         aiHelpPlaceholder: "e.g., 'Samsung Smart TV', 'Amazon Firestick 4K', 'iPhone 15', 'Windows Laptop' ...", aiHelpCTA: "🤖 Generate My Installation Steps", aiHelpError: "Sorry, we couldn't generate instructions right now. Please try again later.", aiHelpEmpty: "Please enter your device name first!",
         faqTitle: "Frequently Asked Questions", faq1q: "Is IPTV legal?", faq1a: "Yes, our service is legal. We provide access to content that is publicly available on the internet and do not host any content ourselves. It's important for users to be aware of the copyright laws in their respective countries.", faq2q: "What devices can I use?", faq2a: "StreamVerse works on almost any device! This includes Smart TVs (Samsung, LG), Amazon Firestick, Android Boxes, Apple TV, iPhones, Android smartphones, and computers. If you can install an app, you can use StreamVerse.", faq3q: "How fast does my internet need to be?", faq3a: "For a smooth experience, we recommend a minimum of 25 Mbps for HD streaming and 50 Mbps for 4K streaming. Our Anti-Freeze™ technology helps optimize the stream for your connection speed.", faq4q: "Can I watch in multiple locations?", faq4a: "Our standard plans are for a single connection at one time. However, we offer affordable add-ons for multiple connections if you need to watch on several devices simultaneously in different locations.",
-        modalTitle: "WAIT! Don't Leave Empty-Handed!", modalSubtitle: "You're seconds away from solving your TV problems forever. As a special one-time offer, try us out $0.99 for 24H.", modalCTA: "YES! GIVE ME MY FREE 24-HOUR TRIAL", modalUrgency: "No credit card required. This offer will not appear again.",
+        modalTitle: "WAIT! Don't Leave Empty-Handed!", modalSubtitle: "You're seconds away from solving your TV problems forever. As a special one-time offer, try us out $0.99 for 24H.", modalCTA: "Secure a 24h Premium Access", modalUrgency: "No credit card required. This offer will not appear again.",
         footerCopyright: "&copy; 2025 StreamVerse. All Rights Reserved. We are a premium IPTV subscription provider.", footerDisclaimer: "Disclaimer: StreamVerse does not host or distribute any content. We provide a service to access content that is already available on the internet."
     },
     es: {
-        navHome: "Inicio", navChannelsFeatures: "Canales y Funciones", navPricing: "Precios", navAbout: "Sobre Nosotros", navHelp: "Ayuda", navBlog: "Blog", getStarted: "Empezar",
-        heroTitle: "¿Cansado del cable caro y de perderte tus programas favoritos?", heroSubtitle: "Deja de pagar una fortuna por cientos de canales que no ves, solo para enfrentarte a frustrantes bloqueos durante el gran partido.", heroSolve: "Obtén acceso instantáneo a más de 16,000 canales en vivo, películas y deportes en 4K HD nítido por un bajo precio mensual.", heroCTA: "OBTENER ACCESO AHORA", heroUrgency: "¡Oferta especial de lanzamiento: 50% de descuento para los primeros 100 clientes!",
+        navHome: "Inicio", navChannelsFeatures: "Canales y Funciones", navPricing: "Precios", navAbout: "Sobre Nosotros", navHelp: "Centro de Ayuda", navBlog: "Blog", getStarted: "Empezar",
+        heroTitle: "Deja de pagar de más por el cable. <span class='text-cyan-400'>Empieza StreamVerse.</span>", heroSubtitle: "Más de 16,000 canales en vivo, películas y series en impresionante 4K/HD. Sin contratos. Sin cargos ocultos.", heroSolve: "El universo definitivo del entretenimiento", heroCTA: "EMPIEZA AHORA", heroUrgency: "Únete a más de 50,000 streamers felices",
         socialProof: "Únete a más de <span class='font-bold text-white'>15,000+</span> streamers satisfechos en España que han cortado el cable para siempre.",
         howItWorksTitle: "La libertad de entretenimiento está a unos pocos clics",
-        step1Title: "Elige tu plan", step1Desc: "Selecciona la suscripción perfecta que se adapte a tus necesidades.", step2Title: "Recibe tus datos de acceso", step2Desc: "Tu acceso se envía a tu correo electrónico inmediatamente después del pago.", step3Title: "Empieza a ver", step3Desc: "Inicia sesión en tu dispositivo favorito y disfruta de entretenimiento ilimitado.",
+        step1Title: "Elige Tu Plan", step1Desc: "Selecciona la suscripción perfecta que se adapte a tus necesidades.", step2Title: "Recibe Detalles de Acceso Instantáneo", step2Desc: "Tu acceso se envía a tu correo inmediatamente después del pago.", step3Title: "Empieza a Ver", step3Desc: "Inicia sesión en tu dispositivo favorito y disfruta de entretenimiento ilimitado.",
         howItWorksHook: "Sin cables desordenados, sin esperar a un técnico. Estarás viendo en menos de 5 minutos.",
         whyChooseTitle: "¿Por qué elegir StreamVerse?", whyChooseSubtitle: "No somos solo otro servicio de IPTV. Estamos construidos sobre una base de calidad, fiabilidad y obsesión por el cliente.",
         why1Title: "Transmisiones seguras y encriptadas", why1Desc: "Tu privacidad es importante. Nuestras transmisiones están aseguradas para proteger tu actividad.", why2Title: "Servidores estables y ultrarrápidos", why2Desc: "Alojados en centros de datos privados, nuestros servidores ofrecen una experiencia sin interrupciones.", why3Title: "Soporte al cliente 24/7", why3Desc: "Nuestro equipo de soporte está disponible todo el día para ayudarte con cualquier problema.",
@@ -54,47 +55,50 @@ const translations = {
         comparisonTitle: "Deja de pagar de más, empieza a ver más", comparisonSubtitle: "Mira cómo se compara StreamVerse con los servicios por los que probablemente estás pagando demasiado.",
         pricingTitle: "¡Asegura tu precio antes de que sea tarde!", countdownTitle: "La oferta de lanzamiento termina en:",
         plan1Title: "1 Mes", plan1Desc: "Perfecto para probarnos.", plan2Title: "12 Meses", plan2Desc: "Ahorro y entretenimiento definitivos.", plan3Title: "6 Meses", plan3Desc: "Gran valor para streamers comprometidos.",
-        planCTA: "INICIAR MI SUSCRIPCIÓN", bestValue: "MEJOR VALOR", pricingScarcity: "Debido a la alta demanda, los cupos se están llenando rápido. Este precio no está garantizado.",
+        planCTA: "INICIAR MI SUSCRIPCIÓN", bestValue: "🎁+ 3 meses gratis", pricingScarcity: "Debido a la alta demanda, los cupos se están llenando rápido. Este precio no está garantizado.",
+        pricingBenefit1: "+16,000 Canales en Vivo", pricingBenefit2: "Calidad 4K/HD impresionante", pricingBenefit3: "Tecnología Anti-Freeze™", pricingBenefit4: "Compatibilidad multidispositivo", pricingBenefit5: "Soporte Premium 24/7", pricingBenefit6: "Películas y Series VOD", pricingBenefit7: "Catch-up y EPG", pricingBenefit8: "Tecnología sin Buffer", pricingBenefit9: "Pago Seguro", pricingBenefit10: "Activación Instantánea",
+        screens1: "1 Pantalla", screens2: "2 Pantallas", screens3: "3 Pantallas",
         testimonialsTitle: "No te fíes solo de nuestra palabra...",
         finalCtaTitle: "Tu equipo favorito juega esta noche. ¿Te lo vas a perder... <span class='text-red-500'>otra vez?</span>", finalCtaSubtitle: "No dejes que los bloqueos y los altos precios dicten tu entretenimiento. Toma el control ahora.", finalCTA: "¡SÍ! QUIERO ACCESO INSTANTÁNEO", guarantee: "Garantía de satisfacción del 100%",
         guaranteeDetails: "Prueba StreamVerse sin riesgo durante 7 días. Si no te encanta, te devolvemos tu dinero. Sin preguntas.",
-        aboutTitle: "Sobre StreamVerse", aboutSubtitle: "Somos un equipo de desarrolladores apasionados y amantes del entretenimiento cansados de las limitaciones de la TV por cable.", aboutDesc: "Nuestra misión es proporcionar una experiencia de streaming fluida, de alta calidad y asequible que te dé la libertad de ver lo que quieras, cuando quieras y donde quieras. Aprovechamos la tecnología de punta para ofrecer una biblioteca masiva de contenido de todo el mundo, directamente a tus dispositivos.",
+        aboutTitle: "Sobre StreamVerse", aboutSubtitle: "Somos un equipo de desarrolladores apasionados y amantes del entretenimiento cansados de las limitaciones y los altos costos de la televisión por cable tradicional. Creíamos que tenía que haber una forma mejor.", aboutDesc: "StreamVerse nació de esa creencia. Nuestra misión es proporcionar una experiencia de streaming fluida, de alta calidad y asequible que te dé la libertad de ver lo que quieras, cuando quieras y donde quieras. Aprovechamos la tecnología de punta para ofrecer una biblioteca masiva de contenido de todo el mundo, directamente a tus dispositivos favoritos. Estamos constantemente innovando y mejorando nuestro servicio para asegurarnos de que tengas el universo de entretenimiento definitivo al alcance de tu mano.",
         helpTitle: "Centro de ayuda", helpSupportTitle: "Soporte por Ticket", helpSupportDesc: "Obtén ayuda detallada de nuestro equipo técnico.", helpSupportCTA: "Abrir un Ticket", helpEmailTitle: "Asistencia por email", helpEmailDesc: "Para consultas generales y preguntas.", helpEmailCTA: "Enviar un email", helpTelegramTitle: "Canal de Telegram", helpTelegramDesc: "Únete para actualizaciones en vivo y chat.", helpTelegramCTA: "Unirse al canal",
         aiHelpTitle: "Asistente de instalación IA", aiHelpSubtitle: "¿Confundido con la configuración? Dile a nuestra IA qué dispositivo usas y generará instrucciones sencillas para ti.",
         aiHelpPlaceholder: "Ej: 'Smart TV Samsung', 'Amazon Firestick 4K', 'iPhone 15', 'Portátil con Windows' ...", aiHelpCTA: "🤖 Generar mis pasos de instalación", aiHelpError: "Lo sentimos, no pudimos generar las instrucciones ahora. Inténtalo de nuevo más tarde.", aiHelpEmpty: "¡Por favor, introduce el nombre de tu dispositivo!",
         faqTitle: "Preguntas frecuentes", faq1q: "¿Es legal el IPTV?", faq1a: "Sí, nuestro servicio es legal. Brindamos acceso a contenido que está disponible públicamente en Internet. Es responsabilidad de los usuarios cumplir con las leyes de derechos de autor de su país.", faq2q: "¿Qué dispositivos puedo usar?", faq2a: "¡StreamVerse funciona en casi cualquier dispositivo! Esto incluye Smart TVs, Amazon Firestick, Cajas Android, Apple TV, iPhones, smartphones Android y computadoras.", faq3q: "¿Qué tan rápido debe ser mi internet?", faq3a: "Para una experiencia fluida, recomendamos un mínimo de 25 Mbps para HD y 50 Mbps para 4K. Nuestra tecnología Anti-Freeze™ ayuda a optimizar la transmisión.", faq4q: "¿Puedo ver en múltiples lugares?", faq4a: "Nuestros planes estándar son para una conexión a la vez. Sin embargo, ofrecemos complementos asequibles para múltiples conexiones si lo necesitas.",
-        modalTitle: "¡ESPERA! ¡No te vayas con las manos vacías!", modalSubtitle: "Estás a segundos de resolver tus problemas de TV para siempre. Como oferta especial única, pruébanos $0.99 por 24H.", modalCTA: "¡SÍ! QUIERO MI PRUEBA DE 24 HORAS", modalUrgency: "No se requiere tarjeta de crédito. Esta oferta no volverá a aparecer.",
+        modalTitle: "¡ESPERA! ¡No te vayas con las manos vacías!", modalSubtitle: "Estás a segundos de resolver tus problemas de TV para siempre. Como oferta especial única, pruébanos $0.99 por 24H.", modalCTA: "Asegura un Acceso Premium de 24h", modalUrgency: "No se requiere tarjeta de crédito. Esta oferta no volverá a aparecer.",
         footerCopyright: "&copy; 2025 StreamVerse. Todos los derechos reservados. Somos un proveedor premium de suscripciones IPTV.", footerDisclaimer: "Aviso: StreamVerse no aloja ni distribuye ningún contenido. Proporcionamos un servicio para acceder a contenido que ya está disponible en Internet."
     },
     fr: {
-        navHome: "Accueil", navChannelsFeatures: "Chaînes et Fonctionnalités", navPricing: "Tarifs", navAbout: "À Propos", navHelp: "Aide", navBlog: "Blog", getStarted: "Commencer",
-        heroTitle: "Fatigué du câble hors de prix et de manquer vos émissions préférées ?", heroSubtitle: "Arrêtez de payer une fortune pour des centaines de chaînes que vous ne regardez pas, pour ensuite subir des interruptions frustrantes pendant le grand match.", heroSolve: "Obtenez un accès instantané à plus de 16 000 chaînes en direct, films et sports en 4K HD pour un prix mensuel modique.", heroCTA: "OBTENIR L'ACCÈS MAINTENANT", heroUrgency: "Offre de lancement spéciale : 50% de réduction pour les 100 premiers clients !",
+        navHome: "Accueil", navChannelsFeatures: "Chaînes et Fonctions", navPricing: "Tarifs", navAbout: "À Propos", navHelp: "Centre d'aide", navBlog: "Blog", getStarted: "Commencer",
+        heroTitle: "Arrêtez de surpayer le câble. <span class='text-cyan-400'>Commencez StreamVerse.</span>", heroSubtitle: "Plus de 16,000 chaînes en direct, films et séries en 4K/HD époustouflante. Sans contrat. Sans frais cachés.", heroSolve: "L'univers ultime du divertissement", heroCTA: "COMMENCER MAINTENANT", heroUrgency: "Rejoignez plus de 50,000 streamers heureux",
         socialProof: "Rejoignez plus de <span class='font-bold text-white'>15 000+</span> streamers satisfaits en France qui ont définitivement coupé le cordon.",
         howItWorksTitle: "La liberté de divertissement à quelques clics",
-        step1Title: "Choisissez votre forfait", step1Desc: "Sélectionnez l'abonnement parfait qui correspond à vos besoins.", step2Title: "Recevez vos identifiants", step2Desc: "Votre accès est envoyé par e-mail immédiatement après le paiement.", step3Title: "Commencez à regarder", step3Desc: "Connectez-vous sur votre appareil préféré et profitez d'un divertissement sans limites.",
+        step1Title: "Choisissez Votre Forfait", step1Desc: "Sélectionnez l'abonnement parfait qui correspond à vos besoins.", step2Title: "Recevez Vos Accès Instantanément", step2Desc: "Vos accès sont envoyés par e-mail immédiatement après le paiement.", step3Title: "Commencez à Regarder", step3Desc: "Connectez-vous sur votre appareil préféré et profitez d'un divertissement illimité.",
         howItWorksHook: "Pas de câbles encombrants, pas d'attente pour un technicien. Vous regarderez en moins de 5 minutes.",
         whyChooseTitle: "Pourquoi choisir StreamVerse ?", whyChooseSubtitle: "Nous ne sommes pas un service IPTV ordinaire. Nous sommes bâtis sur la qualité, la fiabilité et l'obsession du client.",
-        why1Title: "Flux sécurisés et cryptés", why1Desc: "Votre vie privée est importante. Nos flux sont sécurisés pour protéger votre activité de visionnage.", why2Title: "Serveurs stables et ultra-rapides", why2Desc: "Hébergés dans des centres de données privés, nos serveurs offrent une expérience sans mise en mémoire tampon.", why3Title: "Support client 24/7", why3Desc: "Notre équipe de support est disponible 24h/24 pour vous aider avec n'importe quel problème.",
-        devicesTitle: "Regardez partout, sur tous vos appareils", devicesSubtitle: "Nous savons que vous aimez choisir quoi et où regarder. Connectez-vous simplement à votre télé, ordinateur, tablette ou smartphone.",
-        featuresTitle: "Le dernier service de divertissement dont vous aurez besoin", featuresSubtitle: "Nous résolvons les plus grands problèmes de la télévision traditionnelle. C'est plus qu'une alternative, c'est une mise à niveau.",
-        feature1Title: "16 000+ Chaînes", feature1Desc: "Ne manquez plus jamais un événement sportif en direct, un journal télévisé ou une série à succès.", feature2Title: "Qualité 4K/HD époustouflante", feature2Desc: "Vivez l'action avec une résolution de qualité cinéma qui vous donnera l'impression d'y être.", feature3Title: "Technologie Anti-Freeze™", feature3Desc: "Nos serveurs puissants garantissent un streaming fluide sans le buffering angoissant.", feature4Title: "Compatibilité multi-appareils", feature4Desc: "Regardez sur votre TV, ordinateur portable, tablette ou téléphone. Vos émissions, vos règles, où que vous soyez.",
-        channelsTitle: "Un univers de chaînes vous attend", channelsSubtitle: "Des chaînes sportives et cinématographiques premium au contenu international, nous avons de tout.",
-        geminiTitle: "Vous ne savez pas quoi regarder ?", geminiSubtitle: "Décrivez votre soirée cinéma parfaite ou vos ligues sportives préférées. Notre IA créera un guide personnalisé pour vous.",
-        geminiPlaceholder: "Ex : 'J'adore le football de la Ligue 1, les documentaires sur les crimes et les films d'action des années 80...'", geminiCTA: "✨ Générer mon guide de chaînes", geminiError: "Désolé, nous n'avons pas pu générer votre guide. Veuillez réessayer plus tard.", geminiEmpty: "Veuillez d'abord nous dire ce que vous aimez regarder !",
+        why1Title: "Flux sécurisés et cryptés", why1Desc: "Votre vie privée est importante. Nos flux sont sécurisés pour protéger votre activité de visionnage.", why2Title: "Serveurs stables et ultra-rapides", why2Desc: "Hébergés dans des centres de données privés, nos serveurs offrent une expérience sans mise en mémoire tampon.", why3Title: "Support client 24/7", why3Desc: "Our dedicated support team is available around the clock via email, tickets, and Telegram to help you with any issue.",
+        devicesTitle: "Watch Everywhere - On All Your Devices", devicesSubtitle: "We understand you love choice in what you watch, and where you watch it. Simply connect to your TV, computer, tablet or smartphone and enjoy your favorite programming anywhere, anytime.",
+        featuresTitle: "The Last Entertainment Service You'll Ever Need", featuresSubtitle: "We solve the biggest pains of traditional TV. This is more than a cable TV alternative, it's an upgrade.",
+        feature1Title: "16,000+ Channels", feature1Desc: "Never miss another live sports event, news broadcast, or hit series again. Your entertainment is now limitless.", feature2Title: "Stunning 4K/HD Quality", feature2Desc: "Experience heart-pounding action in cinema-quality resolution that makes you feel like you're right there.", feature3Title: "Anti-Freeze™ Technology", feature3Desc: "Our powerful servers ensure silky-smooth streaming without the agonizing buffering that ruins the best moments.", feature4Title: "Multi-Device Compatibility", feature4Desc: "Watch on your TV, laptop, tablet, or phone. Your shows, your rules, anywhere you go.",
+        channelsTitle: "A Universe of Channels Awaits", channelsSubtitle: "From premium sports and movie channels to international content, we have something for everyone.",
+        geminiTitle: "Don't Know What to Watch?", geminiSubtitle: "Describe your perfect movie night or the sports leagues you love. Our AI will build a personalized guide just for you.",
+        geminiPlaceholder: "e.g., 'I love Premier League soccer, true crime documentaries, and classic 80s action movies...'", geminiCTA: "✨ Generate My Channel Guide", geminiError: "Sorry, we couldn't generate your guide at the moment. Please try again later.", geminiEmpty: "Please tell us what you like to watch first!",
         comparisonTitle: "Arrêtez de surpayer, commencez à regarder plus", comparisonSubtitle: "Voyez comment StreamVerse se compare aux services pour lesquels vous payez probablement beaucoup trop cher.",
         pricingTitle: "Bloquez votre prix avant qu'il ne soit trop tard !", countdownTitle: "L'offre de lancement se termine dans :",
         plan1Title: "1 Mois", plan1Desc: "Parfait pour nous essayer.", plan2Title: "12 Mois", plan2Desc: "Économies et divertissement ultimes.", plan3Title: "6 Mois", plan3Desc: "Excellent rapport qualité-prix.",
-        planCTA: "COMMENCER MON ABONNEMENT", bestValue: "MEILLEUR PRIX", pricingScarcity: "En raison de la forte demande, les places se remplissent vite. Ce prix n'est pas garanti.",
+        planCTA: "COMMENCER MON ABONNEMENT", bestValue: "🎁+ 3 mois offerts", pricingScarcity: "En raison de la forte demande, les places se remplissent vite. Ce prix n'est pas garanti.",
+        pricingBenefit1: "16 000+ Chaînes en Direct", pricingBenefit2: "Qualité 4K/HD époustouflante", pricingBenefit3: "Technologie Anti-Freeze™", pricingBenefit4: "Compatibilité multi-appareils", pricingBenefit5: "Support Premium 24/7", pricingBenefit6: "Films et Séries VOD", pricingBenefit7: "Catch-up et EPG", pricingBenefit8: "Technologie sans Buffer", pricingBenefit9: "Paiement Sécurisé", pricingBenefit10: "Activation Instantanée",
+        screens1: "1 Écran", screens2: "2 Écrans", screens3: "3 Écrans",
         testimonialsTitle: "Ne nous croyez pas sur parole...",
         finalCtaTitle: "Votre équipe favorite joue ce soir. Allez-vous le manquer... <span class='text-red-500'>encore ?</span>", finalCtaSubtitle: "Ne laissez pas les interruptions et les prix élevés dicter votre divertissement. Prenez le contrôle.", finalCTA: "OUI ! JE VEUX UN ACCÈS INSTANTANÉ", guarantee: "Garantie de satisfaction à 100%",
         guaranteeDetails: "Essayez StreamVerse sans risque pendant 7 jours. Si vous n'êtes pas satisfait, nous vous remboursons intégralement. Sans poser de questions.",
         aboutTitle: "À propos de StreamVerse", aboutSubtitle: "Nous sommes une équipe de développeurs et d'amateurs de divertissement fatigués des limitations et des coûts élevés du câble.", aboutDesc: "Notre mission est de fournir une expérience de streaming fluide, de haute qualité et abordable, vous donnant la liberté de regarder ce que vous voulez, quand vous voulez et où vous voulez. Nous utilisons une technologie de pointe pour offrir une bibliothèque massive de contenu du monde entier, directement sur vos appareils.",
         helpTitle: "Centre d'aide", helpSupportTitle: "Support par Ticket", helpSupportDesc: "Obtenez une aide détaillée de notre équipe technique.", helpSupportCTA: "Ouvrir un Ticket", helpEmailTitle: "Assistance par e-mail", helpEmailDesc: "Pour les demandes générales.", helpEmailCTA: "Envoyer un e-mail", helpTelegramTitle: "Canal Telegram", helpTelegramDesc: "Rejoignez-nous pour des mises à jour en direct.", helpTelegramCTA: "Rejoindre le canal",
         aiHelpTitle: "Assistant d'installation IA", aiHelpSubtitle: "Besoin d'aide pour l'installation ? Dites à notre IA quel appareil vous utilisez, et elle générera des instructions pour vous.",
-        aiHelpPlaceholder: "Ex : 'Smart TV Samsung', 'Amazon Firestick 4K', 'iPhone 15', 'PC portable Windows' ...", aiHelpCTA: "🤖 Générer mes étapes d'installation", aiHelpError: "Désolé, impossible de générer les instructions. Veuillez réessayer.",
-        aiHelpEmpty: "Veuillez d'abord entrer le nom de votre appareil !",
+        aiHelpPlaceholder: "Ex : 'Smart TV Samsung', 'Amazon Firestick 4K', 'iPhone 15', 'PC portable Windows' ...", aiHelpCTA: "🤖 Générer mes étapes d'installation", aiHelpError: "Désolé, impossible de générer les instructions. Veuillez réessayer.", aiHelpEmpty: "Veuillez d'abord entrer le nom de votre appareil !",
         faqTitle: "Questions fréquentes", faq1q: "L'IPTV est-il légal ?", faq1a: "Oui, notre service est légal. Nous donnons accès à du contenu disponible publiquement sur Internet. Il incombe aux utilisateurs de respecter les lois sur le droit d'auteur de leur pays.", faq2q: "Quels appareils puis-je utiliser ?", faq2a: "StreamVerse fonctionne sur presque tous les appareils ! Cela inclut les Smart TV, Amazon Firestick, les boîtiers Android, Apple TV, les iPhones, les smartphones Android et les ordinateurs.", faq3q: "Quelle vitesse Internet est nécessaire ?", faq3a: "Pour une expérience fluide, nous recommençons un minimum de 25 Mbps pour la HD et 50 Mbps pour la 4K. Notre technologie Anti-Freeze™ aide à optimiser le flux.", faq4q: "Puis-je regarder depuis plusieurs endroits ?", faq4a: "Nos forfaits standard sont pour une seule connexion à la fois. Cependant, nous proposons des options abordables pour des connexions multiples.",
-        modalTitle: "ATTENDEZ ! Ne partez pas les mains vides !", modalSubtitle: "Vous êtes à quelques secondes de résoudre vos problèmes de TV pour toujours. Profitez d'une offre spéciale unique : un essai pour $0.99 pour 24H.", modalCTA: "OUI ! JE VEUX MON ESSAI DE 24H", modalUrgency: "Aucune carte de crédit requise. Cette offre n'apparaîtra plus.",
+        modalTitle: "ATTENDEZ ! Ne partez pas les mains vides !", modalSubtitle: "Vous êtes à quelques secondes de résoudre vos problèmes de TV pour toujours. Profitez d'une offre spéciale unique : un essai pour $0.99 pour 24H.", modalCTA: "Sécurisez un Accès Premium de 24h", modalUrgency: "Aucune carte de crédit requise. Cette offre n'apparaîtra plus.",
         footerCopyright: "&copy; 2025 StreamVerse. Tous droits réservés. Nous sommes un fournisseur d'abonnements IPTV premium.", footerDisclaimer: "Avis de non-responsabilité : StreamVerse n'héberge ni ne distribue aucun contenu. Nous fournissons un service pour accéder à du contenu déjà disponible sur Internet."
     }
 };
@@ -124,7 +128,7 @@ const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ children })
     const t = useCallback((key: keyof Translations['en']): string => {
         return translations[lang][key] || translations['en'][key];
     }, [lang]);
-    
+
     useEffect(() => {
         document.documentElement.lang = lang;
     }, [lang]);
@@ -163,9 +167,9 @@ const Header: React.FC<HeaderProps> = ({ currentPage, setPage }) => {
         { page: 'help', key: 'navHelp' },
         { page: 'about', key: 'navAbout' },
     ];
-    
+
     const desktopNav = (
-         <nav id="desktop-nav" className="hidden xl:flex items-center gap-2 text-lg">
+        <nav id="desktop-nav" className="hidden xl:flex items-center gap-2 text-lg">
             {navItems.map(item => (
                 <a key={item.page} onClick={() => handleNavClick(item.page)} className={`nav-link ${currentPage === item.page ? 'active' : ''}`}>{t(item.key)}</a>
             ))}
@@ -175,20 +179,20 @@ const Header: React.FC<HeaderProps> = ({ currentPage, setPage }) => {
 
     const mobileNav = (
         <div id="mobile-menu" className={`xl:hidden bg-card-dark ${isMobileMenuOpen ? 'open' : ''}`}>
-             <nav className="flex flex-col items-center gap-4 p-4">
+            <nav className="flex flex-col items-center gap-4 p-4">
                 {navItems.map(item => (
                     <a key={item.page} onClick={() => handleNavClick(item.page)} className={`nav-link ${currentPage === item.page ? 'active' : ''}`}>{t(item.key)}</a>
                 ))}
-                 <a href="https://blog.streamversetv.com" target="_blank" rel="noopener noreferrer" className="nav-link">{t('navBlog')}</a>
-                 <a onClick={() => handleNavClick('pricing')} className="nav-link-cta bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-5 rounded-lg cta-button w-full text-center">{t('getStarted')}</a>
-                 <div className="w-full pt-4 mt-4 border-t border-gray-700">
-                     <select id="mobile-language-switcher" value={lang} onChange={handleLanguageChange} className="language-switcher-style text-white rounded-md py-3 px-3 focus:outline-none focus:ring-2 focus:ring-blue-500 w-full">
-                         <option value="en">English</option>
-                         <option value="es">Español</option>
-                         <option value="fr">Français</option>
-                     </select>
-                 </div>
-             </nav>
+                <a href="https://blog.streamversetv.com" target="_blank" rel="noopener noreferrer" className="nav-link">{t('navBlog')}</a>
+                <a onClick={() => handleNavClick('pricing')} className="nav-link-cta bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-5 rounded-lg cta-button w-full text-center">{t('getStarted')}</a>
+                <div className="w-full pt-4 mt-4 border-t border-gray-700">
+                    <select id="mobile-language-switcher" value={lang} onChange={handleLanguageChange} className="language-switcher-style text-white rounded-md py-3 px-3 focus:outline-none focus:ring-2 focus:ring-blue-500 w-full">
+                        <option value="en">English</option>
+                        <option value="es">Español</option>
+                        <option value="fr">Français</option>
+                    </select>
+                </div>
+            </nav>
         </div>
     );
 
@@ -200,14 +204,14 @@ const Header: React.FC<HeaderProps> = ({ currentPage, setPage }) => {
                 </a>
 
                 {desktopNav}
-                
+
                 <div className="hidden xl:flex items-center gap-4">
-                     <a onClick={() => handleNavClick('pricing')} className="nav-link-cta bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-5 rounded-lg cta-button cursor-pointer">{t('getStarted')}</a>
-                     <select id="language-switcher" value={lang} onChange={handleLanguageChange} className="language-switcher-style text-white rounded-md py-2 px-3 focus:outline-none focus:ring-2 focus:ring-blue-500">
-                         <option value="en">English</option>
-                         <option value="es">Español</option>
-                         <option value="fr">Français</option>
-                     </select>
+                    <a onClick={() => handleNavClick('pricing')} className="nav-link-cta bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-5 rounded-lg cta-button cursor-pointer">{t('getStarted')}</a>
+                    <select id="language-switcher" value={lang} onChange={handleLanguageChange} className="language-switcher-style text-white rounded-md py-2 px-3 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        <option value="en">English</option>
+                        <option value="es">Español</option>
+                        <option value="fr">Français</option>
+                    </select>
                 </div>
                 <div className="xl:hidden">
                     <button id="mobile-menu-button" onClick={() => setMobileMenuOpen(!isMobileMenuOpen)} className="text-white focus:outline-none">
@@ -223,11 +227,11 @@ const Header: React.FC<HeaderProps> = ({ currentPage, setPage }) => {
 const Footer: React.FC = () => {
     const { t } = useLanguage();
     return (
-         <footer className="bg-section-dark text-center py-8 px-6">
+        <footer className="bg-section-dark text-center py-8 px-6">
             <div className="container mx-auto">
-                 <div className="mb-4">
-                     <img src="https://i.ibb.co/Qfvn4z6/payment.png" alt="Accepted Payment Methods" className="h-8 mx-auto" onError={(e) => { const target = e.target as HTMLImageElement; target.src='https://placehold.co/300x40/0c1427/e5e7eb?text=Payments+Accepted'; }}/>
-                 </div>
+                <div className="mb-4">
+                    <img src="https://i.ibb.co/Qfvn4z6/payment.png" alt="Accepted Payment Methods" className="h-8 mx-auto" onError={(e) => { const target = e.target as HTMLImageElement; target.src = 'https://placehold.co/300x40/0c1427/e5e7eb?text=Payments+Accepted'; }} />
+                </div>
                 <p className="text-gray-500" dangerouslySetInnerHTML={{ __html: t('footerCopyright') }}></p>
                 <p className="text-gray-600 text-sm mt-2">{t('footerDisclaimer')}</p>
             </div>
@@ -242,31 +246,31 @@ const Testimonials: React.FC = () => {
 
     return (
         <section className="py-20 px-6 bg-section-dark">
-          <div className="container mx-auto max-w-6xl">
-            <div className="text-center mb-10">
-              <h2 className="text-3xl md:text-4xl font-bold mb-2">{t('testimonialsTitle')}</h2>
-            </div>
-        
-            <div className="marquee group mt-6">
-              <div className="track">
-                {[...reviews, ...reviews].map((rev, index) => (
-                    <img key={index} src={`/images/reviews/rev${rev}.webp`} alt={`Trustpilot review ${rev}`} className="tp-card" />
-                ))}
-              </div>
-            </div>
-        
-            <div className="flex justify-center mt-6">
-              <img src="/images/reviews/Trust-Pilot-Review-badge-streamversetv.png" alt="Trustpilot badge" className="trust-badge" />
-            </div>
+            <div className="container mx-auto max-w-6xl">
+                <div className="text-center mb-10">
+                    <h2 className="text-3xl md:text-4xl font-bold mb-2">{t('testimonialsTitle')}</h2>
+                </div>
 
-            <div className="marquee group mt-12">
-              <div className="track">
-                {[...waReviews, ...waReviews].map((rev, index) => (
-                    <img key={index} src={`/images/reviews/streamversetv-review-${rev}.jpg`} alt={`WhatsApp Review ${rev}`} className="wa-shot" />
-                ))}
-              </div>
+                <div className="marquee group mt-6">
+                    <div className="track">
+                        {[...reviews, ...reviews].map((rev, index) => (
+                            <img key={index} src={`/images/reviews/rev${rev}.webp`} alt={`Trustpilot review ${rev}`} className="tp-card" />
+                        ))}
+                    </div>
+                </div>
+
+                <div className="flex justify-center mt-6">
+                    <img src="/images/reviews/Trust-Pilot-Review-badge-streamversetv.png" alt="Trustpilot badge" className="trust-badge" />
+                </div>
+
+                <div className="marquee group mt-12">
+                    <div className="track">
+                        {[...waReviews, ...waReviews].map((rev, index) => (
+                            <img key={index} src={`/images/reviews/streamversetv-review-${rev}.jpg`} alt={`WhatsApp Review ${rev}`} className="wa-shot" />
+                        ))}
+                    </div>
+                </div>
             </div>
-          </div>
         </section>
     );
 };
@@ -333,7 +337,7 @@ const ComparisonTable: React.FC = () => (
                     <td><span className="cross">✗</span> (Technician needed)</td>
                     <td><span className="check">✓</span></td>
                 </tr>
-                    <tr>
+                <tr>
                     <td>No Contracts / Hidden Fees</td>
                     <td className="highlight"><span className="check">✓</span></td>
                     <td><span className="cross">✗</span></td>
@@ -353,13 +357,13 @@ const ComparisonTable: React.FC = () => (
 );
 
 const DeviceGrid: React.FC = () => (
-     <div className="device-logo-grid grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-8 items-center">
+    <div className="device-logo-grid grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-8 items-center">
         <div className="device-item flex flex-col items-center justify-center p-4">
             <svg className="w-20 h-20 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h14a2 2 0 012 2v12a4 4 0 01-4 4H7zM3 13h18"></path></svg>
             <p className="mt-2 text-sm font-semibold text-gray-300">Smart TV</p>
         </div>
         <div className="device-item flex flex-col items-center justify-center p-4">
-           <svg className="w-20 h-20 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="11" width="18" height="3" rx="1.5"></rect><path d="M12.5 14v4.5a2.5 2.5 0 01-5 0V14"></path><path d="M10 11V4a2 2 0 012-2h0a2 2 0 012 2v7"></path></svg>
+            <svg className="w-20 h-20 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="11" width="18" height="3" rx="1.5"></rect><path d="M12.5 14v4.5a2.5 2.5 0 01-5 0V14"></path><path d="M10 11V4a2 2 0 012-2h0a2 2 0 012 2v7"></path></svg>
             <p className="mt-2 text-sm font-semibold text-gray-300">Firestick</p>
         </div>
         <div className="device-item flex flex-col items-center justify-center p-4">
@@ -380,8 +384,8 @@ const DeviceGrid: React.FC = () => (
         </div>
     </div>
 );
-        
-        
+
+
 // --- PAGE COMPONENTS ---
 
 const HomePage: React.FC<{ setPage: (page: Page) => void }> = ({ setPage }) => {
@@ -398,12 +402,21 @@ const HomePage: React.FC<{ setPage: (page: Page) => void }> = ({ setPage }) => {
         }
         setIsLoading(true);
         setGuideResult('');
-        
+
         const prompt = `You are an expert entertainment guide for an IPTV service called StreamVerse which has over 16,000 channels. A potential customer is interested in the following topics: "${interests}". Your task is to generate a personalized recommendation list to show them the value they'll get. Your response MUST be in the same language as the user's query, which is ${lang}. Please provide: 1. A list of 4-5 relevant LIVE TV channels they would love. 2. A list of 3 relevant on-demand movies or TV series they can binge-watch. For each item, provide a one-sentence explanation for why it's a great match for their interests. Format the entire output as clean HTML. Use <h3> for titles and an unordered list (<ul><li>) for the recommendations. Make the channel/movie titles bold using <strong>.`;
 
         try {
-            const responseText = await callGeminiApi(prompt);
-            setGuideResult(responseText);
+            const res = await fetch('/api/gemini', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ prompt }),
+            });
+            const data = await res.json();
+            if (data?.text) {
+                setGuideResult(data.text);
+            } else {
+                setGuideResult(`<p class="text-red-500">${data?.error || t('geminiError')}</p>`);
+            }
         } catch (error) {
             setGuideResult(`<p class="text-red-500">${t('geminiError')}</p>`);
         } finally {
@@ -433,7 +446,7 @@ const HomePage: React.FC<{ setPage: (page: Page) => void }> = ({ setPage }) => {
                 </div>
             </section>
 
-             <div className="bg-black/30 py-4">
+            <div className="bg-black/30 py-4">
                 <div className="container mx-auto px-6 text-center">
                     <div className="flex flex-wrap justify-center items-center gap-4">
                         <div className="flex items-center space-x-1">
@@ -469,16 +482,16 @@ const HomePage: React.FC<{ setPage: (page: Page) => void }> = ({ setPage }) => {
                     </div>
                     <p className="mt-12 text-lg text-cyan-400 font-semibold">{t('howItWorksHook')}</p>
                 </div>
-                <div className="relative container mx-auto max-w-2xl mt-12 z-20"> <div className="relative" style={{ paddingBottom: '56.25%' }}> <img src="/images/abonnement-iptv-multi-devices.webp" alt="StreamVerse interface on a television" className="absolute top-0 left-0 w-full h-full object-contain" onError={(e) => { const target = e.target as HTMLImageElement; target.src='https://placehold.co/1200x600/0c1427/e5e7eb?text=StreamVerse+UI'; }}/>
-                    </div>
+                <div className="relative container mx-auto max-w-2xl mt-12 z-20"> <div className="relative" style={{ paddingBottom: '56.25%' }}> <img src="/images/abonnement-iptv-multi-devices.webp" alt="StreamVerse interface on a television" className="absolute top-0 left-0 w-full h-full object-contain" onError={(e) => { const target = e.target as HTMLImageElement; target.src = 'https://placehold.co/1200x600/0c1427/e5e7eb?text=StreamVerse+UI'; }} />
+                </div>
                 </div>
             </section>
-            
+
             <section className="pt-32 pb-20 px-6">
                 <div className="container mx-auto">
                     <div className="grid lg:grid-cols-2 gap-12 items-center">
                         <div className="w-full lg:w-5/6 mx-auto">
-                            <img src="/images/compatible-device-iptv-vod-streamverse.jpg" alt="Woman enjoying StreamVerse on a tablet" className="rounded-lg shadow-2xl w-full h-auto max-h-96 object-cover" onError={(e) => { const target = e.target as HTMLImageElement; target.src='https://placehold.co/600x500/0c1427/e5e7eb?text=Image+Not+Found'; }} />
+                            <img src="/images/compatible-device-iptv-vod-streamverse.jpg" alt="Woman enjoying StreamVerse on a tablet" className="rounded-lg shadow-2xl w-full h-auto max-h-96 object-cover" onError={(e) => { const target = e.target as HTMLImageElement; target.src = 'https://placehold.co/600x500/0c1427/e5e7eb?text=Image+Not+Found'; }} />
                         </div>
                         <div className="text-center lg:text-left">
                             <h2 className="text-3xl md:text-4xl font-bold mb-4">{t('whyChooseTitle')}</h2>
@@ -501,7 +514,7 @@ const HomePage: React.FC<{ setPage: (page: Page) => void }> = ({ setPage }) => {
                     </div>
                 </div>
             </section>
-            
+
             <div className="py-16 px-6">
                 <div className="container mx-auto max-w-5xl">
                     <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">{t('comparisonTitle')}</h2>
@@ -545,12 +558,21 @@ const ChannelsFeaturesPage: React.FC = () => {
         }
         setIsLoading(true);
         setGuideResult('');
-        
+
         const prompt = `You are an expert entertainment guide for an IPTV service called StreamVerse which has over 16,000 channels. A potential customer is interested in the following topics: "${interests}". Your task is to generate a personalized recommendation list to show them the value they'll get. Your response MUST be in the same language as the user's query, which is ${lang}. Please provide: 1. A list of 4-5 relevant LIVE TV channels they would love. 2. A list of 3 relevant on-demand movies or TV series they can binge-watch. For each item, provide a one-sentence explanation for why it's a great match for their interests. Format the entire output as clean HTML. Use <h3> for titles and an unordered list (<ul><li>) for the recommendations. Make the channel/movie titles bold using <strong>.`;
 
         try {
-            const responseText = await callGeminiApi(prompt);
-            setGuideResult(responseText);
+            const res = await fetch('/api/gemini', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ prompt }),
+            });
+            const data = await res.json();
+            if (data?.text) {
+                setGuideResult(data.text);
+            } else {
+                setGuideResult(`<p class="text-red-500">${data?.error || t('geminiError')}</p>`);
+            }
         } catch (error) {
             setGuideResult(`<p class="text-red-500">${t('geminiError')}</p>`);
         } finally {
@@ -575,44 +597,44 @@ const ChannelsFeaturesPage: React.FC = () => {
                     </div>
                 </div>
             </section>
-            
+
             <section className="py-20 px-6 bg-section-dark">
                 <div className="container mx-auto text-center max-w-5xl">
                     <h2 className="text-3xl md:text-4xl font-bold mb-4">{t('devicesTitle')}</h2>
                     <p className="text-gray-400 mb-12 max-w-3xl mx-auto">{t('devicesSubtitle')}</p>
-                    <DeviceGrid/>
+                    <DeviceGrid />
                 </div>
             </section>
 
-             <div className="py-10 bg-section-dark"><div className="section-divider"></div></div>
+            <div className="py-10 bg-section-dark"><div className="section-divider"></div></div>
             <section className="py-20 px-6 bg-section-dark">
                 <div className="container mx-auto text-center">
-                     <h2 className="text-3xl md:text-4xl font-bold mb-4">{t('channelsTitle')}</h2>
-                     <p className="text-gray-400 mb-12 max-w-2xl mx-auto">{t('channelsSubtitle')}</p>
-                     <div className="grid grid-cols-4 md:grid-cols-6 lg:grid-cols-10 gap-4">
-                        <img src="https://placehold.co/100x60/121c33/e5e7eb?text=SPORTS" alt="Sports Channel" className="rounded-md channel-logo"/>
-                        <img src="https://placehold.co/100x60/121c33/e5e7eb?text=MOVIES" alt="Movies Channel" className="rounded-md channel-logo"/>
-                        <img src="https://placehold.co/100x60/121c33/e5e7eb?text=NEWS" alt="News Channel" className="rounded-md channel-logo"/>
-                        <img src="https://placehold.co/100x60/121c33/e5e7eb?text=KIDS" alt="Kids Channel" className="rounded-md channel-logo"/>
-                        <img src="https://placehold.co/100x60/121c33/e5e7eb?text=USA" alt="USA Channel" className="rounded-md channel-logo"/>
-                        <img src="https://placehold.co/100x60/121c33/e5e7eb?text=UK" alt="UK Channel" className="rounded-md channel-logo"/>
-                        <img src="https://placehold.co/100x60/121c33/e5e7eb?text=CANADA" alt="Canada Channel" className="rounded-md channel-logo"/>
-                        <img src="https://placehold.co/100x60/121c33/e5e7eb?text=EUROPE" alt="Europe Channel" className="rounded-md channel-logo"/>
-                        <img src="https://placehold.co/100x60/121c33/e5e7eb?text=ASIA" alt="Asia Channel" className="rounded-md channel-logo"/>
-                        <img src="https://placehold.co/100x60/121c33/e5e7eb?text=LATINO" alt="Latino Channel" className="rounded-md channel-logo"/>
-                     </div>
+                    <h2 className="text-3xl md:text-4xl font-bold mb-4">{t('channelsTitle')}</h2>
+                    <p className="text-gray-400 mb-12 max-w-2xl mx-auto">{t('channelsSubtitle')}</p>
+                    <div className="grid grid-cols-4 md:grid-cols-6 lg:grid-cols-10 gap-4">
+                        <img src="https://placehold.co/100x60/121c33/e5e7eb?text=SPORTS" alt="Sports Channel" className="rounded-md channel-logo" />
+                        <img src="https://placehold.co/100x60/121c33/e5e7eb?text=MOVIES" alt="Movies Channel" className="rounded-md channel-logo" />
+                        <img src="https://placehold.co/100x60/121c33/e5e7eb?text=NEWS" alt="News Channel" className="rounded-md channel-logo" />
+                        <img src="https://placehold.co/100x60/121c33/e5e7eb?text=KIDS" alt="Kids Channel" className="rounded-md channel-logo" />
+                        <img src="https://placehold.co/100x60/121c33/e5e7eb?text=USA" alt="USA Channel" className="rounded-md channel-logo" />
+                        <img src="https://placehold.co/100x60/121c33/e5e7eb?text=UK" alt="UK Channel" className="rounded-md channel-logo" />
+                        <img src="https://placehold.co/100x60/121c33/e5e7eb?text=CANADA" alt="Canada Channel" className="rounded-md channel-logo" />
+                        <img src="https://placehold.co/100x60/121c33/e5e7eb?text=EUROPE" alt="Europe Channel" className="rounded-md channel-logo" />
+                        <img src="https://placehold.co/100x60/121c33/e5e7eb?text=ASIA" alt="Asia Channel" className="rounded-md channel-logo" />
+                        <img src="https://placehold.co/100x60/121c33/e5e7eb?text=LATINO" alt="Latino Channel" className="rounded-md channel-logo" />
+                    </div>
                 </div>
             </section>
-            
+
             <section id="gemini-guide" className="py-20 px-6 bg-gradient-to-b from-blue-900/30 to-bg-section-dark">
                 <div className="container mx-auto max-w-3xl text-center">
                     <h2 className="text-3xl md:text-4xl font-bold mb-4">{t('geminiTitle')}</h2>
                     <p className="text-gray-300 mb-8 text-lg">{t('geminiSubtitle')}</p>
                     <div className="bg-card-dark rounded-lg p-8">
-                        <textarea 
+                        <textarea
                             value={interests}
                             onChange={(e) => setInterests(e.target.value)}
-                            className="w-full bg-section-dark text-white p-4 rounded-md h-28 focus:ring-2 focus:ring-blue-500 focus:outline-none" 
+                            className="w-full bg-section-dark text-white p-4 rounded-md h-28 focus:ring-2 focus:ring-blue-500 focus:outline-none"
                             placeholder={t('geminiPlaceholder')}
                         />
                         <button onClick={handleGenerateGuide} disabled={isLoading} className="mt-4 w-full bg-gradient-to-r from-blue-500 to-violet-600 hover:from-blue-600 hover:to-violet-700 text-white font-extrabold py-3 px-8 rounded-lg text-lg cta-button disabled:opacity-50">
@@ -634,19 +656,20 @@ const ChannelsFeaturesPage: React.FC = () => {
 const PricingPage: React.FC = () => {
     const { t } = useLanguage();
     const [timeLeft, setTimeLeft] = useState({ days: '00', hours: '00', minutes: '00', seconds: '00' });
+    const [screens, setScreens] = useState(1);
 
     useEffect(() => {
         const countDownDate = new Date().getTime() + 3 * 24 * 60 * 60 * 1000;
         const interval = setInterval(() => {
             const now = new Date().getTime();
             const distance = countDownDate - now;
-            
+
             if (distance < 0) {
                 clearInterval(interval);
                 setTimeLeft({ days: '00', hours: '00', minutes: '00', seconds: '00' });
             } else {
-                 const format = (num: number) => num.toString().padStart(2, '0');
-                 setTimeLeft({
+                const format = (num: number) => num.toString().padStart(2, '0');
+                setTimeLeft({
                     days: format(Math.floor(distance / (1000 * 60 * 60 * 24))),
                     hours: format(Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))),
                     minutes: format(Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60))),
@@ -668,43 +691,62 @@ const PricingPage: React.FC = () => {
                             <span>{timeLeft.days}</span>:<span>{timeLeft.hours}</span>:<span>{timeLeft.minutes}</span>:<span>{timeLeft.seconds}</span>
                         </div>
                     </div>
-                
-                    <div className="py-16 px-6">
-                        <div className="container mx-auto max-w-5xl">
-                            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">{t('comparisonTitle')}</h2>
-                            <p className="text-gray-400 mb-12 text-center max-w-2xl mx-auto">{t('comparisonSubtitle')}</p>
-                            <ComparisonTable />
+
+
+
+                    <div className="container mx-auto max-w-5xl py-16">
+                        <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">{t('comparisonTitle')}</h2>
+                        <p className="text-gray-400 mb-12 text-center max-w-2xl mx-auto">{t('comparisonSubtitle')}</p>
+                        <ComparisonTable />
+                    </div>
+
+                    <div className="flex justify-center mt-12 mb-16 px-6">
+                        <div className="bg-card-dark p-1 rounded-xl border border-gray-700 inline-flex">
+                            {[1, 2, 3].map((num) => (
+                                <button
+                                    key={num}
+                                    onClick={() => setScreens(num)}
+                                    className={`px-4 sm:px-8 py-3 rounded-lg font-bold transition-all duration-300 text-sm sm:text-base ${screens === num
+                                        ? 'bg-blue-600 text-white shadow-lg shadow-blue-600/20'
+                                        : 'text-gray-400 hover:text-white'
+                                        }`}
+                                >
+                                    {t(`screens${num}` as any)}
+                                </button>
+                            ))}
                         </div>
                     </div>
 
-                    <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto mt-4">
+                    <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto mt-12">
                         <div className="bg-card-dark p-8 rounded-lg border-2 border-gray-700 flex flex-col">
-                            <h3 className="text-2xl font-bold mb-2">{t('plan1Title')}</h3><p className="text-gray-400 mb-6">{t('plan1Desc')}</p><p className="text-4xl font-extrabold mb-6"><span className="text-2xl text-gray-400 line-through">$29.99</span> $9.99</p>
+                            <h3 className="text-2xl font-bold mb-2">{t('plan1Title')}</h3><p className="text-gray-400 mb-6">{t('plan1Desc')}</p><p className="text-4xl font-extrabold mb-6"><span className="text-2xl text-gray-400 line-through">${(29.99 + (screens - 1) * 10).toFixed(2)}</span> ${(9.99 + (screens - 1) * 10).toFixed(2)}</p>
                             <ul className="text-left space-y-2 mb-8 flex-grow">
-                                <li className="flex items-center"><svg className="w-5 h-5 text-blue-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>16,000+ Channels</li>
-                                <li className="flex items-center"><svg className="w-5 h-5 text-blue-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>4K/HD Quality</li>
-                                <li className="flex items-center"><svg className="w-5 h-5 text-blue-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>24/7 Support</li>
-                            </ul><a href="https://pay.sumup.com/b2c/QBAVRBOA" target="_blank" rel="noopener noreferrer" className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg cta-button text-center">{t('planCTA')}</a>
+                                <li className="flex items-center"><svg className="w-5 h-5 text-blue-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>{t('pricingBenefit1')}</li>
+                                <li className="flex items-center"><svg className="w-5 h-5 text-blue-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>{t('pricingBenefit2')}</li>
+                                <li className="flex items-center"><svg className="w-5 h-5 text-blue-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>{t('pricingBenefit3')}</li>
+                            </ul><button onClick={() => window.open(`https://pay.sumup.com/b2c/QBAVRBOA`, '_blank')} className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg cta-button text-center">{t('planCTA')}</button>
                         </div>
                         <div className="bg-card-dark p-8 rounded-lg border-2 border-blue-400 glow-border relative flex flex-col scale-105">
-                            <span className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-blue-400 text-black font-bold text-sm px-4 py-1 rounded-full">{t('bestValue')}</span>
-                            <h3 className="text-2xl font-bold mb-2">{t('plan2Title')}</h3><p className="text-gray-400 mb-6">{t('plan2Desc')}</p><p className="text-5xl font-extrabold mb-6"><span className="text-2xl text-gray-400 line-through">$239</span> $59.99</p>
-                             <ul className="text-left space-y-2 mb-8 flex-grow">
-                                 <li className="flex items-center"><svg className="w-5 h-5 text-blue-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>16,000+ Channels</li>
-                                 <li className="flex items-center"><svg className="w-5 h-5 text-blue-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>4K/HD Quality</li>
-                                 <li className="flex items-center"><svg className="w-5 h-5 text-blue-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>24/7 Support</li>
-                                 <li className="flex items-center"><svg className="w-5 h-5 text-blue-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>Priority Updates</li>
-                             </ul><a href="https://pay.sumup.com/b2c/QOC9JWHA" target="_blank" rel="noopener noreferrer" className="w-full bg-gradient-to-r from-blue-500 to-violet-600 hover:from-blue-600 hover:to-violet-700 text-white font-bold py-3 px-6 rounded-lg cta-button text-center">{t('planCTA')}</a>
+                            <span className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-blue-400 text-black font-bold text-sm px-4 py-1 rounded-full whitespace-nowrap">{t('bestValue')}</span>
+                            <h3 className="text-2xl font-bold mb-2">{t('plan2Title')}</h3><p className="text-gray-400 mb-6">{t('plan2Desc')}</p><p className="text-5xl font-extrabold mb-6"><span className="text-2xl text-gray-400 line-through">${(239 + (screens - 1) * 10).toFixed(2)}</span> ${(59.99 + (screens - 1) * 10).toFixed(2)}</p>
+                            <ul className="text-left space-y-2 mb-8 flex-grow">
+                                <li className="flex items-center"><svg className="w-5 h-5 text-blue-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>{t('pricingBenefit1')}</li>
+                                <li className="flex items-center"><svg className="w-5 h-5 text-blue-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>{t('pricingBenefit2')}</li>
+                                <li className="flex items-center"><svg className="w-5 h-5 text-blue-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>{t('pricingBenefit3')}</li>
+                                <li className="flex items-center"><svg className="w-5 h-5 text-blue-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>{t('pricingBenefit4')}</li>
+                            </ul><button onClick={() => window.open(`https://pay.sumup.com/b2c/QOC9JWHA`, '_blank')} className="w-full bg-gradient-to-r from-blue-500 to-violet-600 hover:from-blue-600 hover:to-violet-700 text-white font-bold py-3 px-6 rounded-lg cta-button text-center">{t('planCTA')}</button>
                         </div>
                         <div className="bg-card-dark p-8 rounded-lg border-2 border-gray-700 flex flex-col">
-                            <h3 className="text-2xl font-bold mb-2">{t('plan3Title')}</h3><p className="text-gray-400 mb-6">{t('plan3Desc')}</p><p className="text-4xl font-extrabold mb-6"><span className="text-2xl text-gray-400 line-through">$119</span> $37.99</p>
-                             <ul className="text-left space-y-2 mb-8 flex-grow">
-                                 <li className="flex items-center"><svg className="w-5 h-5 text-blue-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>16,000+ Channels</li>
-                                 <li className="flex items-center"><svg className="w-5 h-5 text-blue-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>4K/HD Quality</li>
-                                 <li className="flex items-center"><svg className="w-5 h-5 text-blue-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>24/7 Support</li>
-                             </ul><a href="https://pay.sumup.com/b2c/QHW2ZETD" target="_blank" rel="noopener noreferrer" className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg cta-button text-center">{t('planCTA')}</a>
+                            <h3 className="text-2xl font-bold mb-2">{t('plan3Title')}</h3><p className="text-gray-400 mb-6">{t('plan3Desc')}</p><p className="text-4xl font-extrabold mb-6"><span className="text-2xl text-gray-400 line-through">${(119 + (screens - 1) * 10).toFixed(2)}</span> ${(37.99 + (screens - 1) * 10).toFixed(2)}</p>
+                            <ul className="text-left space-y-2 mb-8 flex-grow">
+                                <li className="flex items-center"><svg className="w-5 h-5 text-blue-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>{t('pricingBenefit1')}</li>
+                                <li className="flex items-center"><svg className="w-5 h-5 text-blue-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>{t('pricingBenefit2')}</li>
+                                <li className="flex items-center"><svg className="w-5 h-5 text-blue-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>{t('pricingBenefit3')}</li>
+                            </ul><button onClick={() => window.open(`https://pay.sumup.com/b2c/QHW2ZETD`, '_blank')} className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg cta-button text-center">{t('planCTA')}</button>
                         </div>
                     </div>
+
+
                     <p className="mt-8 text-violet-400 font-semibold">{t('pricingScarcity')}</p>
                     <Testimonials />
                 </div>
@@ -722,7 +764,7 @@ const AboutPage: React.FC = () => {
                     <h2 className="text-4xl font-bold mb-6">{t('aboutTitle')}</h2>
                     <p className="text-lg text-gray-300 mb-8">{t('aboutSubtitle')}</p>
                     <p className="text-gray-400 mb-12">{t('aboutDesc')}</p>
-                    <img src="https://nonasties.store/wp-content/uploads/2025/08/Untitled-design-2-copy-removebg-preview.png" alt="StreamVerse Interface on TV" className="rounded-lg w-full h-auto max-w-2xl mx-auto" onError={(e) => { const target = e.target as HTMLImageElement; target.src='https://placehold.co/600x400/0c1427/e5e7eb?text=StreamVerse+Interface'; }} />
+                    <img src="https://nonasties.store/wp-content/uploads/2025/08/Untitled-design-2-copy-removebg-preview.png" alt="StreamVerse Interface on TV" className="rounded-lg w-full h-auto max-w-2xl mx-auto" onError={(e) => { const target = e.target as HTMLImageElement; target.src = 'https://placehold.co/600x400/0c1427/e5e7eb?text=StreamVerse+Interface'; }} />
                 </div>
             </section>
         </main>
@@ -732,7 +774,7 @@ const AboutPage: React.FC = () => {
 const FaqItem: React.FC<{ qKey: keyof Translations['en'], aKey: keyof Translations['en'] }> = ({ qKey, aKey }) => {
     const [isOpen, setIsOpen] = useState(false);
     const { t } = useLanguage();
-    
+
     return (
         <div className={`faq-item bg-card-dark rounded-lg ${isOpen ? 'active' : ''}`}>
             <div className="faq-question flex justify-between items-center p-6" onClick={() => setIsOpen(!isOpen)}>
@@ -764,20 +806,29 @@ const HelpPage: React.FC = () => {
         const prompt = `You are a helpful AI assistant for an IPTV service called StreamVerse. A user needs simple, step-by-step instructions to install an IPTV player and set up the service on their device. Device: "${device}". Your task is to generate clear, easy-to-follow instructions for a non-technical user. Your response MUST be in the same language as the user's query, which is ${lang}. Instructions: 1. Recommend one or two popular and reliable IPTV player apps for that specific device. 2. Provide a step-by-step guide on how to find, download, and install the recommended app(s) on that device. 3. Provide a final step explaining that after installation, they will need to open the app and log in using the username, password, and server URL provided in their welcome email from StreamVerse. Format the entire output as clean HTML. Use <h3> for the title and an ordered list (<ol><li>) for the steps. Use <strong> to highlight app names and important actions.`;
 
         try {
-            const responseText = await callGeminiApi(prompt);
-            setStepsResult(responseText);
+            const res = await fetch('/api/gemini', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ prompt }),
+            });
+            const data = await res.json();
+            if (data?.text) {
+                setStepsResult(data.text);
+            } else {
+                setStepsResult(`<p class="text-red-500">${data?.error || t('aiHelpError')}</p>`);
+            }
         } catch (error) {
             setStepsResult(`<p class="text-red-500">${t('aiHelpError')}</p>`);
         } finally {
             setIsLoading(false);
         }
     };
-    
-    const faqData: {qKey: keyof Translations['en'], aKey: keyof Translations['en']}[] = [
-        { qKey: 'faq1q', aKey: 'faq1a'},
-        { qKey: 'faq2q', aKey: 'faq2a'},
-        { qKey: 'faq3q', aKey: 'faq3a'},
-        { qKey: 'faq4q', aKey: 'faq4a'},
+
+    const faqData: { qKey: keyof Translations['en'], aKey: keyof Translations['en'] }[] = [
+        { qKey: 'faq1q', aKey: 'faq1a' },
+        { qKey: 'faq2q', aKey: 'faq2a' },
+        { qKey: 'faq3q', aKey: 'faq3a' },
+        { qKey: 'faq4q', aKey: 'faq4a' },
     ];
 
     return (
@@ -790,11 +841,11 @@ const HelpPage: React.FC = () => {
                         <div className="bg-card-dark p-8 rounded-lg flex flex-col items-center"><svg className="w-16 h-16 text-blue-400 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg><h3 className="text-2xl font-bold mb-2">{t('helpEmailTitle')}</h3><p className="text-gray-400 mb-4">{t('helpEmailDesc')}</p><a href="mailto:support@streamversetv.com" className="w-full bg-violet-600 hover:bg-violet-700 text-white font-bold py-2 px-6 rounded-lg cta-button">{t('helpEmailCTA')}</a></div>
                         <div className="bg-card-dark p-8 rounded-lg flex flex-col items-center"><svg className="w-16 h-16 text-blue-400 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a2 2 0 01-2-2V7a2 2 0 012-2h2.586a1 1 0 01.707.293l2.414 2.414a1 1 0 01.293.707V8z"></path></svg><h3 className="text-2xl font-bold mb-2">{t('helpTelegramTitle')}</h3><p className="text-gray-400 mb-4">{t('helpTelegramDesc')}</p><a href="#" className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-lg cta-button">{t('helpTelegramCTA')}</a></div>
                     </div>
-                     <div className="section-divider my-16"></div>
+                    <div className="section-divider my-16"></div>
                     <section id="ai-installer" className="text-center">
-                         <h2 className="text-3xl md:text-4xl font-bold mb-4">{t('aiHelpTitle')}</h2>
-                         <p className="text-gray-300 mb-8 text-lg max-w-3xl mx-auto">{t('aiHelpSubtitle')}</p>
-                         <div className="bg-card-dark rounded-lg p-8 max-w-3xl mx-auto">
+                        <h2 className="text-3xl md:text-4xl font-bold mb-4">{t('aiHelpTitle')}</h2>
+                        <p className="text-gray-300 mb-8 text-lg max-w-3xl mx-auto">{t('aiHelpSubtitle')}</p>
+                        <div className="bg-card-dark rounded-lg p-8 max-w-3xl mx-auto">
                             <textarea
                                 value={device}
                                 onChange={(e) => setDevice(e.target.value)}
@@ -810,7 +861,7 @@ const HelpPage: React.FC = () => {
                                     dangerouslySetInnerHTML={{ __html: stepsResult }}>
                                 </div>
                             )}
-                         </div>
+                        </div>
                     </section>
                     <div className="section-divider my-16"></div>
                     <h3 className="text-3xl font-bold mb-6 text-center">{t('faqTitle')}</h3>
@@ -880,7 +931,7 @@ const App: React.FC = () => {
                 return <HomePage setPage={setCurrentPage} />;
         }
     };
-    
+
     return (
         <LanguageProvider>
             <Header currentPage={currentPage} setPage={setCurrentPage} />

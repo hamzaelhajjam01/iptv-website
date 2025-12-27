@@ -15,22 +15,22 @@ const ExitModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isOpen,
 
     const handleFreeTrial = () => {
         // Create WhatsApp message for free trial
-        const message = `Hello! I'm interested in the 24-Hour Free Trial for $0.99.
+        const message = `Hello! I'm interested in the 24-Hour Premium Trial for $0.99.
 
-📦 *Offer:* 24-Hour Trial Access
+📦 *Offer:* 24-Hour Premium Trial Access
 💰 *Price:* $0.99
 
 Please send me the payment details and setup instructions to get started immediately!`;
 
         // Encode message for URL
         const encodedMessage = encodeURIComponent(message);
-        
+
         // Create WhatsApp link
         const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodedMessage}`;
-        
+
         // Open WhatsApp in new tab
         window.open(whatsappUrl, '_blank');
-        
+
         // Close the modal
         onClose();
     };
@@ -92,8 +92,8 @@ const ExitIntent: React.FC = () => {
         // Add a delay to prevent the modal from showing on initial load/reload
         const timer = setTimeout(() => {
             document.body.addEventListener('mouseout', handleMouseOut);
-        }, 3000); 
-        
+        }, 3000);
+
         return () => {
             clearTimeout(timer);
             document.body.removeEventListener('mouseout', handleMouseOut);

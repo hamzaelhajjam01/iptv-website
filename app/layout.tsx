@@ -7,6 +7,7 @@ import { LanguageProvider } from "../contexts/LanguageContext";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import ExitIntent from "../components/ExitIntent";
+import LanguagePopup from "../components/LanguagePopup";
 import PageTransition from "../components/PageTransition";
 import TopLoadingBar from "../components/TopLoadingBar";
 import ReferralTopBar from "../components/ReferralTopBar";
@@ -58,6 +59,7 @@ export default function RootLayout({
           </PageTransition>
           <Footer />
           <ExitIntent />
+          <LanguagePopup />
         </LanguageProvider>
       </body>
     </html>
