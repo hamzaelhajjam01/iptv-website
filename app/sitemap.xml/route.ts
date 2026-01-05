@@ -14,6 +14,7 @@ const pages = [
   '/pricing',
   '/privacy-policy',
   '/terms-of-use',
+  '/reseller',
 ];
 
 async function generateSiteMap() {
