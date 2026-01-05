@@ -331,3 +331,17 @@ body {
 .faq-inline { line-height: 1.6; }
 .faq-q { line-height: 1.6; }
 .faq-a { line-height: 1.6; }
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translate3d(0, 20px, 0);
+    }
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+.animate-fade-in-up {
+    animation: fadeInUp 0.5s ease-out forwards;
+}

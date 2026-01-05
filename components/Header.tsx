@@ -16,9 +16,9 @@ const Header: React.FC = () => {
     };
 
     const navItems: { href: string; key: keyof Translations['en'] }[] = [
-        { href: '/', key: 'navHome' },
         { href: '/channels-features', key: 'navChannelsFeatures' },
         { href: '/pricing', key: 'navPricing' },
+        { href: '/reseller', key: 'navReseller' },
         { href: '/help', key: 'navHelp' },
         { href: '/about', key: 'navAbout' },
         { href: '/blog', key: 'navBlog' },
