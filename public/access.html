@@ -526,8 +526,7 @@
             <div>
                 <h3 class="contact-title" id="contact-title">Need an access code?<br>Contact us via</h3>
                 <div class="social-icons">
-                    <a href="https://t.me/streamverse_support" target="_blank" title="Telegram"><i
-                            class="fab fa-telegram"></i></a>
+
                     <a href="https://wa.me/1234567890?text=Hello%20StreamVerse!%20I%20need%20an%20access%20code%20to%20view%20the%20site."
                         target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
                     <a href="mailto:contact@streamversetv.com" title="Email"><i class="fas fa-envelope"></i></a>
@@ -613,21 +612,15 @@
             document.getElementById('obtain-code-btn').textContent = content.obtainCodeBtn;
             document.getElementById('error-msg').textContent = content.error;
 
-            // Simple counter animation
-            let count = 1.5;
-            let direction = 1;
+            // Realistic counter animation
             const countEl = document.getElementById('streaming-count');
 
             setInterval(() => {
-                const change = (Math.random() * 0.1);
-                if (direction > 0) {
-                    count += change;
-                    if (count >= 3.1) direction = -1;
-                } else {
-                    count -= change;
-                    if (count <= 1.5) direction = 1;
-                }
-                countEl.textContent = count.toFixed(1) + 'k';
+                // Generate a random number between 1.1 and 3.5
+                const min = 1.1;
+                const max = 3.5;
+                const randomVal = (Math.random() * (max - min) + min).toFixed(1);
+                countEl.textContent = randomVal + 'k';
             }, 3000);
         }
 
