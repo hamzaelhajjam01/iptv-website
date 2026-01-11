@@ -24,14 +24,12 @@ export function middleware(request: NextRequest) {
     }
   }
 
-  // 2. Password Gate Logic (Temporarily Disabled - Reactivate by uncommenting)
-  /*
+  // 2. Password Gate Logic (Active)
   const authorized = request.cookies.get('authorized')?.value === 'true';
-  
+
   if (!authorized && pathname !== '/access.html') {
     return NextResponse.redirect(new URL('/access.html', request.url));
   }
-  */
 
   return NextResponse.next();
 }
