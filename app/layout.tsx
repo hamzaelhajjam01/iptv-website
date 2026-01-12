@@ -37,7 +37,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <head>
-        <Script async src="https://www.googletagmanager.com/gtag/js?id=G-BT7CCD8QQN"></Script>
+        <Script async src="https://www.googletagmanager.com/gtag/js?id=AW-17866135580"></Script>
         <Script id="google-analytics">
           {`
             window.dataLayer = window.dataLayer || [];
