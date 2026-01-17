@@ -66,7 +66,7 @@ export async function generateMetadata({ searchParams }: BlogPageProps) {
 export default async function BlogPage({ searchParams }: BlogPageProps) {
   const allPosts = await getAllPostsMeta(); // Assuming this is cached or fast enough
   const category = searchParams?.category;
-  const page = searchParams?.page ? parseInt(searchParams.page, 10) : 1;
+  const page = searchParams?.page ? parseInt(String(searchParams.page), 10) : 1;
   const q = searchParams?.q;
 
   // Case-insensitive lookup for category description
