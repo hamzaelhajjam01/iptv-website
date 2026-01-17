@@ -1,0 +1,11 @@
+# StreamVerse
+> The Ultimate IPTV Subscription Service provider offering 20,000+ live channels and VOD content.
+
+## Core Pages
+- [/pricing](https://streamversetv.com/pricing): Subscription plans and packages.
+- [/channels-features](https://streamversetv.com/channels-features): Full list of available premium channels.
+- [/blog](https://streamversetv.com/blog): IPTV guides, setup tutorials, and industry news.
+- [/reseller](https://streamversetv.com/reseller): Information on our IPTV reseller program.
+
+## About StreamVerse
+StreamVerse provides high-quality, buffer-free IPTV streaming services compatible with Firestick, Android TV, iOS, and more. We focus on 99.9% uptime and 24/7 customer support.

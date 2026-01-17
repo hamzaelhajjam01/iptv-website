@@ -3,6 +3,7 @@ User-agent: *
 Allow: /
 
 # Tell crawlers to ignore the Next.js build folders
+Allow: /_next/static/
 Disallow: /_next/
 
 # Point Google to our sitemap

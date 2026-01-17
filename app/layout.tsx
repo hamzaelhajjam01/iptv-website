@@ -15,8 +15,12 @@ import ReferralTopBar from "../components/ReferralTopBar";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://streamversetv.com'),
   title: "StreamVerse - The Ultimate IPTV Subscription Service",
   description: "A minimal, fast-loading affiliate website that promotes the StreamVerse IPTV service. It showcases digital products, educates visitors with AI-powered guides, and guides visitors to affiliate links to generate commissions.",
+  alternates: {
+    canonical: '/',
+  },
   icons: {
     icon: [
       { url: '/favicon.ico', sizes: 'any' },

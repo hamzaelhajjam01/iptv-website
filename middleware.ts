@@ -7,7 +7,14 @@ const GONE_SLUGS = new Set<string>([
 
 export function middleware(request: NextRequest) {
   const url = new URL(request.url);
-  const { pathname } = url;
+  const { pathname, search } = url;
+  const hostname = request.headers.get('host') || 'streamversetv.com';
+
+  // 1. WWW Redirect (Force non-www)
+  if (hostname.startsWith('www.')) {
+    const newHost = hostname.replace('www.', '');
+    return NextResponse.redirect(`https://${newHost}${pathname}${search}`, 301);
+  }
 
   // 1. Handle Gone Blog Slugs
   const blogMatch = pathname.match(/^\/blog\/([^\/?#]+)/);

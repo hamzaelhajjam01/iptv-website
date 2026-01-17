@@ -51,11 +51,11 @@ export async function getPostBySlug(slug: string) {
     .process(content);
 
   let contentHtml = processed.toString();
-  
+
   // Manually add IDs to headings based on {#slug} syntax
   // Replace patterns like: <h2>Title {#my-slug}</h2> with <h2 id="my-slug">Title</h2>
   contentHtml = contentHtml.replace(/<(h[2-6])>(.*?)\s*\{#([a-z0-9-]+)\}\s*<\/\1>/gi, '<$1 id="$3">$2</$1>');
-  
+
   const headings = (data.toc as Heading[]) || []; // Read ToC from frontmatter
   const faqs = (data.faqs as FAQ[]) || []; // Read FAQs from frontmatter
 
@@ -77,9 +77,17 @@ export async function getAllPostsMeta(): Promise<PostMeta[]> {
       const fullPath = path.join(postsDirectory, `${slug}.mdx`);
       const fileContents = fs.readFileSync(fullPath, 'utf8');
       const { data } = matter(fileContents);
+
+      // Only return essential metadata for the list view to reduce __NEXT_DATA__ size
       return {
-        ...(data as Record<string, any>),
         slug,
+        title: data.title,
+        excerpt: data.excerpt,
+        date: data.date,
+        featuredImage: data.featuredImage,
+        category: data.category,
+        author: data.author,
+        // Exclude heavier fields like 'faqs' and 'toc' from the list view
       } as PostMeta & { draft?: boolean };
     })
     // Hide drafts from public lists

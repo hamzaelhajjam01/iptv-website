@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import CheckoutPopup from '../../components/CheckoutPopup';
 import { useLanguage } from '../../contexts/LanguageContext';
+import { UpdateIcon, DeviceIcon, TrialIcon, ExpiryIcon, ChevronDownIcon, CheckIcon } from '../../components/Icons';
 
 // Inline simple Accordion for FAQs to avoid translation key dependencies for now
 const ResellerFaqItem = ({ question, answer }: { question: string, answer: string }) => {
@@ -16,14 +17,9 @@ const ResellerFaqItem = ({ question, answer }: { question: string, answer: strin
                 onClick={() => setIsOpen(!isOpen)}
             >
                 <h3 className="text-lg md:text-xl font-semibold text-gray-100">{question}</h3>
-                <svg
+                <ChevronDownIcon
                     className={`w-6 h-6 text-blue-500 transform transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
-                </svg>
+                />
             </div>
             <div className={`faq-answer px-6 overflow-hidden transition-all duration-300 ${isOpen ? 'max-h-96 pb-6 opacity-100' : 'max-h-0 opacity-0'}`}>
                 <p className="text-gray-300 leading-relaxed">{answer}</p>
@@ -63,9 +59,7 @@ const PricingCard = ({ title, credits, price, popular, features, onOrder, orderT
         <ul className="space-y-4 mb-8 flex-grow">
             {features.map((feature, idx) => (
                 <li key={idx} className="flex items-center text-gray-300 text-sm">
-                    <svg className="w-5 h-5 text-green-500 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-                    </svg>
+                    <CheckIcon className="w-5 h-5 text-green-500 mr-3 flex-shrink-0" />
                     {feature}
                 </li>
             ))}
@@ -178,6 +172,33 @@ Please send me the payment details and setup instructions.`;
                             description={t('resellerWhy6Desc')}
                             icon={<svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>}
                         />
+                    </div>
+                </div>
+            </section>
+
+            {/* How It Works Section - NEW */}
+            <section className="py-20 bg-[#0c1427]">
+                <div className="container mx-auto px-6">
+                    <div className="text-center mb-16">
+                        <h2 className="text-3xl md:text-4xl font-bold mb-4">{t('resellerHowTitle')}</h2>
+                        <p className="text-gray-400">{t('resellerHowSubtitle')}</p>
+                    </div>
+                    <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                        <div className="text-center p-6 bg-[#050a19] rounded-xl border border-gray-800">
+                            <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-xl font-bold mb-4 mx-auto">1</div>
+                            <h3 className="text-lg font-bold mb-2">{t('resellerHow1Title')}</h3>
+                            <p className="text-gray-400">{t('resellerHow1Desc')}</p>
+                        </div>
+                        <div className="text-center p-6 bg-[#050a19] rounded-xl border border-gray-800">
+                            <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-xl font-bold mb-4 mx-auto">2</div>
+                            <h3 className="text-lg font-bold mb-2">{t('resellerHow2Title')}</h3>
+                            <p className="text-gray-400">{t('resellerHow2Desc')}</p>
+                        </div>
+                        <div className="text-center p-6 bg-[#050a19] rounded-xl border border-gray-800">
+                            <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-xl font-bold mb-4 mx-auto">3</div>
+                            <h3 className="text-lg font-bold mb-2">{t('resellerHow3Title')}</h3>
+                            <p className="text-gray-400">{t('resellerHow3Desc')}</p>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -312,19 +333,19 @@ Please send me the payment details and setup instructions.`;
                 <div className="container mx-auto px-6">
                     <div className="flex flex-wrap justify-around items-center gap-8 text-center text-sm md:text-base">
                         <div className="flex flex-col items-center gap-3">
-                            <svg className="w-8 h-8 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            <UpdateIcon className="w-8 h-8 text-gray-400" />
                             <span className="font-semibold text-gray-300">{t('resellerBenefitUpdates')}</span>
                         </div>
                         <div className="flex flex-col items-center gap-3">
-                            <svg className="w-8 h-8 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
+                            <DeviceIcon className="w-8 h-8 text-gray-400" />
                             <span className="font-semibold text-gray-300">{t('resellerBenefitDevices')}</span>
                         </div>
                         <div className="flex flex-col items-center gap-3">
-                            <svg className="w-8 h-8 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            <TrialIcon className="w-8 h-8 text-gray-400" />
                             <span className="font-semibold text-gray-300">{t('resellerBenefitTrials')}</span>
                         </div>
                         <div className="flex flex-col items-center gap-3">
-                            <svg className="w-8 h-8 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                            <ExpiryIcon className="w-8 h-8 text-gray-400" />
                             <span className="font-semibold text-gray-300">{t('resellerBenefitExpiry')}</span>
                         </div>
                     </div>

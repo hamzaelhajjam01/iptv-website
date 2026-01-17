@@ -26,11 +26,11 @@ export async function generateMetadata({ params }: Props) {
   const ogImageUrl = `${SITE_URL.replace(/\/$/, '')}${ogPath}`;
 
   return {
-    title: meta.title,
+    title: `${meta.title} | StreamVerse`,
     description: meta.excerpt,
     alternates: { canonical: postUrl },
     openGraph: {
-      title: meta.title,
+      title: `${meta.title} | StreamVerse`,
       description: meta.excerpt,
       url: postUrl,
       type: 'article',
@@ -38,7 +38,7 @@ export async function generateMetadata({ params }: Props) {
     },
     twitter: {
       card: 'summary_large_image',
-      title: meta.title,
+      title: `${meta.title} | StreamVerse`,
       description: meta.excerpt,
       images: [ogImageUrl],
     },
@@ -77,12 +77,7 @@ const PostPage = async ({ params }: Props) => {
     },
     mainEntity: {
       '@type': 'Article',
-      headline: meta.title,
-      tableOfContents: headings.map((h: any) => ({
-        '@type': 'ListItem',
-        name: h.text,
-        url: `${postUrl}#${h.slug}`
-      }))
+      headline: meta.title
     }
   } : null;
 
@@ -90,7 +85,7 @@ const PostPage = async ({ params }: Props) => {
     <>
       {/* Add FAQ Schema to head */}
       <FaqSchema faqs={faqs} />
-      
+
       <article className="prose prose-invert max-w-prose">
         <Breadcrumbs category={meta.category} postTitle={meta.title} />
         {/* JSON-LD Article Schema */}
@@ -139,7 +134,7 @@ const PostPage = async ({ params }: Props) => {
       <div className="mt-12">
         <RelatedPosts currentSlug={meta.slug} category={meta.category} />
       </div>
-      
+
       <BackToTopButton />
     </>
   );
