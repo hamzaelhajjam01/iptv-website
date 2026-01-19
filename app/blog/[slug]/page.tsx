@@ -13,6 +13,15 @@ import { FaqSchema } from '../../../components/FaqSchema';
 
 type Props = { params: { slug: string } };
 
+const TITLE_OVERRIDES: Record<string, string> = {
+  'a-beginners-guide-to-xtream-codes-what-they-are-how-to-use-them': 'Xtream Codes Guide: What They Are & How to Use | StreamVerse',
+  'a-travelers-guide-how-to-watch-your-home-tv-channels-from-anywhere': 'How to Watch Your Home TV Channels Anywhere | StreamVerse',
+  'amazon-firestick-vs-android-tv-box-whats-the-best-for-iptv': 'Firestick vs. Android TV Box: Which is Best for IPTV? | StreamVerse',
+  'how-sports-fans-use-iptv-to-watch-every-game-from-every-league': 'How Sports Fans Watch Every League via IPTV | StreamVerse',
+  'how-to-use-the-catch-up-replay-feature-on-your-iptv-service': 'How to Use the IPTV Catch-Up (Replay) Feature | StreamVerse',
+  'the-5-best-vpns-for-iptv-streaming-in-2025-for-privacy-speed': '5 Best VPNs for IPTV Privacy & Speed (2025) | StreamVerse',
+};
+
 export async function generateMetadata({ params }: Props) {
   const result = await getPostBySlug(params.slug);
   if (!result) {
@@ -25,12 +34,14 @@ export async function generateMetadata({ params }: Props) {
   const ogPath = `/images/blog/${meta.slug}/${meta.slug}-og.jpg`;
   const ogImageUrl = `${SITE_URL.replace(/\/$/, '')}${ogPath}`;
 
+  const title = TITLE_OVERRIDES[params.slug] || `${meta.title} | StreamVerse`;
+
   return {
-    title: `${meta.title} | StreamVerse`,
+    title: title,
     description: meta.excerpt,
     alternates: { canonical: postUrl },
     openGraph: {
-      title: `${meta.title} | StreamVerse`,
+      title: title,
       description: meta.excerpt,
       url: postUrl,
       type: 'article',
@@ -38,7 +49,7 @@ export async function generateMetadata({ params }: Props) {
     },
     twitter: {
       card: 'summary_large_image',
-      title: `${meta.title} | StreamVerse`,
+      title: title,
       description: meta.excerpt,
       images: [ogImageUrl],
     },

@@ -11,12 +11,20 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
 	// If redirects are ever needed for other purposes, they can be defined here.
-	// async redirects() {
-	//   return [
-	//     // Example only — 410 is not supported here; use middleware.ts for that.
-	//     // { source: '/old', destination: '/new', permanent: true },
-	//   ];
-	// },
+	async redirects() {
+		return [
+			{
+				source: '/blog/best-vpn-for-iptv',
+				destination: '/blog/the-5-best-vpns-for-iptv-streaming-in-2025-for-privacy-speed',
+				permanent: true,
+			},
+			{
+				source: '/blog/iptv-vs-hulu-live-tv-a-cost-channel-comparison',
+				destination: '/blog/iptv-vs-cable-tv-in-2025-a-full-cost-and-feature-comparison',
+				permanent: true,
+			},
+		];
+	},
 };
 
 export default nextConfig;

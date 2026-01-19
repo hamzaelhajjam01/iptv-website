@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   title: 'Terms of Use | Streamverse',
   description:
     'Read Streamverse Terms of Use: acceptable use, accounts, intellectual property, disclaimers, and limitations of liability.',
+  alternates: {
+    canonical: 'https://streamversetv.com/terms-of-use',
+  },
 };
 
 export default function TermsOfUsePage() {

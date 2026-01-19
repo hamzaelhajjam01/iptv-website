@@ -13,14 +13,14 @@ type BlogPageProps = {
 };
 
 const CATEGORY_DESCRIPTIONS: Record<string, string> = {
-  'guide': 'Expert guides and tutorials to help you get the most out of your IPTV experience. Learn how to set up devices, troubleshoot issues, and optimize your streaming.',
-  'news': 'Stay updated with the latest news from the world of streaming and IPTV. We cover industry trends, new channel additions, and service updates.',
-  'reviews': 'In-depth reviews of the latest streaming devices, apps, and services. Find out which hardware and software combinations work best for your setup.',
-  'tips': 'Quick tips and tricks to enhance your viewing. Discover hidden features, improve connection stability, and master your IPTV player.',
-  'comparison': 'Side-by-side comparisons of popular streaming services and devices. Make informed decisions based on features, price, and performance.',
-  'advanced': 'Technical deep-dives for power users. Explore advanced configurations, network optimization, and secure streaming practices.',
-  'local-tv': 'Information about local channel availability and regional programming options across different countries and regions.',
-  'case-studies': 'Real-world examples and success stories from our community. See how others have cut the cord and improved their entertainment setup.'
+  'guide': 'Our comprehensive Guides section is your ultimate resource for mastering IPTV. Whether you are a complete beginner looking to set up your first Firestick or an experienced user trying to optimize your network for 4K streaming, we have step-by-step tutorials for you. Learn how to install players like TiviMate, troubleshoot buffering issues, and configure your EPG for a seamless TV experience.',
+  'news': 'Stay ahead of the curve with the latest News from the rapidly evolving world of streaming and IPTV. We cover everything from major service updates and new channel additions to industry trends and regulatory changes. Be the first to know about new features, price changes, and the future of cord-cutting technology.',
+  'reviews': 'Make informed buying decisions with our in-depth Reviews. We hands-on test the latest Android TV boxes, streaming sticks, and IPTV player applications to tell you what’s worth your money. Our unbiased analysis covers performance, speed, remote control quality, and ease of use, helping you build the perfect streaming setup.',
+  'tips': 'Unlock the full potential of your setup with our expert Tips & Tricks. Discover hidden features in your favorite apps, learn how to reduce latency, and find out the best settings for sports streaming. These quick, actionable insights are designed to instantly improve your viewing quality and stability.',
+  'comparison': 'Choosing the right service or device can be overwhelming. Our detailed Comparisons break down the pros and cons of top contenders side-by-side. From "Firestick vs. Android Box" to "IPTV vs. Cable TV," we analyze the costs, features, and specs to help you choose the option that best fits your needs and budget.',
+  'advanced': 'In our Advanced IPTV section, we dive deep into technical setups, Xtream codes optimization, and advanced troubleshooting for power users. Explore complex topics like VPN tunneling configurations, recording (DVR) setups on NAS drives, and managing multi-connection subscriptions for optimal performance.',
+  'local-tv': 'Stay connected with home no matter where you are with our Local TV guides. We provide detailed information on channel availability across different regions, helping expats and travelers find the best ways to access their favorite local news, regional sports, and cultural programming from anywhere in the world.',
+  'case-studies': 'Explore real-world Case Studies to see how users are cutting the cord and improved their entertainment setup. We share detailed stories of how families switched from expensive cable packages to streamlined IPTV setups, including exactly what hardware they used, how much money they saved, and the challenges they overcame.'
 };
 
 export async function generateMetadata({ searchParams }: BlogPageProps) {
@@ -50,7 +50,21 @@ export async function generateMetadata({ searchParams }: BlogPageProps) {
     title = `StreamVerse Blog - Page ${page}`;
   }
 
-  const description = page === '1' ? undefined : `StreamVerse Blog - Page ${page}: Insights, guides, and news about IPTV`;
+  // Dynamic Description Logic
+  let description = 'Explore the StreamVerse blog for the latest IPTV guides, service reviews, and expert tips to enhance your streaming experience.';
+
+  if (category) {
+    const capitalizedCategory = category.charAt(0).toUpperCase() + category.slice(1);
+    description = `Browse our ${capitalizedCategory} archives on the StreamVerse blog. Expert insights and tutorials specifically for ${capitalizedCategory} enthusiasts.`;
+
+    // Add pagination to description to avoid duplicates
+    if (page !== '1') {
+      description += ` (Page ${page})`;
+    }
+  } else if (page !== '1') {
+    // Paginated main blog page
+    description = `StreamVerse Blog - Page ${page}: Explore the latest IPTV guides, service reviews, and expert tips.`;
+  }
 
   // Pagination Robots Tag (NoIndex for page 2+)
   const robots = page !== '1' ? { index: false, follow: true } : undefined;

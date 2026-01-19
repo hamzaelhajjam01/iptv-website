@@ -25,7 +25,7 @@ const PostCard: React.FC<{ post: PostMeta }> = ({ post }) => {
         {post.date && <p className="text-sm text-gray-400 mb-2">{new Date(post.date).toLocaleDateString()}</p>}
         <p className="text-gray-300 mb-4">{post.excerpt && post.excerpt.length > 100 ? post.excerpt.substring(0, 100) + '...' : post.excerpt}</p>
         <Link href={`/blog/${post.slug}`} className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-          Read more
+          Read more<span className="sr-only"> about {post.title}</span>
         </Link>
       </div>
     </article>

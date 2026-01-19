@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   title: 'Privacy Policy | Streamverse',
   description:
     'Learn how Streamverse collects, uses, and protects your information. Read our privacy practices, cookies usage, and your rights.',
+  alternates: {
+    canonical: 'https://streamversetv.com/privacy-policy',
+  },
 };
 
 export default function PrivacyPolicyPage() {

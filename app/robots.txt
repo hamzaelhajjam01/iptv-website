@@ -1,10 +1,5 @@
-# Tell all crawlers they can scan the site
 User-agent: *
-Allow: /
-
-# Tell crawlers to ignore the Next.js build folders
 Allow: /_next/static/
+Allow: /_next/image/
 Disallow: /_next/
-
-# Point Google to our sitemap
 Sitemap: https://streamversetv.com/sitemap.xml
