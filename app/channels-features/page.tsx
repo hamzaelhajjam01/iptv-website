@@ -24,21 +24,21 @@ const ChannelsFeaturesPage: React.FC = () => {
                     <div className="w-full mx-auto mb-16 text-left bg-card-dark/50 p-8 rounded-xl border border-white/5">
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                             <section>
-                                <h2 className="text-2xl font-bold text-white mb-3">99.9% Uptime Guarantee</h2>
+                                <h2 className="text-2xl font-bold text-white mb-3">{t('seoUptimeTitle')}</h2>
                                 <p className="text-gray-300 leading-relaxed">
-                                    Reliability is the cornerstone of the StreamVerse experience. We understand that there is nothing worse than a stream cutting out during the final minutes of a qualified game or the climax of a movie. That is why we invest heavily in a redundant server infrastructure. Our load-balancing technology automatically distributes traffic across multiple global data centers, ensuring that if one server experiences high load, your connection is instantly rerouted to a stable backup. This allows us to maintain a 99.9% uptime record, providing you with a broadcast-quality signal that you can trust, 24/7.
+                                    {t('seoUptimeDesc')}
                                 </p>
                             </section>
                             <section>
-                                <h2 className="text-2xl font-bold text-white mb-3">Next-Gen Anti-Freeze Technology</h2>
+                                <h2 className="text-2xl font-bold text-white mb-3">{t('seoAntiFreezeTitle')}</h2>
                                 <p className="text-gray-300 leading-relaxed">
-                                    Buffering is the enemy of streaming. StreamVerse utilizes proprietary Anti-Freeze Technology 5.0 to eliminate lag before it starts. Unlike traditional streams that download data in small chunks, our smart-buffering system pre-loads a larger cache of content, smoothing out any minor fluctuations in your internet connection. Combined with H.265 HEVC compression, we deliver crystal-clear 4K and FHD streams that use less bandwidth, making our service incredibly stable even on average internet connections.
+                                    {t('seoAntiFreezeDesc')}
                                 </p>
                             </section>
                             <section>
-                                <h2 className="text-2xl font-bold text-white mb-3">Massive VOD Library: Movies & TV Shows</h2>
+                                <h2 className="text-2xl font-bold text-white mb-3">{t('seoVodTitle')}</h2>
                                 <p className="text-gray-300 leading-relaxed">
-                                    Your subscription includes more than just live TV. Unlock an on-demand library that rivals the biggest streaming platforms. Access over 50,000 movies, from the latest cinema releases to timeless classics, all in stunning HD and 4K quality. Binge-watch complete seasons of your favorite TV shows from providers like HBO, Netflix, Disney+, and Hulu—all in one place. Our library is updated daily, so you never miss a premiere. With clean organization, subtitles, and multi-language support, it's the ultimate entertainment hub for the whole family.
+                                    {t('seoVodDesc')}
                                 </p>
                             </section>
                         </div>
