@@ -1,6 +1,6 @@
 export const metadata = {
-    title: 'IPTV Reseller Program | StreamVerse',
-    description: 'Join the StreamVerse IPTV Reseller program. Start your own business with our high-quality streams and easy-to-use panel.',
+    title: 'IPTV Reseller Panel Program | StreamVerse',
+    description: 'Join the StreamVerse IPTV Reseller program. Start your own business with our high-quality streams and easy-to-use reseller panel.',
     alternates: {
         canonical: '/reseller',
     },
