@@ -1,5 +1,25 @@
+# Allow all crawlers by default
 User-agent: *
+
+# CRITICAL: Allow Next.js optimized images (fixes GSC "Disallowed Internal Resources" errors)
+Allow: /_next/image
+
+# Allow static assets (JS, CSS, fonts, etc.)
 Allow: /_next/static/
-Allow: /_next/image/
-Disallow: /_next/
+
+# Block other Next.js internal directories
+Disallow: /_next/data/
+Disallow: /_next/server/
+
+# Allow public assets
+Allow: /images/
+Allow: /fonts/
+Allow: /*.css
+Allow: /*.js
+
+# Block admin/sensitive paths (if applicable)
+# Disallow: /api/
+# Disallow: /admin/
+
+# Sitemap reference
 Sitemap: https://streamversetv.com/sitemap.xml
