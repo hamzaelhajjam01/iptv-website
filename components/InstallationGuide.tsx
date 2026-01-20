@@ -30,6 +30,7 @@ const InstallationGuide: React.FC = () => {
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="text-red-500 hover:underline break-all"
+                                    aria-label="Download IPTV Smarters for Windows"
                                 >
                                     https://www.iptvsmarters.com/download/?download=windows_app
                                 </a>
@@ -44,6 +45,7 @@ const InstallationGuide: React.FC = () => {
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="text-red-500 hover:underline break-all"
+                                    aria-label="Download IPTV Smarters for Mac"
                                 >
                                     https://www.iptvsmarters.com/download/?download=mac
                                 </a>

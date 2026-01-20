@@ -10,12 +10,12 @@ import LocalizedFinalCTA from '../components/LocalizedFinalCTA';
 import { useLanguage } from '../contexts/LanguageContext';
 
 const HomePage: React.FC = () => {
-        const { t } = useLanguage();
-        return (
+    const { t } = useLanguage();
+    return (
         <>
             <LocalizedHero src="/videos/Lionel Messi - Top 30 Goals.mp4" />
 
-             <div className="bg-black/30 py-4">
+            <div className="bg-black/30 py-4">
                 <div className="container mx-auto px-6 text-center">
                     <div className="flex flex-wrap justify-center items-center gap-4">
                         <div className="flex items-center space-x-1">
@@ -24,12 +24,12 @@ const HomePage: React.FC = () => {
                             ))}
                             <span className="text-white font-bold ml-2">4.9/5</span>
                         </div>
-                        <p className="text-gray-300 text-sm md:text-base">{/* social proof remains server-rendered initial language */} StreamverseTV — 16,000+ channels</p>
+                        <p className="text-gray-300 text-sm md:text-base">{/* social proof remains server-rendered initial language */} StreamverseTV — 50,000+ channels</p>
                     </div>
                 </div>
             </div>
             <LocalizedHowItWorks />
-            
+
             <section className="pt-32 pb-20 px-6">
                 <div className="container mx-auto">
                     <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -57,7 +57,7 @@ const HomePage: React.FC = () => {
                     </div>
                 </div>
             </section>
-            
+
             <div className="py-16 px-6">
                 <div className="container mx-auto max-w-5xl">
                     <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">{t('comparisonTitle')}</h2>
