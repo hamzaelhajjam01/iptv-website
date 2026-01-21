@@ -59,9 +59,7 @@ async function WidgetPopularPosts() {
       <ul className="space-y-4">
         {top.map((p, idx) => {
           const slug = p.slug || '';
-          const thumb = slug
-            ? `/images/blog/${slug}/${slug}-400.jpg`
-            : (p.featuredImage || '/images/promo/placeholder.jpg');
+          const thumb = p.featuredImage || (slug ? `/images/blog/${slug}/${slug}-400.jpg` : '/images/promo/placeholder.jpg');
           const rank = idx + 1;
           return (
             <li key={slug}>
