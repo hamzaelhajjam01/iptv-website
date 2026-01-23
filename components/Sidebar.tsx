@@ -8,14 +8,24 @@ import dynamic from 'next/dynamic';
 
 const ReferralCard = dynamic(() => import('./ReferralCard'), { ssr: false });
 
-// Widget: CTA to main product/pricing
-function WidgetCTA() {
+const WidgetCTA = () => {
   return (
-    <div className="bg-gradient-to-br from-blue-600 to-violet-600 rounded-xl p-6 text-white shadow-lg">
-      <h3 className="text-xl font-bold mb-2">Try StreamVerse</h3>
-      <p className="text-sm/6 mb-4 opacity-90">Premium IPTV with top channels, sports, and VOD. Fast setup, 24/7 support.</p>
-      <Link href="/pricing" className="inline-block bg-white/10 hover:bg-white/20 border border-white/20 rounded-lg px-4 py-2 font-semibold">
-        View Plans & Pricing →
+    <div className="bg-gradient-to-br from-blue-600 to-violet-600 rounded-xl p-6 text-white shadow-lg relative overflow-hidden">
+      {/* Animated Pulse Decoration */}
+      <div className="absolute top-0 right-0 w-20 h-20 bg-white/10 rounded-full blur-2xl animate-pulse"></div>
+
+      <h3 className="text-xl font-bold mb-2 flex items-center gap-2">
+        🔥 Special Offer
+      </h3>
+
+      <p className="text-sm/6 mb-4 opacity-90 font-medium">
+        Get <span className="underline decoration-yellow-400 decoration-2 font-bold text-white">12 Months + 3 Months FREE!</span>
+        <br />
+        Premium 4K IPTV. Instant Setup.
+      </p>
+
+      <Link href="/pricing#pricing-cards" className="inline-block w-full text-center bg-white text-blue-600 hover:bg-gray-100 rounded-lg px-4 py-3 font-bold transition-all shadow-md">
+        Claim Offer Now →
       </Link>
     </div>
   );
