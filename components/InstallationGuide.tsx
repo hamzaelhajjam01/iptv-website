@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
+import { FaWindows, FaApple } from 'react-icons/fa';
 
 const InstallationGuide: React.FC = () => {
     const { t } = useLanguage();
@@ -25,30 +26,34 @@ const InstallationGuide: React.FC = () => {
                             <h4 className="text-xl font-bold mb-2 text-white">{t('windowsMethod')}</h4>
                             <p className="text-gray-300">
                                 {t('windowsInstructions')}
-                                <a
-                                    href="https://www.iptvsmarters.com/download/?download=windows_app"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="text-red-500 hover:underline break-all"
-                                    aria-label="Download IPTV Smarters for Windows"
-                                >
-                                    https://www.iptvsmarters.com/download/?download=windows_app
-                                </a>
+                                <div className="mt-4">
+                                    <a
+                                        href="https://www.iptvsmarters.com/download/?download=windows_app"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="inline-flex items-center justify-center w-16 h-16 bg-[#0c1427] border border-blue-500/30 rounded-xl text-blue-400 hover:bg-blue-600 hover:text-white hover:border-transparent transition-all duration-300 shadow-lg shadow-blue-500/10 hover:shadow-blue-500/30"
+                                        aria-label="Download IPTV Smarters for Windows"
+                                    >
+                                        <FaWindows size={32} />
+                                    </a>
+                                </div>
                             </p>
                         </div>
                         <div>
                             <h4 className="text-xl font-bold mb-2 text-white">{t('macMethod')}</h4>
                             <p className="text-gray-300">
                                 {t('macInstructions')}
-                                <a
-                                    href="https://www.iptvsmarters.com/download/?download=mac"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="text-red-500 hover:underline break-all"
-                                    aria-label="Download IPTV Smarters for Mac"
-                                >
-                                    https://www.iptvsmarters.com/download/?download=mac
-                                </a>
+                                <div className="mt-4">
+                                    <a
+                                        href="https://www.iptvsmarters.com/download/?download=mac"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="inline-flex items-center justify-center w-16 h-16 bg-[#0c1427] border border-gray-600/30 rounded-xl text-gray-300 hover:bg-white hover:text-black hover:border-transparent transition-all duration-300 shadow-lg"
+                                        aria-label="Download IPTV Smarters for Mac"
+                                    >
+                                        <FaApple size={32} />
+                                    </a>
+                                </div>
                             </p>
                         </div>
                     </div>
