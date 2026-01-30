@@ -94,8 +94,14 @@ const HelpPage: React.FC = () => {
                                 </svg>
                             </div>
                             <h3 className="text-xl font-bold text-white mb-3">Sideloading</h3>
+                            <p className="text-gray-300 text-sm leading-relaxed mb-3">
+                                Sideloading is the process of installing an application on your device from a source outside the official app store. For example, Amazon Firestick users must sideload IPTV player apps because Amazon doesn't allow them in the official Appstore.
+                            </p>
+                            <p className="text-gray-300 text-sm leading-relaxed mb-3">
+                                This is done using a free tool called "Downloader" and requires enabling a setting called "Apps from Unknown Sources" in your device's Developer Options menu. Sideloading is completely legal and safe when installing trusted applications from reputable providers.
+                            </p>
                             <p className="text-gray-300 text-sm leading-relaxed">
-                                Sideloading is the process of installing an application on your device from a source outside the official app store. For example, Amazon Firestick users must sideload IPTV player apps because Amazon doesn't allow them in the official Appstore. This is done using a free tool called "Downloader" and requires enabling a setting called "Apps from Unknown Sources" in your device's Developer Options menu. Sideloading is completely legal and safe when installing trusted applications from reputable providers. It's called "sideloading" because you're loading the app from the "side" (an external source) rather than from the front door (the official store). The process takes about 2-3 minutes and only needs to be done once per device. Once sideloaded and installed, the app functions exactly like any other app on your system.
+                                It's called "sideloading" because you're loading the app from the "side" (an external source) rather than from the front door (the official store). The process takes about 2-3 minutes and only needs to be done once per device. Once sideloaded and installed, the app functions exactly like any other app on your system.
                             </p>
                         </div>
 
@@ -106,8 +112,14 @@ const HelpPage: React.FC = () => {
                                 </svg>
                             </div>
                             <h3 className="text-xl font-bold text-white mb-3">APK File</h3>
+                            <p className="text-gray-300 text-sm leading-relaxed mb-3">
+                                APK stands for "Android Package Kit," and it's the file format used to distribute and install applications on Android-based devices. Since devices like Amazon Firestick, Android TV boxes, and most Smart TVs run on Android operating systems, their apps are distributed as APK files.
+                            </p>
+                            <p className="text-gray-300 text-sm leading-relaxed mb-3">
+                                When you download an IPTV app like IPTV Smarters or TiviMate, you're downloading an .apk file. Think of it like a .exe file on Windows or a .dmg file on Mac—it's simply the installation package for the software.
+                            </p>
                             <p className="text-gray-300 text-sm leading-relaxed">
-                                APK stands for "Android Package Kit," and it's the file format used to distribute and install applications on Android-based devices. Since devices like Amazon Firestick, Android TV boxes, and most Smart TVs run on Android operating systems, their apps are distributed as APK files. When you download an IPTV app like IPTV Smarters or TiviMate, you're downloading an .apk file. Think of it like a .exe file on Windows or a .dmg file on Mac—it's simply the installation package for the software. APK files are completely normal and standard in the Android ecosystem. After you install the APK, you can (and should) delete the APK file itself to free up storage space; the installed app will continue to work perfectly without it.
+                                APK files are completely normal and standard in the Android ecosystem. After you install the APK, you can (and should) delete the APK file itself to free up storage space; the installed app will continue to work perfectly without it.
                             </p>
                         </div>
 
@@ -118,8 +130,14 @@ const HelpPage: React.FC = () => {
                                 </svg>
                             </div>
                             <h3 className="text-xl font-bold text-white mb-3">M3U Playlist URL</h3>
+                            <p className="text-gray-300 text-sm leading-relaxed mb-3">
+                                An M3U URL is a web link that contains a list of IPTV channels and streams in a specific text format. While StreamVerse primarily uses the more advanced Xtream Codes API for login (which is simpler and includes more features), some older IPTV players or advanced users prefer M3U URLs.
+                            </p>
+                            <p className="text-gray-300 text-sm leading-relaxed mb-3">
+                                The M3U format is essentially a plain text file listing every channel's stream URL, channel name, and logo. If your IPTV player asks for an "M3U URL" or "playlist link" instead of Xtream Codes credentials, contact our support team and we can provide your account's M3U link.
+                            </p>
                             <p className="text-gray-300 text-sm leading-relaxed">
-                                An M3U URL is a web link that contains a list of IPTV channels and streams in a specific text format. While StreamVerse primarily uses the more advanced Xtream Codes API for login (which is simpler and includes more features), some older IPTV players or advanced users prefer M3U URLs. The M3U format is essentially a plain text file listing every channel's stream URL, channel name, and logo. If your IPTV player asks for an "M3U URL" or "playlist link" instead of Xtream Codes credentials, contact our support team and we can provide your account's M3U link. However, we strongly recommend using Xtream Codes when possible because it auto-updates your channel list, integrates the EPG seamlessly, and supports VOD libraries—features that basic M3U playlists lack.
+                                However, we strongly recommend using Xtream Codes when possible because it auto-updates your channel list, integrates the EPG seamlessly, and supports VOD libraries—features that basic M3U playlists lack.
                             </p>
                         </div>
 
@@ -130,8 +148,16 @@ const HelpPage: React.FC = () => {
                                 </svg>
                             </div>
                             <h3 className="text-xl font-bold text-white mb-3">Buffering</h3>
+                            <p className="text-gray-300 text-sm leading-relaxed mb-3">
+                                Buffering occurs when your video stream pauses to load more data before it can continue playing. You'll typically see a spinning loading icon or a frozen picture when this happens. Buffering is almost always caused by one of three issues:
+                            </p>
+                            <ul className="list-disc pl-5 text-gray-300 text-sm leading-relaxed mb-3 text-left">
+                                <li>Slow internet speed (IPTV requires a minimum of 25 Mbps for HD and 50+ Mbps for 4K)</li>
+                                <li>Network congestion (too many devices using your internet simultaneously)</li>
+                                <li>ISP throttling (your internet provider intentionally slowing down streaming traffic)</li>
+                            </ul>
                             <p className="text-gray-300 text-sm leading-relaxed">
-                                Buffering occurs when your video stream pauses to load more data before it can continue playing. You'll typically see a spinning loading icon or a frozen picture when this happens. Buffering is almost always caused by one of three issues: slow internet speed (IPTV requires a minimum of 25 Mbps for HD and 50+ Mbps for 4K), network congestion (too many devices using your internet simultaneously), or ISP throttling (your internet provider intentionally slowing down streaming traffic). To minimize buffering, close bandwidth-heavy applications, connect your streaming device via Ethernet cable instead of Wi-Fi when possible, restart your router periodically, and consider using a VPN if your ISP is known to throttle video streams. Buffering is not typically caused by the IPTV service itself—our servers are robust and high-capacity—but rather by the "last mile" connection between your router and your device.
+                                To minimize buffering, close bandwidth-heavy applications, connect your streaming device via Ethernet cable instead of Wi-Fi when possible, restart your router periodically, and consider using a VPN if your ISP is known to throttle video streams. Buffering is not typically caused by the IPTV service itself—our servers are robust and high-capacity—but rather by the "last mile" connection between your router and your device.
                             </p>
                         </div>
 
@@ -142,8 +168,14 @@ const HelpPage: React.FC = () => {
                                 </svg>
                             </div>
                             <h3 className="text-xl font-bold text-white mb-3">ISP Throttling</h3>
+                            <p className="text-gray-300 text-sm leading-relaxed max-w-3xl mx-auto mb-4">
+                                ISP throttling is when your Internet Service Provider (like Comcast, Spectrum, or AT&T) intentionally slows down certain types of internet traffic—most commonly video streaming. ISPs do this to manage network congestion, discourage "cord-cutting" (since many ISPs also sell cable TV packages and view IPTV as competition), or to push customers toward more expensive data plans.
+                            </p>
+                            <p className="text-gray-300 text-sm leading-relaxed max-w-3xl mx-auto mb-4">
+                                You can detect throttling by running speed tests: if your general internet speed is fine but streaming video consistently buffers, throttling is likely the culprit. The most effective solution is using a reputable VPN service, which encrypts your internet traffic so your ISP can't see that you're streaming video and therefore can't selectively slow it down.
+                            </p>
                             <p className="text-gray-300 text-sm leading-relaxed max-w-3xl mx-auto">
-                                ISP throttling is when your Internet Service Provider (like Comcast, Spectrum, or AT&T) intentionally slows down certain types of internet traffic—most commonly video streaming. ISPs do this to manage network congestion, discourage "cord-cutting" (since many ISPs also sell cable TV packages and view IPTV as competition), or to push customers toward more expensive data plans. You can detect throttling by running speed tests: if your general internet speed is fine but streaming video consistently buffers, throttling is likely the culprit. The most effective solution is using a reputable VPN service, which encrypts your internet traffic so your ISP can't see that you're streaming video and therefore can't selectively slow it down. Many StreamVerse customers in the US and Canada report significant improvements in stream quality after enabling a VPN, particularly during peak evening hours when throttling is most aggressive.
+                                Many StreamVerse customers in the US and Canada report significant improvements in stream quality after enabling a VPN, particularly during peak evening hours when throttling is most aggressive.
                             </p>
                         </div>
                     </div>
@@ -170,36 +202,72 @@ const HelpPage: React.FC = () => {
                     <div className="grid md:grid-cols-2 gap-x-8 gap-y-8">
                         <div>
                             <h3 className="text-xl font-bold text-white mb-3">How do I install the IPTV app on my Firestick?</h3>
+                            <p className="text-gray-300 leading-relaxed mb-4">
+                                Installing an IPTV player app on your Amazon Firestick requires a process called "sideloading" because these apps aren't available in the official Amazon Appstore. Follow these steps:
+                            </p>
+                            <ul className="list-disc pl-5 text-gray-300 leading-relaxed space-y-2 mb-4">
+                                <li>First, go to <strong>Settings → My Fire TV → Developer Options</strong> and enable "Apps from Unknown Sources."</li>
+                                <li>Next, install the free <strong>"Downloader"</strong> app from the Amazon Appstore.</li>
+                                <li>Open Downloader and enter the APK download link provided in your welcome email (or use a popular player like IPTV Smarters Pro). The app will download automatically.</li>
+                                <li>Once downloaded, click "Install" and wait for it to complete. After installation, you can delete the APK file to save space.</li>
+                            </ul>
                             <p className="text-gray-300 leading-relaxed">
-                                Installing an IPTV player app on your Amazon Firestick requires a process called "sideloading" because these apps aren't available in the official Amazon Appstore. First, go to Settings → My Fire TV → Developer Options and enable "Apps from Unknown Sources." Next, install the free "Downloader" app from the Amazon Appstore. Open Downloader and enter the APK download link provided in your welcome email (or use a popular player like IPTV Smarters Pro). The app will download automatically. Once downloaded, click "Install" and wait for it to complete. After installation, you can delete the APK file to save space—the installed app will continue to work. Finally, open your newly installed IPTV player, select "Login with Xtream Codes," and enter the server URL, username, and password from your welcome email. Your channels and VOD library will load automatically within seconds.
+                                Finally, open your newly installed IPTV player, select "Login with Xtream Codes," and enter the server URL, username, and password from your welcome email. Your channels and VOD library will load automatically within seconds.
                             </p>
                         </div>
 
                         <div>
                             <h3 className="text-xl font-bold text-white mb-3">I forgot my login credentials, what should I do?</h3>
+                            <p className="text-gray-300 leading-relaxed mb-4">
+                                Your IPTV login credentials (Xtream Codes server URL, username, and password) were sent to the email address you used when signing up. Search your email inbox for "StreamVerse" or "welcome" to find the original message. If you still can't locate it, check your spam or junk folder as automated emails sometimes get misdirected there.
+                            </p>
                             <p className="text-gray-300 leading-relaxed">
-                                Your IPTV login credentials (Xtream Codes server URL, username, and password) were sent to the email address you used when signing up. Search your email inbox for "StreamVerse" or "welcome" to find the original message. If you still can't locate it, check your spam or junk folder as automated emails sometimes get misdirected there. If you've genuinely lost access to that email or deleted the message, contact our support team via the email button above with your order confirmation number or the email address you used to purchase. We can resend your credentials or reset your password within a few hours. For security reasons, we'll need to verify your identity before issuing new credentials, so having your payment confirmation or original signup details ready will speed up the process.
+                                If you've genuinely lost access to that email or deleted the message, contact our support team via the email button above with your order confirmation number or the email address you used to purchase. We can resend your credentials or reset your password within a few hours. For security reasons, we'll need to verify your identity before issuing new credentials, so having your payment confirmation or original signup details ready will speed up the process.
                             </p>
                         </div>
 
                         <div>
                             <h3 className="text-xl font-bold text-white mb-3">Channels are buffering constantly, how do I fix this?</h3>
+                            <p className="text-gray-300 leading-relaxed mb-4">
+                                Buffering is almost always a local network issue rather than a server problem. Start by running a speed test on the device where you're experiencing buffering—you need at least 25 Mbps for HD channels and 50+ Mbps for 4K content.
+                            </p>
+                            <ul className="list-disc pl-5 text-gray-300 leading-relaxed space-y-2 mb-4">
+                                <li>If your speed is below this, too many devices may be using your internet simultaneously, or your internet plan may be too slow.</li>
+                                <li>Try closing other apps, pausing downloads, and disconnecting unused devices from Wi-Fi.</li>
+                                <li>Switch from Wi-Fi to a wired Ethernet connection if possible, as this provides more stable speeds.</li>
+                                <li>Restart your router by unplugging it for 30 seconds then plugging it back in—this often resolves temporary network congestion.</li>
+                            </ul>
                             <p className="text-gray-300 leading-relaxed">
-                                Buffering is almost always a local network issue rather than a server problem. Start by running a speed test on the device where you're experiencing buffering—you need at least 25 Mbps for HD channels and 50+ Mbps for 4K content. If your speed is below this, too many devices may be using your internet simultaneously, or your internet plan may be too slow. Try closing other apps, pausing downloads, and disconnecting unused devices from Wi-Fi. Switch from Wi-Fi to a wired Ethernet connection if possible, as this provides more stable speeds. Restart your router by unplugging it for 30 seconds then plugging it back in—this often resolves temporary network congestion. If you have consistently fast internet but still experience buffering during prime time (evenings), your ISP may be throttling streaming traffic. The solution is to use a VPN service, which encrypts your traffic so your ISP cannot detect that you're streaming and therefore cannot slow you down. Many users report that enabling a VPN completely eliminates buffering issues.
+                                If you have consistently fast internet but still experience buffering during prime time (evenings), your ISP may be throttling streaming traffic. The solution is to use a VPN service, which encrypts your traffic so your ISP cannot detect that you're streaming and therefore cannot slow you down. Many users report that enabling a VPN completely eliminates buffering issues.
                             </p>
                         </div>
 
                         <div>
                             <h3 className="text-xl font-bold text-white mb-3">Can I watch on multiple devices at the same time?</h3>
+                            <p className="text-gray-300 leading-relaxed mb-4">
+                                Yes, but only if you purchased a multi-connection plan.
+                            </p>
+                            <ul className="list-disc pl-5 text-gray-300 leading-relaxed space-y-2 mb-4">
+                                <li><strong>1 Screen:</strong> Only one device can stream at a time—logging in on a second device will disconnect the first.</li>
+                                <li><strong>2 Screens:</strong> Two devices can watch different channels or content simultaneously without interfering with each other.</li>
+                                <li><strong>3 Screens:</strong> Three simultaneous streams allowed.</li>
+                            </ul>
                             <p className="text-gray-300 leading-relaxed">
-                                Yes, but only if you purchased a multi-connection plan. If you have a "1 Screen" subscription, only one device can stream at a time—logging in on a second device will disconnect the first. If you have "2 Screens," two devices can watch different channels or content simultaneously without interfering with each other. The same applies to "3 Screens" for three simultaneous streams. You can install the IPTV app on as many devices as you want (Fire TV, smartphone, tablet, etc.), but the number that can actively stream at the same time is limited by your plan. If you need additional screens, contact support to upgrade your account for a small additional monthly fee.
+                                You can install the IPTV app on as many devices as you want (Fire TV, smartphone, tablet, etc.), but the number that can actively stream at the same time is limited by your plan. If you need additional screens, contact support to upgrade your account for a small additional monthly fee.
                             </p>
                         </div>
 
                         <div>
                             <h3 className="text-xl font-bold text-white mb-3">Does StreamVerse work with a VPN?</h3>
+                            <p className="text-gray-300 leading-relaxed mb-4">
+                                Yes, StreamVerse works perfectly with VPN services, and we actually recommend using one for multiple reasons:
+                            </p>
+                            <ul className="list-disc pl-5 text-gray-300 leading-relaxed space-y-2 mb-4">
+                                <li>First, a VPN prevents your Internet Service Provider from throttling your streaming speeds, which can significantly improve buffering issues.</li>
+                                <li>Second, a VPN adds privacy by encrypting your internet traffic.</li>
+                            </ul>
                             <p className="text-gray-300 leading-relaxed">
-                                Yes, StreamVerse works perfectly with VPN services, and we actually recommend using one for multiple reasons. First, a VPN prevents your Internet Service Provider from throttling your streaming speeds, which can significantly improve buffering issues. Second, a VPN adds privacy by encrypting your internet traffic. Popular VPN services that work well with IPTV include ExpressVPN, NordVPN, and Surfshark. Simply install the VPN app on your streaming device, connect to a nearby server location, and then open your IPTV player as usual. Everything will work identically, potentially with better performance if your ISP was previously throttling you.
+                                Popular VPN services that work well with IPTV include ExpressVPN, NordVPN, and Surfshark. Simply install the VPN app on your streaming device, connect to a nearby server location, and then open your IPTV player as usual. Everything will work identically, potentially with better performance if your ISP was previously throttling you.
                             </p>
                         </div>
                     </div>
