@@ -107,6 +107,13 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
           initialQuery={q}
           initialPage={page}
         />
+
+        <section className="mt-16 border-t border-gray-800 pt-10 text-gray-400">
+          <h2 className="text-2xl font-bold text-white mb-4">The Definitive Resource for IPTV Streaming</h2>
+          <p className="leading-relaxed">
+            Welcome to the StreamVerse knowledge hub. Here you will find the latest industry news, installation tutorials for Firestick and Android TV, and in-depth reviews of top IPTV players like TiviMate and Smarters Pro. Whether you are looking to cut the cord, fix buffering issues, or understand the difference between M3U and Xtream Codes, our expert guides cover every aspect of modern streaming. Stay updated with our weekly articles on internet privacy, VPN configuration, and digital TV trends.
+          </p>
+        </section>
       </div>
       <BackToTopButton />
     </div>

@@ -146,6 +146,13 @@ const PostPage = async ({ params }: Props) => {
         <RelatedPosts currentSlug={meta.slug} category={meta.category} />
       </div>
 
+      <div className="mt-12 p-6 bg-gray-900 rounded-lg border border-gray-800">
+        <h3 className="text-lg font-semibold text-red-400 mb-2">Important Safety & Legal Disclaimer</h3>
+        <p className="text-sm text-gray-400">
+          StreamVerse does not host, provide, or store any media files or streams. We act solely as a technical guide for educational purposes. Users are responsible for ensuring they comply with all local copyright laws and regulations when accessing content. We strongly recommend using a secure VPN to protect your privacy and prevent ISP throttling while streaming. This site may contain affiliate links to software or services that we trust and use personally. Always prioritize your digital security by using verified applications and secure connections.
+        </p>
+      </div>
+
       <BackToTopButton />
     </>
   );
