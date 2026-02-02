@@ -241,7 +241,7 @@ Please send me the payment details and setup instructions.`;
                         <PricingCard
                             title={t('resellerPlanStarter')}
                             credits="120"
-                            price="402"
+                            price="340"
                             orderText={t('resellerOrderNow')}
                             features={[
                                 t('resellerFeatureCredits').replace('{0}', '120'),
@@ -254,12 +254,12 @@ Please send me the payment details and setup instructions.`;
                                 t('resellerFeatureUpdates'),
                                 t('resellerFeatureActivation')
                             ]}
-                            onOrder={() => handleOrder(t('resellerPlanStarter'), "$402", "120")}
+                            onOrder={() => handleOrder(t('resellerPlanStarter'), "$340", "120")}
                         />
                         <PricingCard
                             title={t('resellerPlanPro')}
                             credits="240"
-                            price="754"
+                            price="500"
                             popular={true}
                             orderText={t('resellerOrderNow')}
                             features={[
@@ -274,12 +274,12 @@ Please send me the payment details and setup instructions.`;
                                 t('resellerFeatureUpdates'),
                                 t('resellerFeatureActivation')
                             ]}
-                            onOrder={() => handleOrder(t('resellerPlanPro'), "$754", "240")}
+                            onOrder={() => handleOrder(t('resellerPlanPro'), "$500", "240")}
                         />
                         <PricingCard
                             title={t('resellerPlanEnterprise')}
                             credits="360"
-                            price="1006"
+                            price="660"
                             orderText={t('resellerOrderNow')}
                             features={[
                                 t('resellerFeatureCredits').replace('{0}', '360'),
@@ -293,7 +293,7 @@ Please send me the payment details and setup instructions.`;
                                 t('resellerFeatureUpdates'),
                                 t('resellerFeatureActivation')
                             ]}
-                            onOrder={() => handleOrder(t('resellerPlanEnterprise'), "$1006", "360")}
+                            onOrder={() => handleOrder(t('resellerPlanEnterprise'), "$660", "360")}
                         />
                     </div>
                 </div>
