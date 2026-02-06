@@ -10,6 +10,7 @@ import AuthorBio from '../../../components/AuthorBio';
 import { TableOfContents } from '../../../components/TableOfContents';
 import { Accordion } from '../../../components/Accordion';
 import { FaqSchema } from '../../../components/FaqSchema';
+import TechnicalGlossary from '../../../src/components/TechnicalGlossary';
 
 type Props = { params: { slug: string } };
 
@@ -130,6 +131,9 @@ const PostPage = async ({ params }: Props) => {
 
         {/* Main Content */}
         <div dangerouslySetInnerHTML={{ __html: contentHtml }} />
+
+        {/* Technical Glossary - SEO Content Injection */}
+        <TechnicalGlossary />
 
         {/* FAQ Section */}
         {faqs && faqs.length > 0 && (
