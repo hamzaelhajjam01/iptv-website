@@ -51,6 +51,38 @@ export default function RootLayout({
             gtag('config', 'AW-17866135580');
           `}
         </Script>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@graph": [
+                {
+                  "@type": "Organization",
+                  "@id": "https://streamversetv.com/#organization",
+                  "name": "StreamVerse TV",
+                  "url": "https://streamversetv.com",
+                  "logo": "https://streamversetv.com/logo.png",
+                  "description": "Premium IPTV streaming service providing live TV, sports, and VOD solutions.",
+                  "contactPoint": {
+                    "@type": "ContactPoint",
+                    "contactType": "customer support",
+                    "email": "support@streamversetv.com"
+                  }
+                },
+                {
+                  "@type": "WebSite",
+                  "@id": "https://streamversetv.com/#website",
+                  "url": "https://streamversetv.com",
+                  "name": "StreamVerse TV",
+                  "publisher": { "@id": "https://streamversetv.com/#organization" },
+                  "keywords": "IPTV, Streaming Service, Live TV, 4K Sports, VOD, Entertainment",
+                  "inLanguage": "en-US"
+                }
+              ]
+            })
+          }}
+        />
       </head>
       <body className={inter.className}>
         <LanguageProvider>
