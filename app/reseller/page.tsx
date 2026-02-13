@@ -314,7 +314,7 @@ Please send me the payment details and setup instructions.`;
                             { name: t('resellerT3Name'), role: t('resellerT3Role'), text: t('resellerT3Text'), img: "https://i.pravatar.cc/150?img=59" }
                         ].map((fb, idx) => (
                             <div key={idx} className="bg-[#0c1427] p-8 rounded-2xl border border-gray-800 flex flex-col">
-                                <p className="text-gray-300 italic mb-6">"{fb.text}"</p>
+                                <p className="text-gray-300 italic mb-6">&quot;{fb.text}&quot;</p>
                                 <div className="mt-auto flex items-center">
                                     <img src={fb.img} alt={fb.name} className="w-12 h-12 rounded-full mr-4 border-2 border-blue-500" />
                                     <div>

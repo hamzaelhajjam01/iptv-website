@@ -134,7 +134,7 @@ const HelpPage: React.FC = () => {
                                 An M3U URL is a web link that contains a list of IPTV channels and streams in a specific text format. While StreamVerse primarily uses the more advanced Xtream Codes API for login (which is simpler and includes more features), some older IPTV players or advanced users prefer M3U URLs.
                             </p>
                             <p className="text-gray-300 text-sm leading-relaxed mb-3">
-                                The M3U format is essentially a plain text file listing every channel's stream URL, channel name, and logo. If your IPTV player asks for an "M3U URL" or "playlist link" instead of Xtream Codes credentials, contact our support team and we can provide your account's M3U link.
+                                The M3U format is essentially a plain text file listing every channel&apos;s stream URL, channel name, and logo. If your IPTV player asks for an &quot;M3U URL&quot; or &quot;playlist link&quot; instead of Xtream Codes credentials, contact our support team and we can provide your account&apos;s M3U link.
                             </p>
                             <p className="text-gray-300 text-sm leading-relaxed">
                                 However, we strongly recommend using Xtream Codes when possible because it auto-updates your channel list, integrates the EPG seamlessly, and supports VOD libraries—features that basic M3U playlists lack.
@@ -149,7 +149,7 @@ const HelpPage: React.FC = () => {
                             </div>
                             <h3 className="text-xl font-bold text-white mb-3">Buffering</h3>
                             <p className="text-gray-300 text-sm leading-relaxed mb-3">
-                                Buffering occurs when your video stream pauses to load more data before it can continue playing. You'll typically see a spinning loading icon or a frozen picture when this happens. Buffering is almost always caused by one of three issues:
+                                Buffering occurs when your video stream pauses to load more data before it can continue playing. You&apos;ll typically see a spinning loading icon or a frozen picture when this happens. Buffering is almost always caused by one of three issues:
                             </p>
                             <ul className="list-disc pl-5 text-gray-300 text-sm leading-relaxed mb-3 text-left">
                                 <li>Slow internet speed (IPTV requires a minimum of 25 Mbps for HD and 50+ Mbps for 4K)</li>
@@ -157,7 +157,7 @@ const HelpPage: React.FC = () => {
                                 <li>ISP throttling (your internet provider intentionally slowing down streaming traffic)</li>
                             </ul>
                             <p className="text-gray-300 text-sm leading-relaxed">
-                                To minimize buffering, close bandwidth-heavy applications, connect your streaming device via Ethernet cable instead of Wi-Fi when possible, restart your router periodically, and consider using a VPN if your ISP is known to throttle video streams. Buffering is not typically caused by the IPTV service itself—our servers are robust and high-capacity—but rather by the "last mile" connection between your router and your device.
+                                To minimize buffering, close bandwidth-heavy applications, connect your streaming device via Ethernet cable instead of Wi-Fi when possible, restart your router periodically, and consider using a VPN if your ISP is known to throttle video streams. Buffering is not typically caused by the IPTV service itself—our servers are robust and high-capacity—but rather by the &quot;last mile&quot; connection between your router and your device.
                             </p>
                         </div>
 
@@ -169,10 +169,10 @@ const HelpPage: React.FC = () => {
                             </div>
                             <h3 className="text-xl font-bold text-white mb-3">ISP Throttling</h3>
                             <p className="text-gray-300 text-sm leading-relaxed max-w-3xl mx-auto mb-4">
-                                ISP throttling is when your Internet Service Provider (like Comcast, Spectrum, or AT&T) intentionally slows down certain types of internet traffic—most commonly video streaming. ISPs do this to manage network congestion, discourage "cord-cutting" (since many ISPs also sell cable TV packages and view IPTV as competition), or to push customers toward more expensive data plans.
+                                ISP throttling is when your Internet Service Provider (like Comcast, Spectrum, or AT&T) intentionally slows down certain types of internet traffic—most commonly video streaming. ISPs do this to manage network congestion, discourage &quot;cord-cutting&quot; (since many ISPs also sell cable TV packages and view IPTV as competition), or to push customers toward more expensive data plans.
                             </p>
                             <p className="text-gray-300 text-sm leading-relaxed max-w-3xl mx-auto mb-4">
-                                You can detect throttling by running speed tests: if your general internet speed is fine but streaming video consistently buffers, throttling is likely the culprit. The most effective solution is using a reputable VPN service, which encrypts your internet traffic so your ISP can't see that you're streaming video and therefore can't selectively slow it down.
+                                You can detect throttling by running speed tests: if your general internet speed is fine but streaming video consistently buffers, throttling is likely the culprit. The most effective solution is using a reputable VPN service, which encrypts your internet traffic so your ISP can&apos;t see that you&apos;re streaming video and therefore can&apos;t selectively slow it down.
                             </p>
                             <p className="text-gray-300 text-sm leading-relaxed max-w-3xl mx-auto">
                                 Many StreamVerse customers in the US and Canada report significant improvements in stream quality after enabling a VPN, particularly during peak evening hours when throttling is most aggressive.
@@ -203,33 +203,33 @@ const HelpPage: React.FC = () => {
                         <div>
                             <h3 className="text-xl font-bold text-white mb-3">How do I install the IPTV app on my Firestick?</h3>
                             <p className="text-gray-300 leading-relaxed mb-4">
-                                Installing an IPTV player app on your Amazon Firestick requires a process called "sideloading" because these apps aren't available in the official Amazon Appstore. Follow these steps:
+                                Installing an IPTV player app on your Amazon Firestick requires a process called &quot;sideloading&quot; because these apps aren&apos;t available in the official Amazon Appstore. Follow these steps:
                             </p>
                             <ul className="list-disc pl-5 text-gray-300 leading-relaxed space-y-2 mb-4">
-                                <li>First, go to <strong>Settings → My Fire TV → Developer Options</strong> and enable "Apps from Unknown Sources."</li>
-                                <li>Next, install the free <strong>"Downloader"</strong> app from the Amazon Appstore.</li>
+                                <li>First, go to <strong>Settings → My Fire TV → Developer Options</strong> and enable &quot;Apps from Unknown Sources.&quot;</li>
+                                <li>Next, install the free <strong>&quot;Downloader&quot;</strong> app from the Amazon Appstore.</li>
                                 <li>Open Downloader and enter the APK download link provided in your welcome email (or use a popular player like IPTV Smarters Pro). The app will download automatically.</li>
-                                <li>Once downloaded, click "Install" and wait for it to complete. After installation, you can delete the APK file to save space.</li>
+                                <li>Once downloaded, click &quot;Install&quot; and wait for it to complete. After installation, you can delete the APK file to save space.</li>
                             </ul>
                             <p className="text-gray-300 leading-relaxed">
-                                Finally, open your newly installed IPTV player, select "Login with Xtream Codes," and enter the server URL, username, and password from your welcome email. Your channels and VOD library will load automatically within seconds.
+                                Finally, open your newly installed IPTV player, select &quot;Login with Xtream Codes,&quot; and enter the server URL, username, and password from your welcome email. Your channels and VOD library will load automatically within seconds.
                             </p>
                         </div>
 
                         <div>
                             <h3 className="text-xl font-bold text-white mb-3">I forgot my login credentials, what should I do?</h3>
                             <p className="text-gray-300 leading-relaxed mb-4">
-                                Your IPTV login credentials (Xtream Codes server URL, username, and password) were sent to the email address you used when signing up. Search your email inbox for "StreamVerse" or "welcome" to find the original message. If you still can't locate it, check your spam or junk folder as automated emails sometimes get misdirected there.
+                                Your IPTV login credentials (Xtream Codes server URL, username, and password) were sent to the email address you used when signing up. Search your email inbox for &quot;StreamVerse&quot; or &quot;welcome&quot; to find the original message. If you still can&apos;t locate it, check your spam or junk folder as automated emails sometimes get misdirected there.
                             </p>
                             <p className="text-gray-300 leading-relaxed">
-                                If you've genuinely lost access to that email or deleted the message, contact our support team via the email button above with your order confirmation number or the email address you used to purchase. We can resend your credentials or reset your password within a few hours. For security reasons, we'll need to verify your identity before issuing new credentials, so having your payment confirmation or original signup details ready will speed up the process.
+                                If you&apos;ve genuinely lost access to that email or deleted the message, contact our support team via the email button above with your order confirmation number or the email address you used to purchase. We can resend your credentials or reset your password within a few hours. For security reasons, we&apos;ll need to verify your identity before issuing new credentials, so having your payment confirmation or original signup details ready will speed up the process.
                             </p>
                         </div>
 
                         <div>
                             <h3 className="text-xl font-bold text-white mb-3">Channels are buffering constantly, how do I fix this?</h3>
                             <p className="text-gray-300 leading-relaxed mb-4">
-                                Buffering is almost always a local network issue rather than a server problem. Start by running a speed test on the device where you're experiencing buffering—you need at least 25 Mbps for HD channels and 50+ Mbps for 4K content.
+                                Buffering is almost always a local network issue rather than a server problem. Start by running a speed test on the device where you&apos;re experiencing buffering—you need at least 25 Mbps for HD channels and 50+ Mbps for 4K content.
                             </p>
                             <ul className="list-disc pl-5 text-gray-300 leading-relaxed space-y-2 mb-4">
                                 <li>If your speed is below this, too many devices may be using your internet simultaneously, or your internet plan may be too slow.</li>
@@ -238,7 +238,7 @@ const HelpPage: React.FC = () => {
                                 <li>Restart your router by unplugging it for 30 seconds then plugging it back in—this often resolves temporary network congestion.</li>
                             </ul>
                             <p className="text-gray-300 leading-relaxed">
-                                If you have consistently fast internet but still experience buffering during prime time (evenings), your ISP may be throttling streaming traffic. The solution is to use a VPN service, which encrypts your traffic so your ISP cannot detect that you're streaming and therefore cannot slow you down. Many users report that enabling a VPN completely eliminates buffering issues.
+                                If you have consistently fast internet but still experience buffering during prime time (evenings), your ISP may be throttling streaming traffic. The solution is to use a VPN service, which encrypts your traffic so your ISP cannot detect that you&apos;re streaming and therefore cannot slow you down. Many users report that enabling a VPN completely eliminates buffering issues.
                             </p>
                         </div>
 

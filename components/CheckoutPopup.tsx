@@ -126,7 +126,7 @@ Please send me the payment details and setup instructions.`;
             {/* Header */}
             <div className="mb-5 pr-10" id="checkout-heading">
               <h2 className="text-xl font-bold text-white mb-1">Complete Your Order</h2>
-              <p className="text-gray-400 text-xs">You're one step away from premium entertainment</p>
+              <p className="text-gray-400 text-xs">You&apos;re one step away from premium entertainment</p>
             </div>
 
             {/* Plan Summary */}
@@ -410,7 +410,7 @@ Please send me the payment details and setup instructions.`;
 
             {/* Footer Note */}
             <p className="text-[10px] text-gray-500 text-center mt-3">
-              🔒 Your information is secure. We'll contact you via WhatsApp to complete your order.
+              🔒 Your information is secure. We&apos;ll contact you via WhatsApp to complete your order.
             </p>
             <button
               type="button"

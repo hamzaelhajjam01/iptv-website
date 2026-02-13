@@ -203,7 +203,7 @@ const PricingPage: React.FC = () => {
                             </div>
                             <h3 className="text-xl font-bold text-white mb-3">Multi-Connection IPTV</h3>
                             <p className="text-gray-300 text-sm leading-relaxed mb-3">
-                                Multi-connection refers to the ability to stream content on multiple devices simultaneously using a single IPTV subscription. When you select 2 or 3 screens in our pricing options, you're allowing that many devices to watch different channels or content at the exact same time.
+                                Multi-connection refers to the ability to stream content on multiple devices simultaneously using a single IPTV subscription. When you select 2 or 3 screens in our pricing options, you&apos;re allowing that many devices to watch different channels or content at the exact same time.
                             </p>
                             <p className="text-gray-300 text-sm leading-relaxed mb-3">
                                 For example, with a 2-screen connection, one family member can watch live sports in the living room while another watches a movie in the bedroom. This is fundamentally different from simply logging into multiple devices—those devices can actually be used concurrently without interrupting each other.
@@ -224,7 +224,7 @@ const PricingPage: React.FC = () => {
                                 VOD stands for Video On Demand, which is essentially your personal streaming library built into the IPTV service—similar to Netflix or Hulu, but included in your subscription at no extra cost. Unlike Live TV channels that broadcast on a fixed schedule, VOD content consists of movies and TV series that you can start, pause, rewind, and watch whenever you want.
                             </p>
                             <p className="text-gray-300 text-sm leading-relaxed mb-3">
-                                Our VOD library contains over 140,000 titles spanning multiple genres, languages, and release years. This means you're getting both a full cable replacement (live channels) and a streaming service replacement (on-demand content) in one package.
+                                Our VOD library contains over 140,000 titles spanning multiple genres, languages, and release years. This means you&apos;re getting both a full cable replacement (live channels) and a streaming service replacement (on-demand content) in one package.
                             </p>
                             <p className="text-gray-300 text-sm leading-relaxed">
                                 VOD is organized by categories such as Action, Comedy, Drama, 4K Movies, and TV Series, with new releases added regularly. You never pay per rental or per title—unlimited access to the entire library is included in every subscription tier.
@@ -239,13 +239,13 @@ const PricingPage: React.FC = () => {
                             </div>
                             <h3 className="text-xl font-bold text-white mb-3">EPG (Electronic Program Guide)</h3>
                             <p className="text-gray-300 text-sm leading-relaxed mb-3">
-                                An Electronic Program Guide (EPG) is the digital TV guide that shows you what's currently playing and what's coming up next on each channel, just like the channel guide on cable or satellite TV. A high-quality EPG displays program names, descriptions, start times, and duration for every channel in an easy-to-navigate interface.
+                                An Electronic Program Guide (EPG) is the digital TV guide that shows you what&apos;s currently playing and what&apos;s coming up next on each channel, just like the channel guide on cable or satellite TV. A high-quality EPG displays program names, descriptions, start times, and duration for every channel in an easy-to-navigate interface.
                             </p>
                             <p className="text-gray-300 text-sm leading-relaxed mb-3">
-                                This is crucial for IPTV usability because without an EPG, you'd have to manually flip through channels to see what's on. StreamVerse provides a comprehensive EPG that covers all major channels with accurate, real-time data that's updated automatically.
+                                This is crucial for IPTV usability because without an EPG, you&apos;d have to manually flip through channels to see what&apos;s on. StreamVerse provides a comprehensive EPG that covers all major channels with accurate, real-time data that&apos;s updated automatically.
                             </p>
                             <p className="text-gray-300 text-sm leading-relaxed">
-                                The EPG also enables advanced features like "catch-up TV," which allows you to go back and watch shows that aired in the past 3-7 days, and "TV guide search," where you can find specific programs across all channels instantly.
+                                The EPG also enables advanced features like &quot;catch-up TV,&quot; which allows you to go back and watch shows that aired in the past 3-7 days, and &quot;TV guide search,&quot; where you can find specific programs across all channels instantly.
                             </p>
                         </div>
 
@@ -257,13 +257,13 @@ const PricingPage: React.FC = () => {
                             </div>
                             <h3 className="text-xl font-bold text-white mb-3">Xtream Codes API</h3>
                             <p className="text-gray-300 text-sm leading-relaxed mb-3">
-                                Xtream Codes API is the technical protocol that IPTV players (like IPTV Smarters, TiviMate, or other apps) use to connect to your IPTV service and load your channels, VOD content, and EPG data. When you receive your login credentials in the welcome email, you'll see three key pieces of information: a server URL, a username, and a password.
+                                Xtream Codes API is the technical protocol that IPTV players (like IPTV Smarters, TiviMate, or other apps) use to connect to your IPTV service and load your channels, VOD content, and EPG data. When you receive your login credentials in the welcome email, you&apos;ll see three key pieces of information: a server URL, a username, and a password.
                             </p>
                             <p className="text-gray-300 text-sm leading-relaxed mb-3">
                                 These credentials use the Xtream Codes format, which is the industry standard for professional IPTV services. You simply enter these details once into your IPTV player app, and the app automatically loads everything—your live channel list, VOD library, and program guide—without any manual configuration.
                             </p>
                             <p className="text-gray-300 text-sm leading-relaxed">
-                                This makes setup incredibly simple and ensures compatibility with all major IPTV player apps across every device platform. You'll never need to manually enter M3U playlist URLs or edit configuration files.
+                                This makes setup incredibly simple and ensures compatibility with all major IPTV player apps across every device platform. You&apos;ll never need to manually enter M3U playlist URLs or edit configuration files.
                             </p>
                         </div>
                     </div>
@@ -280,7 +280,7 @@ const PricingPage: React.FC = () => {
                                 Our pricing is significantly lower than traditional cable or satellite TV for several fundamental reasons:
                             </p>
                             <ul className="list-disc pl-5 text-gray-300 leading-relaxed space-y-2 mb-4">
-                                <li><strong>No Infrastructure Costs:</strong> We don't have the infrastructure costs that cable companies face—there's no need to maintain physical cable lines, satellite dishes, or regional service centers.</li>
+                                <li><strong>No Infrastructure Costs:</strong> We don&apos;t have the infrastructure costs that cable companies face—there&apos;s no need to maintain physical cable lines, satellite dishes, or regional service centers.</li>
                                 <li><strong>No Hardware Rentals:</strong> Cable providers typically charge $10-15 per month for each cable box, whereas IPTV works on devices you already own like Firesticks, smartphones, tablets, and Smart TVs.</li>
                                 <li><strong>No Installation Fees:</strong> We eliminate installation fees and technician visits entirely; setup is completely self-service and takes only 5 minutes using our step-by-step guides.</li>
                                 <li><strong>Efficient Delivery:</strong> Our content delivery via internet streaming is more efficient than traditional broadcast methods.</li>
@@ -291,7 +291,7 @@ const PricingPage: React.FC = () => {
                         </div>
 
                         <div>
-                            <h3 className="text-xl font-bold text-white mb-3">What does "multi-connection" mean and do I need it?</h3>
+                            <h3 className="text-xl font-bold text-white mb-3">What does &quot;multi-connection&quot; mean and do I need it?</h3>
                             <p className="text-gray-300 leading-relaxed mb-4">
                                 Multi-connection refers to the number of devices that can stream content simultaneously using your subscription.
                             </p>
@@ -310,13 +310,13 @@ const PricingPage: React.FC = () => {
                         <div>
                             <h3 className="text-xl font-bold text-white mb-3">How do I pay and when does my service activate?</h3>
                             <p className="text-gray-300 leading-relaxed mb-4">
-                                Payment is simple and secure. When you click "Subscribe Now" on any plan, you'll open a checkout popup that allows you to complete payment via WhatsApp or direct contact with our billing team. We accept all major payment methods including credit cards, PayPal, cryptocurrency, and international payment systems.
+                                Payment is simple and secure. When you click &quot;Subscribe Now&quot; on any plan, you&apos;ll open a checkout popup that allows you to complete payment via WhatsApp or direct contact with our billing team. We accept all major payment methods including credit cards, PayPal, cryptocurrency, and international payment systems.
                             </p>
                             <p className="text-gray-300 leading-relaxed mb-4">
-                                Your service activates within minutes of payment confirmation—not hours or days. You'll immediately receive a welcome email containing your Xtream Codes login credentials (server URL, username, and password) and links to download the recommended IPTV player apps for your devices.
+                                Your service activates within minutes of payment confirmation—not hours or days. You&apos;ll immediately receive a welcome email containing your Xtream Codes login credentials (server URL, username, and password) and links to download the recommended IPTV player apps for your devices.
                             </p>
                             <p className="text-gray-300 leading-relaxed">
-                                From the moment you receive that email, you can start watching. There are no activation fees, no setup charges, and no hidden costs. Your subscription period starts the day you activate, and you'll receive a reminder email 3 days before your plan expires so you have time to renew if you wish to continue service.
+                                From the moment you receive that email, you can start watching. There are no activation fees, no setup charges, and no hidden costs. Your subscription period starts the day you activate, and you&apos;ll receive a reminder email 3 days before your plan expires so you have time to renew if you wish to continue service.
                             </p>
                         </div>
 
@@ -326,23 +326,23 @@ const PricingPage: React.FC = () => {
                                 Yes, plan changes are flexible and handled on a case-by-case basis. If you want to add extra screens (upgrade from 1 to 2 screens, for example), contact our support team and we can activate additional connections on your existing account for a prorated fee based on your remaining subscription time.
                             </p>
                             <p className="text-gray-300 leading-relaxed">
-                                If you'd like to switch from a monthly plan to a longer-term plan to save money, we can credit your unused time toward the new plan. Downgrades (reducing screens or switching to a shorter plan) are processed at renewal time to keep billing simple.
+                                If you&apos;d like to switch from a monthly plan to a longer-term plan to save money, we can credit your unused time toward the new plan. Downgrades (reducing screens or switching to a shorter plan) are processed at renewal time to keep billing simple.
                             </p>
                             <p className="text-gray-300 leading-relaxed">
-                                The key point is that you're never locked in—if your situation changes, we work with you to adjust your service rather than forcing you to keep paying for features you don't need.
+                                The key point is that you&apos;re never locked in—if your situation changes, we work with you to adjust your service rather than forcing you to keep paying for features you don&apos;t need.
                             </p>
                         </div>
 
                         <div>
-                            <h3 className="text-xl font-bold text-white mb-3">What happens if I don't renew after my subscription ends?</h3>
+                            <h3 className="text-xl font-bold text-white mb-3">What happens if I don&apos;t renew after my subscription ends?</h3>
                             <p className="text-gray-300 leading-relaxed mb-4">
-                                When your subscription period ends, your service will simply stop working—your login credentials will no longer authenticate and you won't be able to stream. There are no penalties, no cancellation fees, and no automatic renewals that charge your card without permission.
+                                When your subscription period ends, your service will simply stop working—your login credentials will no longer authenticate and you won&apos;t be able to stream. There are no penalties, no cancellation fees, and no automatic renewals that charge your card without permission.
                             </p>
                             <p className="text-gray-300 leading-relaxed mb-4">
-                                Your account remains in our system for 30 days after expiration, so if you decide to renew within that window, we can reactivate your existing account with the same credentials. After 30 days of inactivity, the account is permanently deleted for security and privacy reasons, and you'd need to sign up as a new customer if you want to return.
+                                Your account remains in our system for 30 days after expiration, so if you decide to renew within that window, we can reactivate your existing account with the same credentials. After 30 days of inactivity, the account is permanently deleted for security and privacy reasons, and you&apos;d need to sign up as a new customer if you want to return.
                             </p>
                             <p className="text-gray-300 leading-relaxed">
-                                This no-commitment approach means you're only paying for the service when you're actively using it, with complete freedom to start and stop as your needs change.
+                                This no-commitment approach means you&apos;re only paying for the service when you&apos;re actively using it, with complete freedom to start and stop as your needs change.
                             </p>
                         </div>
                     </div>

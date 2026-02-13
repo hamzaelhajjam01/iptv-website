@@ -109,7 +109,7 @@ const BestIPTVFirestickPage: React.FC = () => {
                                     Enable Apps from Unknown Sources
                                 </h3>
                                 <p className="text-gray-300 leading-relaxed mb-4">
-                                    This is a critical first step that allows your Firestick to install third-party IPTV applications. Don't worry—this is completely safe and reversible.
+                                    This is a critical first step that allows your Firestick to install third-party IPTV applications. Don&apos;t worry—this is completely safe and reversible.
                                 </p>
                                 <ul className="list-disc pl-8 text-gray-300 space-y-2">
                                     <li>From your Firestick home screen, navigate to <span className="text-white font-semibold">Settings</span> (gear icon at the top)</li>
@@ -120,7 +120,7 @@ const BestIPTVFirestickPage: React.FC = () => {
                                 </ul>
                                 <div className="mt-4 bg-blue-900/30 border border-blue-500/50 rounded-lg p-4">
                                     <p className="text-blue-200 text-sm">
-                                        <strong>💡 Pro Tip:</strong> If you don't see "Developer Options," you may need to enable it first by going to Settings → My Fire TV → About → Click on "Fire TV Stick" 7 times rapidly.
+                                        <strong>💡 Pro Tip:</strong> If you don&apos;t see &quot;Developer Options,&quot; you may need to enable it first by going to Settings → My Fire TV → About → Click on &quot;Fire TV Stick&quot; 7 times rapidly.
                                     </p>
                                 </div>
                             </div>
@@ -143,12 +143,12 @@ const BestIPTVFirestickPage: React.FC = () => {
                                     Install the Downloader App
                                 </h3>
                                 <p className="text-gray-300 leading-relaxed mb-4">
-                                    The Downloader app is the easiest way to sideload IPTV applications onto your Firestick. It's available directly from the Amazon App Store.
+                                    The Downloader app is the easiest way to sideload IPTV applications onto your Firestick. It&apos;s available directly from the Amazon App Store.
                                 </p>
                                 <ul className="list-disc pl-8 text-gray-300 space-y-2">
                                     <li>Return to the Firestick home screen</li>
                                     <li>Click the <span className="text-white font-semibold">Search</span> icon (magnifying glass)</li>
-                                    <li>Type <span className="text-white font-semibold">"Downloader"</span> using the on-screen keyboard</li>
+                                    <li>Type <span className="text-white font-semibold">&quot;Downloader&quot;</span> using the on-screen keyboard</li>
                                     <li>Select the <span className="text-white font-semibold">Downloader</span> app by AFTVnews.com</li>
                                     <li>Click <span className="text-white font-semibold">Download</span> or <span className="text-white font-semibold">Get</span>, then wait for installation to complete</li>
                                     <li>Click <span className="text-white font-semibold">Open</span> when finished</li>
@@ -169,12 +169,12 @@ const BestIPTVFirestickPage: React.FC = () => {
                                     <li>In the URL field, enter: <span className="bg-gray-900 text-cyan-400 font-mono px-2 py-1 rounded">https://iptvsmarters.app</span></li>
                                     <li>Click <span className="text-white font-semibold">Go</span> and wait for the APK file to download</li>
                                     <li>When download completes, click <span className="text-white font-semibold">Install</span></li>
-                                    <li>After installation, click <span className="text-white font-semibold">Done</span> (not "Open" yet)</li>
+                                    <li>After installation, click <span className="text-white font-semibold">Done</span> (not &quot;Open&quot; yet)</li>
                                     <li>When Downloader asks to delete the file, click <span className="text-white font-semibold">Delete</span> to free up space</li>
                                 </ul>
                                 <div className="mt-4 bg-yellow-900/30 border border-yellow-500/50 rounded-lg p-4">
                                     <p className="text-yellow-200 text-sm">
-                                        <strong>⚠️ Important:</strong> If you see a "Parse Error" during installation, your Firestick may have downloaded a corrupted file. Delete the APK in Downloader and try downloading again with a stable internet connection.
+                                        <strong>⚠️ Important:</strong> If you see a &quot;Parse Error&quot; during installation, your Firestick may have downloaded a corrupted file. Delete the APK in Downloader and try downloading again with a stable internet connection.
                                     </p>
                                 </div>
                             </div>
@@ -186,7 +186,7 @@ const BestIPTVFirestickPage: React.FC = () => {
                                     Enter Your Xtream Codes Credentials
                                 </h3>
                                 <p className="text-gray-300 leading-relaxed mb-4">
-                                    After subscribing to StreamVerse, you'll receive an email with your login credentials. Here's how to activate your service:
+                                    After subscribing to StreamVerse, you&apos;ll receive an email with your login credentials. Here&apos;s how to activate your service:
                                 </p>
                                 <ul className="list-disc pl-8 text-gray-300 space-y-2">
                                     <li>Open <span className="text-white font-semibold">IPTV Smarters Pro</span> from your Firestick apps</li>
@@ -198,7 +198,7 @@ const BestIPTVFirestickPage: React.FC = () => {
                                 </ul>
                                 <div className="mt-4 bg-green-900/30 border border-green-500/50 rounded-lg p-4">
                                     <p className="text-green-200 text-sm">
-                                        <strong>✅ Success Indicator:</strong> Once logged in, you should see categories like "Live TV," "Movies," "Series," and "Catch-up" in the main menu. If you see these, your setup is complete!
+                                        <strong>✅ Success Indicator:</strong> Once logged in, you should see categories like &quot;Live TV,&quot; &quot;Movies,&quot; &quot;Series,&quot; and &quot;Catch-up&quot; in the main menu. If you see these, your setup is complete!
                                     </p>
                                 </div>
                             </div>
@@ -259,7 +259,7 @@ const BestIPTVFirestickPage: React.FC = () => {
                                     <div>
                                         <h3 className="text-2xl font-bold text-white mb-3">No-Buffering Technology</h3>
                                         <p className="text-gray-300 leading-relaxed">
-                                            Our <span className="text-white font-semibold">Anti-Freeze Technology</span> ensures smooth streaming even during peak hours. With <span className="text-white font-semibold">99.9% uptime</span> and adaptive bitrate streaming, you'll never miss a crucial moment in live sports or your favorite shows. Our servers are optimized specifically for Firestick's hardware capabilities.
+                                            Our <span className="text-white font-semibold">Anti-Freeze Technology</span> ensures smooth streaming even during peak hours. With <span className="text-white font-semibold">99.9% uptime</span> and adaptive bitrate streaming, you&apos;ll never miss a crucial moment in live sports or your favorite shows. Our servers are optimized specifically for Firestick&apos;s hardware capabilities.
                                         </p>
                                     </div>
                                 </div>
@@ -590,7 +590,7 @@ const BestIPTVFirestickPage: React.FC = () => {
                             Start Streaming 50k+ Channels on Firestick in 5 Minutes
                         </h2>
                         <p className="text-xl text-blue-100 mb-8 max-w-3xl mx-auto">
-                            Join 50,000+ happy streamers who've already made the switch. Get 4K quality, 99.9% uptime, and instant setup today.
+                            Join 50,000+ happy streamers who&apos;ve already made the switch. Get 4K quality, 99.9% uptime, and instant setup today.
                         </p>
                         <a
                             href="#pricing"

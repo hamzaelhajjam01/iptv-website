@@ -4,7 +4,7 @@ export const CATEGORY_CONTENT: Record<string, React.ReactNode> = {
     'Local TV': (
         <div className="space-y-4 text-left">
             <p className="text-gray-300 leading-relaxed">
-                Stream local news, weather, and regional sports networks (RSN) directly via IPTV without expensive cable packages. Unlike standard OTA antennas, our IPTV service delivers crystal-clear feeds of major affiliates like ABC, CBS, NBC, and FOX, regardless of your physical location. Stay connected to your community's breaking news and daily forecasts while enjoying the flexibility of watching on Firestick, Android TV, or mobile devices. This section guides you through finding your specific local channels and troubleshooting regional restrictions.
+                Stream local news, weather, and regional sports networks (RSN) directly via IPTV without expensive cable packages. Unlike standard OTA antennas, our IPTV service delivers crystal-clear feeds of major affiliates like ABC, CBS, NBC, and FOX, regardless of your physical location. Stay connected to your community&apos;s breaking news and daily forecasts while enjoying the flexibility of watching on Firestick, Android TV, or mobile devices. This section guides you through finding your specific local channels and troubleshooting regional restrictions.
             </p>
         </div>
     ),
@@ -25,7 +25,7 @@ export const CATEGORY_CONTENT: Record<string, React.ReactNode> = {
     'General Info': (
         <div className="space-y-4 text-left">
             <p className="text-gray-300 leading-relaxed">
-                New to IPTV? Start here. This section covers the fundamental concepts of Internet Protocol Television, explaining how it differs from traditional cable and satellite. Learn about the legality of streaming in your region, the minimum internet speed requirements for buffer-free 4K viewing, and which devices offer the best performance. We break down technical jargon like 'M3U', 'Xtream Codes', and 'MAC Address' into simple terms so you can manage your subscription with confidence.
+                New to IPTV? Start here. This section covers the fundamental concepts of Internet Protocol Television, explaining how it differs from traditional cable and satellite. Learn about the legality of streaming in your region, the minimum internet speed requirements for buffer-free 4K viewing, and which devices offer the best performance. We break down technical jargon like &apos;M3U&apos;, &apos;Xtream Codes&apos;, and &apos;MAC Address&apos; into simple terms so you can manage your subscription with confidence.
             </p>
         </div>
     ),
@@ -46,28 +46,28 @@ export const CATEGORY_CONTENT: Record<string, React.ReactNode> = {
     'Best Of': (
         <div className="space-y-4 text-left">
             <p className="text-gray-300 leading-relaxed">
-                Don't waste money on bad hardware or apps. Our 'Best Of' lists are curated based on rigorous testing and performance benchmarks. Discover the Top 5 IPTV Players for 2026, the Best Android TV Boxes under $50, and the most reliable VPNs for privacy and speed. We update these rankings monthly to reflect the latest software updates and device releases, ensuring you always have the best equipment for your setup.
+                Don&apos;t waste money on bad hardware or apps. Our &apos;Best Of&apos; lists are curated based on rigorous testing and performance benchmarks. Discover the Top 5 IPTV Players for 2026, the Best Android TV Boxes under $50, and the most reliable VPNs for privacy and speed. We update these rankings monthly to reflect the latest software updates and device releases, ensuring you always have the best equipment for your setup.
             </p>
         </div>
     ),
     'Troubleshooting': (
         <div className="space-y-4 text-left">
             <p className="text-gray-300 leading-relaxed">
-                Fix common streaming errors instantly. This section is a dedicated repair guide for issues like 'Download Failed', 'Audio Out of Sync', 'Black Screen', and 'Login Authentication Errors'. We provide flowcharts and step-by-step fixes for specific error codes on Firestick, TiviMate, and Smarters Pro. Stop guessing and start watching again by following our proven debugging procedures.
+                Fix common streaming errors instantly. This section is a dedicated repair guide for issues like &apos;Download Failed&apos;, &apos;Audio Out of Sync&apos;, &apos;Black Screen&apos;, and &apos;Login Authentication Errors&apos;. We provide flowcharts and step-by-step fixes for specific error codes on Firestick, TiviMate, and Smarters Pro. Stop guessing and start watching again by following our proven debugging procedures.
             </p>
         </div>
     ),
     'Guides': (
         <div className="space-y-4 text-left">
             <p className="text-gray-300 leading-relaxed">
-                Versatile 'How-To' content for every scenario. Whether you are trying to watch IPTV on a Windows PC via VLC, set up streaming on an Xbox or PlayStation, or cast content from your phone to a Smart TV, these guides cover non-standard setups. We also include lifestyle guides, such as 'How to Watch IPTV in a Hotel' and 'Parental Control Configurations' to keep your family safe.
+                Versatile &apos;How-To&apos; content for every scenario. Whether you are trying to watch IPTV on a Windows PC via VLC, set up streaming on an Xbox or PlayStation, or cast content from your phone to a Smart TV, these guides cover non-standard setups. We also include lifestyle guides, such as &apos;How to Watch IPTV in a Hotel&apos; and &apos;Parental Control Configurations&apos; to keep your family safe.
             </p>
         </div>
     ),
     'Comparisons': (
         <div className="space-y-4 text-left">
             <p className="text-gray-300 leading-relaxed">
-                Make informed decisions with our head-to-head battles. We pit top services and apps against each other: 'TiviMate vs. Smarters Pro', 'IPTV vs. Cable', 'FuboTV vs. Private IPTV'. These unbiased comparisons analyze price, channel count, interface speed, and reliability. We stress-test features so you can choose the platform that perfectly matches your viewing habits and budget.
+                Make informed decisions with our head-to-head battles. We pit top services and apps against each other: &apos;TiviMate vs. Smarters Pro&apos;, &apos;IPTV vs. Cable&apos;, &apos;FuboTV vs. Private IPTV&apos;. These unbiased comparisons analyze price, channel count, interface speed, and reliability. We stress-test features so you can choose the platform that perfectly matches your viewing habits and budget.
             </p>
         </div>
     )
