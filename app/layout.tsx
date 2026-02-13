@@ -11,6 +11,9 @@ import LanguagePopup from "../components/LanguagePopup";
 import PageTransition from "../components/PageTransition";
 import TopLoadingBar from "../components/TopLoadingBar";
 import ReferralTopBar from "../components/ReferralTopBar";
+import LiveSalesNotification from "../components/LiveSalesNotification";
+import LiveViewerCount from "../components/LiveViewerCount";
+import WhatsAppWidget from "../components/WhatsAppWidget";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -97,6 +100,9 @@ export default function RootLayout({
           <Footer />
           <ExitIntent />
           <LanguagePopup />
+          <LiveSalesNotification />
+          <LiveViewerCount />
+          <WhatsAppWidget />
         </LanguageProvider>
       </body>
     </html>

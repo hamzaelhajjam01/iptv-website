@@ -15,9 +15,9 @@ export default function ReferralTopBar() {
       content: (
         <>
           <span className="md:hidden font-bold">Refer & Get 30% OFF!</span>
-          <span className="hidden md:inline">Refer & Earn! </span>
-          <span className="hidden md:inline font-bold">30% OFF for Everyone!</span>
-          <span className="hidden lg:inline"> - Both you and your friend get the discount</span>
+          <span className="hidden md:inline">Refer & Earn!{' '}</span>
+          <span className="hidden md:inline font-bold">30% OFF for Everyone!{' '}</span>
+          <span className="hidden lg:inline">- Both you and your friend get the discount</span>
         </>
       ),
       whatsappMessage: 'Hi! I want to refer someone for the 30% OFF discount program.',
@@ -29,8 +29,8 @@ export default function ReferralTopBar() {
       content: (
         <>
           <span className="md:hidden font-bold text-yellow-300">12 + 3 Months FREE!</span>
-          <span className="hidden md:inline font-bold text-yellow-300">LIMITED OFFER: </span>
-          <span className="hidden md:inline font-bold">Get 12 Months + 3 Months FREE! </span>
+          <span className="hidden md:inline font-bold text-yellow-300">LIMITED OFFER:{' '}</span>
+          <span className="hidden md:inline font-bold">Get 12 Months + 3 Months FREE!{' '}</span>
           <span className="hidden lg:inline">- Premium 4K IPTV. Instant Setup.</span>
         </>
       ),

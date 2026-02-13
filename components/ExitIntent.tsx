@@ -15,10 +15,10 @@ const ExitModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isOpen,
 
     const handleFreeTrial = () => {
         // Create WhatsApp message for free trial
-        const message = `Hello! I'm interested in the 24-Hour Premium Trial for $0.99.
+        const message = `Hello! I'm interested in the 24-Hour Premium Trial for $1.99.
 
 📦 *Offer:* 24-Hour Premium Trial Access
-💰 *Price:* $0.99
+💰 *Price:* $1.99
 
 Please send me the payment details and setup instructions to get started immediately!`;
 
