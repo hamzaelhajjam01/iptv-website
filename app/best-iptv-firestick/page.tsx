@@ -587,7 +587,7 @@ const BestIPTVFirestickPage: React.FC = () => {
                     {/* Final CTA */}
                     <div className="text-center bg-gradient-to-r from-blue-600 to-violet-600 rounded-xl p-12">
                         <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-                            Start Streaming 10k+ Channels on Firestick in 5 Minutes
+                            Start Streaming 50k+ Channels on Firestick in 5 Minutes
                         </h2>
                         <p className="text-xl text-blue-100 mb-8 max-w-3xl mx-auto">
                             Join 50,000+ happy streamers who've already made the switch. Get 4K quality, 99.9% uptime, and instant setup today.

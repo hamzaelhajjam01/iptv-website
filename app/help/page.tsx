@@ -95,13 +95,13 @@ const HelpPage: React.FC = () => {
                             </div>
                             <h3 className="text-xl font-bold text-white mb-3">Sideloading</h3>
                             <p className="text-gray-300 text-sm leading-relaxed mb-3">
-                                Sideloading is the process of installing an application on your device from a source outside the official app store. For example, Amazon Firestick users must sideload IPTV player apps because Amazon doesn't allow them in the official Appstore.
+                                Sideloading is the process of installing an application on your device from a source outside the official app store. For example, Amazon Firestick users must sideload IPTV player apps because Amazon doesn&apos;t allow them in the official Appstore.
                             </p>
                             <p className="text-gray-300 text-sm leading-relaxed mb-3">
-                                This is done using a free tool called "Downloader" and requires enabling a setting called "Apps from Unknown Sources" in your device's Developer Options menu. Sideloading is completely legal and safe when installing trusted applications from reputable providers.
+                                This is done using a free tool called &quot;Downloader&quot; and requires enabling a setting called &quot;Apps from Unknown Sources&quot; in your device&apos;s Developer Options menu. Sideloading is completely legal and safe when installing trusted applications from reputable providers.
                             </p>
                             <p className="text-gray-300 text-sm leading-relaxed">
-                                It's called "sideloading" because you're loading the app from the "side" (an external source) rather than from the front door (the official store). The process takes about 2-3 minutes and only needs to be done once per device. Once sideloaded and installed, the app functions exactly like any other app on your system.
+                                It&apos;s called &quot;sideloading&quot; because you&apos;re loading the app from the &quot;side&quot; (an external source) rather than from the front door (the official store). The process takes about 2-3 minutes and only needs to be done once per device. Once sideloaded and installed, the app functions exactly like any other app on your system.
                             </p>
                         </div>
 
@@ -113,10 +113,10 @@ const HelpPage: React.FC = () => {
                             </div>
                             <h3 className="text-xl font-bold text-white mb-3">APK File</h3>
                             <p className="text-gray-300 text-sm leading-relaxed mb-3">
-                                APK stands for "Android Package Kit," and it's the file format used to distribute and install applications on Android-based devices. Since devices like Amazon Firestick, Android TV boxes, and most Smart TVs run on Android operating systems, their apps are distributed as APK files.
+                                APK stands for &quot;Android Package Kit,&quot; and it&apos;s the file format used to distribute and install applications on Android-based devices. Since devices like Amazon Firestick, Android TV boxes, and most Smart TVs run on Android operating systems, their apps are distributed as APK files.
                             </p>
                             <p className="text-gray-300 text-sm leading-relaxed mb-3">
-                                When you download an IPTV app like IPTV Smarters or TiviMate, you're downloading an .apk file. Think of it like a .exe file on Windows or a .dmg file on Mac—it's simply the installation package for the software.
+                                When you download an IPTV app like IPTV Smarters or TiviMate, you&apos;re downloading an .apk file. Think of it like a .exe file on Windows or a .dmg file on Mac—it&apos;s simply the installation package for the software.
                             </p>
                             <p className="text-gray-300 text-sm leading-relaxed">
                                 APK files are completely normal and standard in the Android ecosystem. After you install the APK, you can (and should) delete the APK file itself to free up storage space; the installed app will continue to work perfectly without it.

@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-    title: 'Start Streaming 10k+ Channels on Firestick in 5 Minutes | StreamVerse',
+    title: 'Start Streaming 50k+ Channels on Firestick in 5 Minutes | StreamVerse',
     description: 'Looking for the best IPTV for Firestick? Get 4K quality, 99.9% uptime, and instant setup. Join 50,000+ happy streamers today. Start your trial!',
     keywords: [
         'best IPTV for Firestick',
