@@ -82,12 +82,12 @@ export default function LiveSalesNotification() {
 
     return (
         <div
-            className={`fixed top-6 md:top-auto md:bottom-6 left-6 z-50 transition-all duration-500 ease-in-out transform ${isVisible
-                ? 'translate-x-0 opacity-100'
-                : '-translate-x-full opacity-0'
+            className={`fixed top-6 md:top-auto md:bottom-6 left-1/2 md:left-6 -translate-x-1/2 md:translate-x-0 z-50 transition-all duration-500 ease-in-out ${isVisible
+                ? 'translate-y-0 opacity-100'
+                : '-translate-y-full md:translate-y-0 md:-translate-x-full opacity-0'
                 }`}
         >
-            <div className="bg-gradient-to-r from-purple-900/95 to-indigo-900/95 backdrop-blur-md rounded-lg shadow-2xl border border-purple-500/30 p-4 max-w-sm">
+            <div className="bg-gradient-to-r from-purple-900/95 to-indigo-900/95 backdrop-blur-md rounded-lg shadow-2xl border border-purple-500/30 p-4 w-[calc(100vw-3rem)] md:max-w-md md:w-auto">
                 <div className="flex items-start gap-3">
                     {/* Animated pulse indicator */}
                     <div className="relative flex-shrink-0 mt-1">

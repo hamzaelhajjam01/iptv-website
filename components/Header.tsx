@@ -10,6 +10,7 @@ import { MenuIcon } from './Icons';
 const Header: React.FC = () => {
     const { lang, setLang, t } = useLanguage();
     const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
+    const [isHelpMenuOpen, setHelpMenuOpen] = useState(false);
     const pathname = usePathname();
 
     const handleLanguageChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
@@ -20,9 +21,22 @@ const Header: React.FC = () => {
         { href: '/channels-features', key: 'navChannelsFeatures' },
         { href: '/pricing', key: 'navPricing' },
         { href: '/reseller', key: 'navReseller' },
-        { href: '/help', key: 'navHelp' },
         { href: '/about', key: 'navAbout' },
         { href: '/blog', key: 'navBlog' },
+    ];
+
+    const deviceLinks = [
+        { label: 'IPTV for Firestick', href: '/best-iptv-firestick', available: true },
+        { label: 'IPTV for Samsung TV', href: '#', available: false },
+        { label: 'IPTV for LG TV', href: '#', available: false },
+        { label: 'IPTV for Apple TV', href: '#', available: false },
+        { label: 'IPTV for Android TV/Shield', href: '#', available: false },
+    ];
+
+    const regionLinks = [
+        { label: 'Best IPTV USA', href: '/best-iptv-usa', available: true },
+        { label: 'Best IPTV UK', href: '#', available: false },
+        { label: 'Best IPTV Canada', href: '#', available: false },
     ];
 
     const desktopNav = (
@@ -30,6 +44,73 @@ const Header: React.FC = () => {
             {navItems.map(item => (
                 <Link key={item.href} href={item.href} onClick={() => setMobileMenuOpen(false)} className={`nav-link ${pathname === item.href ? 'active' : ''}`}>{t(item.key)}</Link>
             ))}
+
+            {/* Help Center with Mega Menu */}
+            <div
+                className="relative"
+                onMouseEnter={() => setHelpMenuOpen(true)}
+                onMouseLeave={() => setHelpMenuOpen(false)}
+            >
+                <Link
+                    href="/help"
+                    className={`nav-link ${pathname === '/help' ? 'active' : ''}`}
+                >
+                    {t('navHelp')}
+                </Link>
+
+                {/* Mega Menu Dropdown */}
+                {isHelpMenuOpen && (
+                    <div className="absolute top-full left-0 mt-2 bg-gray-900 border border-gray-700 rounded-lg shadow-2xl p-6 min-w-[500px] z-50">
+                        <div className="grid grid-cols-2 gap-8">
+                            {/* Devices Column */}
+                            <div>
+                                <h3 className="text-white font-bold text-sm uppercase tracking-wide mb-4 text-blue-400">Devices</h3>
+                                <ul className="space-y-3">
+                                    {deviceLinks.map((link, idx) => (
+                                        <li key={idx}>
+                                            {link.available ? (
+                                                <Link
+                                                    href={link.href}
+                                                    className="text-gray-300 hover:text-white transition-colors text-sm"
+                                                >
+                                                    {link.label}
+                                                </Link>
+                                            ) : (
+                                                <span className="text-gray-600 text-sm cursor-not-allowed">
+                                                    {link.label}
+                                                </span>
+                                            )}
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+
+                            {/* Regions Column */}
+                            <div>
+                                <h3 className="text-white font-bold text-sm uppercase tracking-wide mb-4 text-blue-400">Regions</h3>
+                                <ul className="space-y-3">
+                                    {regionLinks.map((link, idx) => (
+                                        <li key={idx}>
+                                            {link.available ? (
+                                                <Link
+                                                    href={link.href}
+                                                    className="text-gray-300 hover:text-white transition-colors text-sm"
+                                                >
+                                                    {link.label}
+                                                </Link>
+                                            ) : (
+                                                <span className="text-gray-600 text-sm cursor-not-allowed">
+                                                    {link.label}
+                                                </span>
+                                            )}
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                )}
+            </div>
         </nav>
     );
 
@@ -39,6 +120,7 @@ const Header: React.FC = () => {
                 {navItems.map(item => (
                     <Link key={item.href} href={item.href} onClick={() => setMobileMenuOpen(false)} className={`nav-link ${pathname === item.href ? 'active' : ''}`}>{t(item.key)}</Link>
                 ))}
+                <Link href="/help" onClick={() => setMobileMenuOpen(false)} className={`nav-link ${pathname === '/help' ? 'active' : ''}`}>{t('navHelp')}</Link>
                 <Link href="/pricing" onClick={() => setMobileMenuOpen(false)} className="nav-link-cta bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-5 rounded-lg cta-button w-full text-center">{t('getStarted')}</Link>
                 <div className="w-full pt-4 mt-4 border-t border-gray-700">
                     <label htmlFor="mobile-language-switcher" className="sr-only">Language</label>
