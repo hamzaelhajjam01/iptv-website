@@ -11,6 +11,7 @@ const Header: React.FC = () => {
     const { lang, setLang, t } = useLanguage();
     const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
     const [isHelpMenuOpen, setHelpMenuOpen] = useState(false);
+
     const [helpMenuTimeout, setHelpMenuTimeout] = useState<NodeJS.Timeout | null>(null);
     const pathname = usePathname();
 
@@ -136,7 +137,15 @@ const Header: React.FC = () => {
                 {navItems.map(item => (
                     <Link key={item.href} href={item.href} onClick={() => setMobileMenuOpen(false)} className={`nav-link ${pathname === item.href ? 'active' : ''}`}>{t(item.key)}</Link>
                 ))}
-                <Link href="/help" onClick={() => setMobileMenuOpen(false)} className={`nav-link ${pathname === '/help' ? 'active' : ''}`}>{t('navHelp')}</Link>
+
+                <Link
+                    href="/help"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className={`nav-link w-full text-center ${pathname === '/help' ? 'active' : ''}`}
+                >
+                    {t('navHelp')}
+                </Link>
+
                 <Link href="/pricing" onClick={() => setMobileMenuOpen(false)} className="nav-link-cta bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-5 rounded-lg cta-button w-full text-center">{t('getStarted')}</Link>
                 <div className="w-full pt-4 mt-4 border-t border-gray-700">
                     <label htmlFor="mobile-language-switcher" className="sr-only">Language</label>

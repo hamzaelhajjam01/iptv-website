@@ -42,25 +42,25 @@ const InstallationGuide: React.FC = () => {
                             <h4 className="text-xl font-bold mb-2 text-white">{t('windowsMethod')}</h4>
                             <p className="text-gray-300">
                                 {t('windowsInstructions')}
-                                <DownloadButton
-                                    url="https://www.iptvsmarters.com/download/?download=windows_app"
-                                    icon={<FaWindows size={32} />}
-                                    className="inline-flex items-center justify-center w-16 h-16 bg-[#0c1427] border border-blue-500/30 rounded-xl text-blue-400 hover:bg-blue-600 hover:text-white hover:border-transparent transition-all duration-300 shadow-lg shadow-blue-500/10 hover:shadow-blue-500/30"
-                                    aria-label="Download IPTV Smarters for Windows"
-                                />
                             </p>
+                            <DownloadButton
+                                url="https://www.iptvsmarters.com/download/?download=windows_app"
+                                icon={<FaWindows size={32} />}
+                                className="inline-flex items-center justify-center w-16 h-16 bg-[#0c1427] border border-blue-500/30 rounded-xl text-blue-400 hover:bg-blue-600 hover:text-white hover:border-transparent transition-all duration-300 shadow-lg shadow-blue-500/10 hover:shadow-blue-500/30"
+                                aria-label="Download IPTV Smarters for Windows"
+                            />
                         </div>
                         <div>
                             <h4 className="text-xl font-bold mb-2 text-white">{t('macMethod')}</h4>
                             <p className="text-gray-300">
                                 {t('macInstructions')}
-                                <DownloadButton
-                                    url="https://www.iptvsmarters.com/download/?download=mac"
-                                    icon={<FaApple size={32} />}
-                                    className="inline-flex items-center justify-center w-16 h-16 bg-[#0c1427] border border-gray-600/30 rounded-xl text-gray-300 hover:bg-white hover:text-black hover:border-transparent transition-all duration-300 shadow-lg"
-                                    aria-label="Download IPTV Smarters for Mac"
-                                />
                             </p>
+                            <DownloadButton
+                                url="https://www.iptvsmarters.com/download/?download=mac"
+                                icon={<FaApple size={32} />}
+                                className="inline-flex items-center justify-center w-16 h-16 bg-[#0c1427] border border-gray-600/30 rounded-xl text-gray-300 hover:bg-white hover:text-black hover:border-transparent transition-all duration-300 shadow-lg"
+                                aria-label="Download IPTV Smarters for Mac"
+                            />
                         </div>
                     </div>
                 );
