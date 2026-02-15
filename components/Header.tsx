@@ -11,10 +11,26 @@ const Header: React.FC = () => {
     const { lang, setLang, t } = useLanguage();
     const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
     const [isHelpMenuOpen, setHelpMenuOpen] = useState(false);
+    const [helpMenuTimeout, setHelpMenuTimeout] = useState<NodeJS.Timeout | null>(null);
     const pathname = usePathname();
 
     const handleLanguageChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
         setLang(e.target.value as Language);
+    };
+
+    const handleHelpMenuEnter = () => {
+        if (helpMenuTimeout) {
+            clearTimeout(helpMenuTimeout);
+            setHelpMenuTimeout(null);
+        }
+        setHelpMenuOpen(true);
+    };
+
+    const handleHelpMenuLeave = () => {
+        const timeout = setTimeout(() => {
+            setHelpMenuOpen(false);
+        }, 200); // 200ms delay before closing
+        setHelpMenuTimeout(timeout);
     };
 
     const navItems: { href: string; key: keyof Translations['en'] }[] = [
@@ -48,8 +64,8 @@ const Header: React.FC = () => {
             {/* Help Center with Mega Menu */}
             <div
                 className="relative"
-                onMouseEnter={() => setHelpMenuOpen(true)}
-                onMouseLeave={() => setHelpMenuOpen(false)}
+                onMouseEnter={handleHelpMenuEnter}
+                onMouseLeave={handleHelpMenuLeave}
             >
                 <Link
                     href="/help"
