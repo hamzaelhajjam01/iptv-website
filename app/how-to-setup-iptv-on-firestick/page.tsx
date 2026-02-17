@@ -94,7 +94,7 @@ const HowToSetupFirestickPage: React.FC = () => {
                         </h2>
                         <div className="bg-gray-900/60 border border-gray-800 rounded-xl p-8">
                             <p className="text-gray-300 leading-relaxed mb-6">
-                                Before installing any IPTV player, it's crucial to prepare your Amazon Fire TV Stick to accept third-party applications. This process is called "Jailbreaking" or "Sideloading," and it is 100% legal and safe. It simply removes Amazon's restrictions to allow you to install the best streaming apps.
+                                Before installing any IPTV player, it&apos;s crucial to prepare your Amazon Fire TV Stick to accept third-party applications. This process is called &quot;Jailbreaking&quot; or &quot;Sideloading,&quot; and it is 100% legal and safe. It simply removes Amazon&apos;s restrictions to allow you to install the best streaming apps.
                             </p>
                             <div className="grid md:grid-cols-2 gap-6">
                                 <div className="bg-gray-800/50 rounded-lg p-6 border-l-4 border-yellow-500">
@@ -109,8 +109,8 @@ const HowToSetupFirestickPage: React.FC = () => {
                                 <div className="bg-gray-800/50 rounded-lg p-6 border-l-4 border-green-500">
                                     <h3 className="text-xl font-bold text-white mb-2">What We Will Do</h3>
                                     <ol className="list-decimal pl-5 text-gray-300 space-y-1">
-                                        <li>Enable "Developer Options"</li>
-                                        <li>Install the "Downloader" App</li>
+                                        <li>Enable &quot;Developer Options&quot;</li>
+                                        <li>Install the &quot;Downloader&quot; App</li>
                                         <li>Install IPTV Smarters Pro (or TiviMate)</li>
                                         <li>Login with StreamVerse Credentials</li>
                                     </ol>
@@ -128,7 +128,7 @@ const HowToSetupFirestickPage: React.FC = () => {
 
                         <div className="bg-gray-900/60 border border-gray-800 rounded-xl p-8 mb-8">
                             <p className="text-gray-300 mb-6">
-                                Newer Firestick updates have hidden the "Developer Options" menu by default. Here is the trick to unlock it:
+                                Newer Firestick updates have hidden the &quot;Developer Options&quot; menu by default. Here is the trick to unlock it:
                             </p>
 
                             <div className="grid md:grid-cols-2 gap-8 items-center">
@@ -148,7 +148,7 @@ const HowToSetupFirestickPage: React.FC = () => {
                                         </li>
                                         <li className="flex items-start bg-blue-900/20 p-3 rounded-lg border border-blue-500/30">
                                             <CheckIcon className="w-5 h-5 text-blue-500 mr-2 mt-1 flex-shrink-0" />
-                                            <span><strong>CRITICAL STEP:</strong> Highlight <strong>Fire TV Stick 4K</strong> (or your device name) and click the Select button on your remote <strong>7 times rapidly</strong>. You will see a message: "No need, you are already a developer."</span>
+                                            <span><strong>CRITICAL STEP:</strong> Highlight <strong>Fire TV Stick 4K</strong> (or your device name) and click the Select button on your remote <strong>7 times rapidly</strong>. You will see a message: &quot;No need, you are already a developer.&quot;</span>
                                         </li>
                                         <li className="flex items-start">
                                             <CheckIcon className="w-5 h-5 text-blue-500 mr-2 mt-1 flex-shrink-0" />
@@ -156,7 +156,7 @@ const HowToSetupFirestickPage: React.FC = () => {
                                         </li>
                                         <li className="flex items-start">
                                             <CheckIcon className="w-5 h-5 text-blue-500 mr-2 mt-1 flex-shrink-0" />
-                                            <span>Click it and turn <strong>ON</strong> "Apps from Unknown Sources".</span>
+                                            <span>Click it and turn <strong>ON</strong> &quot;Apps from Unknown Sources&quot;.</span>
                                         </li>
                                     </ul>
                                 </div>
@@ -185,7 +185,7 @@ const HowToSetupFirestickPage: React.FC = () => {
 
                         <div className="bg-gray-900/60 border border-gray-800 rounded-xl p-8 mb-8">
                             <p className="text-gray-300 mb-6">
-                                Since IPTV apps aren't in the Amazon App Store, we need a special browser called "Downloader" to get them.
+                                Since IPTV apps aren&apos;t in the Amazon App Store, we need a special browser called &quot;Downloader&quot; to get them.
                             </p>
 
                             <div className="grid md:grid-cols-2 gap-8 items-center">
@@ -212,11 +212,11 @@ const HowToSetupFirestickPage: React.FC = () => {
                                         </li>
                                         <li className="flex items-start">
                                             <CheckIcon className="w-5 h-5 text-blue-500 mr-2 mt-1 flex-shrink-0" />
-                                            <span>Type <strong>"Downloader"</strong>.</span>
+                                            <span>Type <strong>&quot;Downloader&quot;</strong>.</span>
                                         </li>
                                         <li className="flex items-start">
                                             <CheckIcon className="w-5 h-5 text-blue-500 mr-2 mt-1 flex-shrink-0" />
-                                            <span>Select the orange app icon titled <strong>Downloader</strong> by AFTVnews.</span>
+                                            <span>Select the orange app icon titled <strong>&quot;Downloader&quot;</strong> by AFTVnews.</span>
                                         </li>
                                         <li className="flex items-start">
                                             <CheckIcon className="w-5 h-5 text-blue-500 mr-2 mt-1 flex-shrink-0" />
@@ -270,7 +270,7 @@ const HowToSetupFirestickPage: React.FC = () => {
                             <div>
                                 <h2 className="text-3xl font-bold text-white mb-4">⚠️ Use the Right Server!</h2>
                                 <p className="text-gray-300 leading-relaxed mb-6">
-                                    You have installed the app (the "car"), but now you need the fuel (the "server") to make it run.
+                                    You have installed the app (the &quot;car&quot;), but now you need the fuel (the &quot;server&quot;) to make it run.
                                     <br /><br />
                                     <strong>Warning:</strong> Connecting free or cheap servers to Smarters Pro will result in:
                                 </p>
@@ -407,7 +407,7 @@ const HowToSetupFirestickPage: React.FC = () => {
                         <div className="bg-gray-900/60 border border-gray-800 rounded-xl p-8">
                             <h3 className="text-2xl font-bold text-white mb-4">💡 Pro Tip: Clear Your Cache</h3>
                             <p className="text-gray-300 mb-4 text-sm leading-relaxed">
-                                Firesticks have limited storage. If your stream starts buffering after a few months, it's likely a full cache.
+                                Firesticks have limited storage. If your stream starts buffering after a few months, it&apos;s likely a full cache.
                             </p>
                             <div className="bg-black/40 p-4 rounded-lg">
                                 <p className="text-blue-400 font-mono text-sm">Settings &gt; Applications &gt; Manage Installed Applications &gt; IPTV Smarters Pro &gt; Clear Cache (NOT Clear Data!)</p>
