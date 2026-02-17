@@ -56,6 +56,13 @@ const Header: React.FC = () => {
         { label: 'Best IPTV Canada', href: '#', available: false },
     ];
 
+    const educationalLinks = [
+        { label: 'How to Setup Firestick', href: '/how-to-setup-iptv-on-firestick', available: true },
+        { label: 'How to Fix IPTV Buffering', href: '#', available: false },
+        { label: 'Ultimate VPN Guide for IPTV', href: '#', available: false },
+        { label: 'IPTV Legal & Safety FAQ 2026', href: '#', available: false },
+    ];
+
     const desktopNav = (
         <nav id="desktop-nav" className="hidden xl:flex items-center gap-2 text-lg">
             {navItems.map(item => (
@@ -77,8 +84,8 @@ const Header: React.FC = () => {
 
                 {/* Mega Menu Dropdown */}
                 {isHelpMenuOpen && (
-                    <div className="absolute top-full left-0 mt-2 bg-gray-900 border border-gray-700 rounded-lg shadow-2xl p-6 min-w-[500px] z-50">
-                        <div className="grid grid-cols-2 gap-8">
+                    <div className="absolute top-full left-0 mt-2 bg-gray-900 border border-gray-700 rounded-lg shadow-2xl p-6 min-w-[700px] z-50">
+                        <div className="grid grid-cols-3 gap-8">
                             {/* Devices Column */}
                             <div>
                                 <h3 className="text-white font-bold text-sm uppercase tracking-wide mb-4 text-blue-400">Devices</h3>
@@ -107,6 +114,29 @@ const Header: React.FC = () => {
                                 <h3 className="text-white font-bold text-sm uppercase tracking-wide mb-4 text-blue-400">Regions</h3>
                                 <ul className="space-y-3">
                                     {regionLinks.map((link, idx) => (
+                                        <li key={idx}>
+                                            {link.available ? (
+                                                <Link
+                                                    href={link.href}
+                                                    className="text-gray-300 hover:text-white transition-colors text-sm"
+                                                >
+                                                    {link.label}
+                                                </Link>
+                                            ) : (
+                                                <span className="text-gray-600 text-sm cursor-not-allowed">
+                                                    {link.label}
+                                                </span>
+                                            )}
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+
+                            {/* Educational Column */}
+                            <div>
+                                <h3 className="text-white font-bold text-sm uppercase tracking-wide mb-4 text-blue-400">Educational</h3>
+                                <ul className="space-y-3">
+                                    {educationalLinks.map((link, idx) => (
                                         <li key={idx}>
                                             {link.available ? (
                                                 <Link
