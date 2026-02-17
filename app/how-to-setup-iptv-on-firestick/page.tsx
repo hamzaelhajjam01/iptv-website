@@ -197,7 +197,7 @@ const HowToSetupFirestickPage: React.FC = () => {
                                         className="object-contain"
                                     />
                                     <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                                        <span className="bg-black/70 text-white px-2 py-1 text-xs rounded">Image: Search Icon / "Downloader"</span>
+                                        <span className="bg-black/70 text-white px-2 py-1 text-xs rounded">Image: Search Icon / &quot;Downloader&quot;</span>
                                     </div>
                                 </div>
                                 <div className="order-1 md:order-2">
