@@ -14,6 +14,7 @@ import ReferralTopBar from "../components/ReferralTopBar";
 import LiveSalesNotification from "../components/LiveSalesNotification";
 import LiveViewerCount from "../components/LiveViewerCount";
 import WhatsAppWidget from "../components/WhatsAppWidget";
+import MetaPixel from "../components/MetaPixel";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -103,6 +104,7 @@ export default function RootLayout({
           <LiveSalesNotification />
           <LiveViewerCount />
           <WhatsAppWidget />
+          <MetaPixel />
         </LanguageProvider>
       </body>
     </html>
