@@ -10,6 +10,7 @@ const pages = [
   '/',
   '/about',
   '/help',
+  '/how-to-setup-iptv-on-firestick',
   '/channels-features',
   '/pricing',
   '/privacy-policy',
