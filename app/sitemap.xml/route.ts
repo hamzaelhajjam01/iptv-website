@@ -15,6 +15,9 @@ const pages = [
   '/privacy-policy',
   '/terms-of-use',
   '/reseller',
+  '/best-iptv-firestick',
+  '/iptv-for-samsung-tv',
+  '/best-iptv-usa',
 ];
 
 async function generateSiteMap() {

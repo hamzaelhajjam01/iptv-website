@@ -44,7 +44,8 @@ const Header: React.FC = () => {
 
     const deviceLinks = [
         { label: 'IPTV for Firestick', href: '/best-iptv-firestick', available: true },
-        { label: 'IPTV for Samsung TV', href: '#', available: false },
+        { label: 'IPTV for Samsung TV', href: '/iptv-for-samsung-tv', available: true },
+        { label: 'Best IPTV App', href: '#', available: false },
         { label: 'IPTV for LG TV', href: '#', available: false },
         { label: 'IPTV for Apple TV', href: '#', available: false },
         { label: 'IPTV for Android TV/Shield', href: '#', available: false },
