@@ -1,0 +1,356 @@
+﻿
+> streamverse-iptv@0.1.0 build
+> next build
+
+  Ôû▓ Next.js 14.2.5
+  - Environments: .env.local
+
+   Creating an optimized production build ...
+ Ô£ô Compiled successfully
+   Linting and checking validity of types ...
+node.exe : 
+At C:\Program 
+Files\nodejs\npm.ps1:29 char:3
++   & $NODE_EXE $NPM_CLI_JS 
+$args
++   
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          :  
+   NotSpecified: (:String) []  
+  , RemoteException
+    + FullyQualifiedErrorId :  
+   NativeCommandError
+ 
+Failed to compile.
+
+./app/best-iptv-uk/page.tsx
+399:51  Error: `'` can be 
+escaped with `&apos;`, 
+`&lsquo;`, `&#39;`, `&rsquo;`. 
+ react/no-unescaped-entities
+
+./app/channels-features/page.ts
+x
+17:21  Warning: Using `<img>` 
+could result in slower LCP and 
+higher bandwidth. Consider 
+using `<Image />` from 
+`next/image` to automatically 
+optimize images. This may 
+incur additional usage or cost 
+from your provider. See: https:
+//nextjs.org/docs/messages/no-i
+mg-element  
+@next/next/no-img-element
+70:25  Warning: Using `<img>` 
+could result in slower LCP and 
+higher bandwidth. Consider 
+using `<Image />` from 
+`next/image` to automatically 
+optimize images. This may 
+incur additional usage or cost 
+from your provider. See: https:
+//nextjs.org/docs/messages/no-i
+mg-element  
+@next/next/no-img-element
+71:25  Warning: Using `<img>` 
+could result in slower LCP and 
+higher bandwidth. Consider 
+using `<Image />` from 
+`next/image` to automatically 
+optimize images. This may 
+incur additional usage or cost 
+from your provider. See: https:
+//nextjs.org/docs/messages/no-i
+mg-element  
+@next/next/no-img-element
+72:25  Warning: Using `<img>` 
+could result in slower LCP and 
+higher bandwidth. Consider 
+using `<Image />` from 
+`next/image` to automatically 
+optimize images. This may 
+incur additional usage or cost 
+from your provider. See: https:
+//nextjs.org/docs/messages/no-i
+mg-element  
+@next/next/no-img-element
+73:25  Warning: Using `<img>` 
+could result in slower LCP and 
+higher bandwidth. Consider 
+using `<Image />` from 
+`next/image` to automatically 
+optimize images. This may 
+incur additional usage or cost 
+from your provider. See: https:
+//nextjs.org/docs/messages/no-i
+mg-element  
+@next/next/no-img-element
+74:25  Warning: Using `<img>` 
+could result in slower LCP and 
+higher bandwidth. Consider 
+using `<Image />` from 
+`next/image` to automatically 
+optimize images. This may 
+incur additional usage or cost 
+from your provider. See: https:
+//nextjs.org/docs/messages/no-i
+mg-element  
+@next/next/no-img-element
+75:25  Warning: Using `<img>` 
+could result in slower LCP and 
+higher bandwidth. Consider 
+using `<Image />` from 
+`next/image` to automatically 
+optimize images. This may 
+incur additional usage or cost 
+from your provider. See: https:
+//nextjs.org/docs/messages/no-i
+mg-element  
+@next/next/no-img-element
+76:25  Warning: Using `<img>` 
+could result in slower LCP and 
+higher bandwidth. Consider 
+using `<Image />` from 
+`next/image` to automatically 
+optimize images. This may 
+incur additional usage or cost 
+from your provider. See: https:
+//nextjs.org/docs/messages/no-i
+mg-element  
+@next/next/no-img-element
+77:25  Warning: Using `<img>` 
+could result in slower LCP and 
+higher bandwidth. Consider 
+using `<Image />` from 
+`next/image` to automatically 
+optimize images. This may 
+incur additional usage or cost 
+from your provider. See: https:
+//nextjs.org/docs/messages/no-i
+mg-element  
+@next/next/no-img-element
+78:25  Warning: Using `<img>` 
+could result in slower LCP and 
+higher bandwidth. Consider 
+using `<Image />` from 
+`next/image` to automatically 
+optimize images. This may 
+incur additional usage or cost 
+from your provider. See: https:
+//nextjs.org/docs/messages/no-i
+mg-element  
+@next/next/no-img-element
+79:25  Warning: Using `<img>` 
+could result in slower LCP and 
+higher bandwidth. Consider 
+using `<Image />` from 
+`next/image` to automatically 
+optimize images. This may 
+incur additional usage or cost 
+from your provider. See: https:
+//nextjs.org/docs/messages/no-i
+mg-element  
+@next/next/no-img-element
+
+./app/page.tsx
+37:29  Warning: Using `<img>` 
+could result in slower LCP and 
+higher bandwidth. Consider 
+using `<Image />` from 
+`next/image` to automatically 
+optimize images. This may 
+incur additional usage or cost 
+from your provider. See: https:
+//nextjs.org/docs/messages/no-i
+mg-element  
+@next/next/no-img-element
+
+./app/reseller/page.tsx
+115:21  Warning: Using `<img>` 
+could result in slower LCP and 
+higher bandwidth. Consider 
+using `<Image />` from 
+`next/image` to automatically 
+optimize images. This may 
+incur additional usage or cost 
+from your provider. See: https:
+//nextjs.org/docs/messages/no-i
+mg-element  
+@next/next/no-img-element
+319:37  Warning: Using `<img>` 
+could result in slower LCP and 
+higher bandwidth. Consider 
+using `<Image />` from 
+`next/image` to automatically 
+optimize images. This may 
+incur additional usage or cost 
+from your provider. See: https:
+//nextjs.org/docs/messages/no-i
+mg-element  
+@next/next/no-img-element
+
+./components/BlogFilters.tsx
+67:6  Warning: React Hook 
+useEffect has a missing 
+dependency: 'currentPage'. 
+Either include it or remove 
+the dependency array.  
+react-hooks/exhaustive-deps
+86:6  Warning: React Hook 
+useEffect has a missing 
+dependency: 'currentPage'. 
+Either include it or remove 
+the dependency array.  
+react-hooks/exhaustive-deps
+
+./components/Footer.tsx
+18:42  Warning: Using `<img>` 
+could result in slower LCP and 
+higher bandwidth. Consider 
+using `<Image />` from 
+`next/image` to automatically 
+optimize images. This may 
+incur additional usage or cost 
+from your provider. See: https:
+//nextjs.org/docs/messages/no-i
+mg-element  
+@next/next/no-img-element
+
+./components/Header.tsx
+201:21  Warning: Using `<img>` 
+could result in slower LCP and 
+higher bandwidth. Consider 
+using `<Image />` from 
+`next/image` to automatically 
+optimize images. This may 
+incur additional usage or cost 
+from your provider. See: https:
+//nextjs.org/docs/messages/no-i
+mg-element  
+@next/next/no-img-element
+
+./components/InstallationGuide.
+tsx
+99:37  Warning: Using `<img>` 
+could result in slower LCP and 
+higher bandwidth. Consider 
+using `<Image />` from 
+`next/image` to automatically 
+optimize images. This may 
+incur additional usage or cost 
+from your provider. See: https:
+//nextjs.org/docs/messages/no-i
+mg-element  
+@next/next/no-img-element
+119:37  Warning: Using `<img>` 
+could result in slower LCP and 
+higher bandwidth. Consider 
+using `<Image />` from 
+`next/image` to automatically 
+optimize images. This may 
+incur additional usage or cost 
+from your provider. See: https:
+//nextjs.org/docs/messages/no-i
+mg-element  
+@next/next/no-img-element
+132:37  Warning: Using `<img>` 
+could result in slower LCP and 
+higher bandwidth. Consider 
+using `<Image />` from 
+`next/image` to automatically 
+optimize images. This may 
+incur additional usage or cost 
+from your provider. See: https:
+//nextjs.org/docs/messages/no-i
+mg-element  
+@next/next/no-img-element
+159:37  Warning: Using `<img>` 
+could result in slower LCP and 
+higher bandwidth. Consider 
+using `<Image />` from 
+`next/image` to automatically 
+optimize images. This may 
+incur additional usage or cost 
+from your provider. See: https:
+//nextjs.org/docs/messages/no-i
+mg-element  
+@next/next/no-img-element
+172:37  Warning: Using `<img>` 
+could result in slower LCP and 
+higher bandwidth. Consider 
+using `<Image />` from 
+`next/image` to automatically 
+optimize images. This may 
+incur additional usage or cost 
+from your provider. See: https:
+//nextjs.org/docs/messages/no-i
+mg-element  
+@next/next/no-img-element
+
+./components/LocalizedHowItWork
+s.tsx
+34:21  Warning: Using `<img>` 
+could result in slower LCP and 
+higher bandwidth. Consider 
+using `<Image />` from 
+`next/image` to automatically 
+optimize images. This may 
+incur additional usage or cost 
+from your provider. See: https:
+//nextjs.org/docs/messages/no-i
+mg-element  
+@next/next/no-img-element
+
+./components/MetaPixel.tsx
+27:17  Warning: Using `<img>` 
+could result in slower LCP and 
+higher bandwidth. Consider 
+using `<Image />` from 
+`next/image` to automatically 
+optimize images. This may 
+incur additional usage or cost 
+from your provider. See: https:
+//nextjs.org/docs/messages/no-i
+mg-element  
+@next/next/no-img-element
+
+./components/Testimonials.tsx
+21:21  Warning: Using `<img>` 
+could result in slower LCP and 
+higher bandwidth. Consider 
+using `<Image />` from 
+`next/image` to automatically 
+optimize images. This may 
+incur additional usage or cost 
+from your provider. See: https:
+//nextjs.org/docs/messages/no-i
+mg-element  
+@next/next/no-img-element
+27:15  Warning: Using `<img>` 
+could result in slower LCP and 
+higher bandwidth. Consider 
+using `<Image />` from 
+`next/image` to automatically 
+optimize images. This may 
+incur additional usage or cost 
+from your provider. See: https:
+//nextjs.org/docs/messages/no-i
+mg-element  
+@next/next/no-img-element
+33:21  Warning: Using `<img>` 
+could result in slower LCP and 
+higher bandwidth. Consider 
+using `<Image />` from 
+`next/image` to automatically 
+optimize images. This may 
+incur additional usage or cost 
+from your provider. See: https:
+//nextjs.org/docs/messages/no-i
+mg-element  
+@next/next/no-img-element
+
+info  - Need to disable some 
+ESLint rules? Learn more here: 
+https://nextjs.org/docs/basic-f
+eatures/eslint#disabling-rules

@@ -82,9 +82,9 @@ const HelpPage: React.FC = () => {
                                 <a href="/best-iptv-usa" className="block p-3 bg-gray-800/50 hover:bg-blue-900/20 rounded-lg transition-colors border border-gray-700/50 hover:border-blue-500/30">
                                     <span className="text-gray-200 font-medium">Best IPTV USA</span>
                                 </a>
-                                <span className="block p-3 bg-gray-800/30 rounded-lg border border-gray-800 text-gray-500 cursor-not-allowed">
-                                    Best IPTV UK <span className="text-xs ml-1 opacity-60">(Coming Soon)</span>
-                                </span>
+                                <a href="/best-iptv-uk" className="block p-3 bg-gray-800/50 hover:bg-blue-900/20 rounded-lg transition-colors border border-gray-700/50 hover:border-blue-500/30">
+                                    <span className="text-gray-200 font-medium">Best IPTV UK</span>
+                                </a>
                                 <span className="block p-3 bg-gray-800/30 rounded-lg border border-gray-800 text-gray-500 cursor-not-allowed">
                                     Best IPTV Canada <span className="text-xs ml-1 opacity-60">(Coming Soon)</span>
                                 </span>

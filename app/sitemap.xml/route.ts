@@ -19,6 +19,7 @@ const pages = [
   '/best-iptv-firestick',
   '/iptv-for-samsung-tv',
   '/best-iptv-usa',
+  '/best-iptv-uk',
 ];
 
 async function generateSiteMap() {

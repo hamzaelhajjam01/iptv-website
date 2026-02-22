@@ -53,7 +53,7 @@ const Header: React.FC = () => {
 
     const regionLinks = [
         { label: 'Best IPTV USA', href: '/best-iptv-usa', available: true },
-        { label: 'Best IPTV UK', href: '#', available: false },
+        { label: 'Best IPTV UK', href: '/best-iptv-uk', available: true },
         { label: 'Best IPTV Canada', href: '#', available: false },
     ];
 
@@ -101,7 +101,7 @@ const Header: React.FC = () => {
                                                     {link.label}
                                                 </Link>
                                             ) : (
-                                                <span className="text-gray-600 text-sm cursor-not-allowed">
+                                                <span className="text-gray-500 text-sm cursor-not-allowed flex items-center justify-between">
                                                     {link.label}
                                                 </span>
                                             )}
@@ -124,7 +124,7 @@ const Header: React.FC = () => {
                                                     {link.label}
                                                 </Link>
                                             ) : (
-                                                <span className="text-gray-600 text-sm cursor-not-allowed">
+                                                <span className="text-gray-500 text-sm cursor-not-allowed flex items-center justify-between">
                                                     {link.label}
                                                 </span>
                                             )}
@@ -147,7 +147,7 @@ const Header: React.FC = () => {
                                                     {link.label}
                                                 </Link>
                                             ) : (
-                                                <span className="text-gray-600 text-sm cursor-not-allowed">
+                                                <span className="text-gray-500 text-sm cursor-not-allowed flex items-center justify-between">
                                                     {link.label}
                                                 </span>
                                             )}
