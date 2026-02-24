@@ -59,7 +59,7 @@ const Header: React.FC = () => {
 
     const educationalLinks = [
         { label: 'How to Setup Firestick', href: '/how-to-setup-iptv-on-firestick', available: true },
-        { label: 'How to Fix IPTV Buffering', href: '#', available: false },
+        { label: 'How to Fix IPTV Buffering', href: '/how-to-fix-iptv-buffering', available: true },
         { label: 'Ultimate VPN Guide for IPTV', href: '#', available: false },
         { label: 'IPTV Legal & Safety FAQ 2026', href: '#', available: false },
     ];
