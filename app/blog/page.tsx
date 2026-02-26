@@ -59,8 +59,8 @@ export async function generateMetadata({ searchParams }: BlogPageProps) {
     description = `StreamVerse Blog - Page ${page}: Explore the latest IPTV guides, service reviews, and expert tips.`;
   }
 
-  // Pagination Robots Tag (NoIndex for page 2+)
-  const robots = page !== '1' ? { index: false, follow: true } : undefined;
+  // Pagination Robots Tag (Allow index for page 2+)
+  const robots = page !== '1' ? { index: true, follow: true } : undefined;
 
   return {
     title,
