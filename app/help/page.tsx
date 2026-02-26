@@ -57,12 +57,12 @@ const HelpPage: React.FC = () => {
                                 <a href="/best-iptv-firestick" className="block p-3 bg-gray-800/50 hover:bg-blue-900/20 rounded-lg transition-colors border border-gray-700/50 hover:border-blue-500/30">
                                     <span className="text-gray-200 font-medium">Best IPTV for Firestick</span>
                                 </a>
-                                <span className="block p-3 bg-gray-800/30 rounded-lg border border-gray-800 text-gray-500 cursor-not-allowed">
-                                    Samsung TV <span className="text-xs ml-1 opacity-60">(Coming Soon)</span>
-                                </span>
-                                <span className="block p-3 bg-gray-800/30 rounded-lg border border-gray-800 text-gray-500 cursor-not-allowed">
-                                    LG TV <span className="text-xs ml-1 opacity-60">(Coming Soon)</span>
-                                </span>
+                                <a href="/iptv-for-samsung-tv" className="block p-3 bg-gray-800/50 hover:bg-blue-900/20 rounded-lg transition-colors border border-gray-700/50 hover:border-blue-500/30">
+                                    <span className="text-gray-200 font-medium">IPTV for Samsung TV</span>
+                                </a>
+                                <a href="/iptv-for-lg-smart-tv" className="block p-3 bg-gray-800/50 hover:bg-blue-900/20 rounded-lg transition-colors border border-gray-700/50 hover:border-blue-500/30">
+                                    <span className="text-gray-200 font-medium">IPTV for LG TV</span>
+                                </a>
                                 <span className="block p-3 bg-gray-800/30 rounded-lg border border-gray-800 text-gray-500 cursor-not-allowed">
                                     Apple TV <span className="text-xs ml-1 opacity-60">(Coming Soon)</span>
                                 </span>
@@ -101,9 +101,9 @@ const HelpPage: React.FC = () => {
                                 <a href="/how-to-setup-iptv-on-firestick" className="block p-3 bg-gray-800/50 hover:bg-blue-900/20 rounded-lg transition-colors border border-gray-700/50 hover:border-blue-500/30">
                                     <span className="text-gray-200 font-medium">How to Setup Firestick</span>
                                 </a>
-                                <span className="block p-3 bg-gray-800/30 rounded-lg border border-gray-800 text-gray-500 cursor-not-allowed">
-                                    Fix IPTV Buffering <span className="text-xs ml-1 opacity-60">(Coming Soon)</span>
-                                </span>
+                                <a href="/how-to-fix-iptv-buffering" className="block p-3 bg-gray-800/50 hover:bg-blue-900/20 rounded-lg transition-colors border border-gray-700/50 hover:border-blue-500/30">
+                                    <span className="text-gray-200 font-medium">Fix IPTV Buffering</span>
+                                </a>
                                 <span className="block p-3 bg-gray-800/30 rounded-lg border border-gray-800 text-gray-500 cursor-not-allowed">
                                     VPN Guide for IPTV <span className="text-xs ml-1 opacity-60">(Coming Soon)</span>
                                 </span>
