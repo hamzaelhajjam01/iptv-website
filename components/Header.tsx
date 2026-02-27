@@ -10,28 +10,10 @@ import { MenuIcon } from './Icons';
 const Header: React.FC = () => {
     const { lang, setLang, t } = useLanguage();
     const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
-    const [isHelpMenuOpen, setHelpMenuOpen] = useState(false);
-
-    const [helpMenuTimeout, setHelpMenuTimeout] = useState<NodeJS.Timeout | null>(null);
     const pathname = usePathname();
 
     const handleLanguageChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
         setLang(e.target.value as Language);
-    };
-
-    const handleHelpMenuEnter = () => {
-        if (helpMenuTimeout) {
-            clearTimeout(helpMenuTimeout);
-            setHelpMenuTimeout(null);
-        }
-        setHelpMenuOpen(true);
-    };
-
-    const handleHelpMenuLeave = () => {
-        const timeout = setTimeout(() => {
-            setHelpMenuOpen(false);
-        }, 200); // 200ms delay before closing
-        setHelpMenuTimeout(timeout);
     };
 
     const navItems: { href: string; key: keyof Translations['en'] }[] = [
@@ -39,29 +21,6 @@ const Header: React.FC = () => {
         { href: '/pricing', key: 'navPricing' },
         { href: '/reseller', key: 'navReseller' },
         { href: '/about', key: 'navAbout' },
-        { href: '/blog', key: 'navBlog' },
-    ];
-
-    const deviceLinks = [
-        { label: 'IPTV for Firestick', href: '/best-iptv-firestick', available: true },
-        { label: 'IPTV for Samsung TV', href: '/iptv-for-samsung-tv', available: true },
-        { label: 'Best IPTV App', href: '#', available: false },
-        { label: 'IPTV for LG TV', href: '/iptv-for-lg-smart-tv', available: true },
-        { label: 'IPTV for Apple TV', href: '#', available: false },
-        { label: 'IPTV for Android TV/Shield', href: '#', available: false },
-    ];
-
-    const regionLinks = [
-        { label: 'Best IPTV USA', href: '/best-iptv-usa', available: true },
-        { label: 'Best IPTV UK', href: '/best-iptv-uk', available: true },
-        { label: 'Best IPTV Canada', href: '#', available: false },
-    ];
-
-    const educationalLinks = [
-        { label: 'How to Setup Firestick', href: '/how-to-setup-iptv-on-firestick', available: true },
-        { label: 'How to Fix IPTV Buffering', href: '/how-to-fix-iptv-buffering', available: true },
-        { label: 'Ultimate VPN Guide for IPTV', href: '#', available: false },
-        { label: 'IPTV Legal & Safety FAQ 2026', href: '#', available: false },
     ];
 
     const desktopNav = (
@@ -69,96 +28,12 @@ const Header: React.FC = () => {
             {navItems.map(item => (
                 <Link key={item.href} href={item.href} onClick={() => setMobileMenuOpen(false)} className={`nav-link ${pathname === item.href ? 'active' : ''}`}>{t(item.key)}</Link>
             ))}
-
-            {/* Help Center with Mega Menu */}
-            <div
-                className="relative"
-                onMouseEnter={handleHelpMenuEnter}
-                onMouseLeave={handleHelpMenuLeave}
+            <Link
+                href="/help"
+                className={`nav-link ${pathname === '/help' ? 'active' : ''}`}
             >
-                <Link
-                    href="/help"
-                    className={`nav-link ${pathname === '/help' ? 'active' : ''}`}
-                >
-                    {t('navHelp')}
-                </Link>
-
-                {/* Mega Menu Dropdown */}
-                {isHelpMenuOpen && (
-                    <div className="absolute top-full left-0 mt-2 bg-gray-900 border border-gray-700 rounded-lg shadow-2xl p-6 min-w-[700px] z-50">
-                        <div className="grid grid-cols-3 gap-8">
-                            {/* Devices Column */}
-                            <div>
-                                <h3 className="text-white font-bold text-sm uppercase tracking-wide mb-4 text-blue-400">Devices</h3>
-                                <ul className="space-y-3">
-                                    {deviceLinks.map((link, idx) => (
-                                        <li key={idx}>
-                                            {link.available ? (
-                                                <Link
-                                                    href={link.href}
-                                                    className="text-gray-300 hover:text-white transition-colors text-sm"
-                                                >
-                                                    {link.label}
-                                                </Link>
-                                            ) : (
-                                                <span className="text-gray-500 text-sm cursor-not-allowed flex items-center justify-between">
-                                                    {link.label}
-                                                </span>
-                                            )}
-                                        </li>
-                                    ))}
-                                </ul>
-                            </div>
-
-                            {/* Regions Column */}
-                            <div>
-                                <h3 className="text-white font-bold text-sm uppercase tracking-wide mb-4 text-blue-400">Regions</h3>
-                                <ul className="space-y-3">
-                                    {regionLinks.map((link, idx) => (
-                                        <li key={idx}>
-                                            {link.available ? (
-                                                <Link
-                                                    href={link.href}
-                                                    className="text-gray-300 hover:text-white transition-colors text-sm"
-                                                >
-                                                    {link.label}
-                                                </Link>
-                                            ) : (
-                                                <span className="text-gray-500 text-sm cursor-not-allowed flex items-center justify-between">
-                                                    {link.label}
-                                                </span>
-                                            )}
-                                        </li>
-                                    ))}
-                                </ul>
-                            </div>
-
-                            {/* Educational Column */}
-                            <div>
-                                <h3 className="text-white font-bold text-sm uppercase tracking-wide mb-4 text-blue-400">Educational</h3>
-                                <ul className="space-y-3">
-                                    {educationalLinks.map((link, idx) => (
-                                        <li key={idx}>
-                                            {link.available ? (
-                                                <Link
-                                                    href={link.href}
-                                                    className="text-gray-300 hover:text-white transition-colors text-sm"
-                                                >
-                                                    {link.label}
-                                                </Link>
-                                            ) : (
-                                                <span className="text-gray-500 text-sm cursor-not-allowed flex items-center justify-between">
-                                                    {link.label}
-                                                </span>
-                                            )}
-                                        </li>
-                                    ))}
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                )}
-            </div>
+                {t('navHelp')}
+            </Link>
         </nav>
     );
 

@@ -413,12 +413,14 @@ body {
 }
 
 /* Utility to hide scrollbars while preserving scroll behavior */
-.no-scrollbar::-webkit-scrollbar {
+.no-scrollbar::-webkit-scrollbar,
+.hide-scrollbar::-webkit-scrollbar {
     /* Chrome, Safari, Opera */
     display: none;
 }
 
-.no-scrollbar {
+.no-scrollbar,
+.hide-scrollbar {
     /* IE, Edge, Firefox */
     -ms-overflow-style: none;
     /* IE and Edge */

@@ -10,16 +10,11 @@ const pages = [
   '/',
   '/about',
   '/help',
-  '/how-to-setup-iptv-on-firestick',
   '/channels-features',
   '/pricing',
   '/privacy-policy',
   '/terms-of-use',
   '/reseller',
-  '/best-iptv-firestick',
-  '/iptv-for-samsung-tv',
-  '/best-iptv-usa',
-  '/best-iptv-uk',
 ];
 
 async function generateSiteMap() {

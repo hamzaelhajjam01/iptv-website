@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import Image from 'next/image';
 import GeminiClientForm from '../../components/GeminiClientForm';
 import InstallationGuide from '../../components/InstallationGuide';
@@ -23,6 +23,39 @@ const HelpPage: React.FC = () => {
 
     const [openIndex, setOpenIndex] = useState<number | null>(null);
 
+    const carouselRef = useRef<HTMLDivElement>(null);
+    const [scrollProgress, setScrollProgress] = useState(0);
+
+    const handleScroll = () => {
+        if (!carouselRef.current) return;
+        const { scrollLeft, scrollWidth, clientWidth } = carouselRef.current;
+        const maxScroll = scrollWidth - clientWidth;
+        // Avoid division by zero if not scrollable
+        const progress = maxScroll > 0 ? (scrollLeft / maxScroll) * 100 : 0;
+        setScrollProgress(progress);
+    };
+
+    // Calculate initial progress in case of pre-scrolled state or resize changes
+    useEffect(() => {
+        handleScroll();
+        window.addEventListener('resize', handleScroll);
+        return () => window.removeEventListener('resize', handleScroll);
+    }, []);
+
+    const scrollLeft = () => {
+        if (carouselRef.current) {
+            // Scroll by one card width approximately (50% of container width)
+            carouselRef.current.scrollBy({ left: -(carouselRef.current.clientWidth * 0.5), behavior: 'smooth' });
+        }
+    };
+
+    const scrollRight = () => {
+        if (carouselRef.current) {
+            // Scroll by one card width approximately
+            carouselRef.current.scrollBy({ left: (carouselRef.current.clientWidth * 0.5), behavior: 'smooth' });
+        }
+    };
+
     // Build JSON-LD for FAQPage (OrcaSEO strategy)
     const jsonLd = {
         "@context": "https://schema.org",
@@ -44,76 +77,7 @@ const HelpPage: React.FC = () => {
             <div className="container mx-auto max-w-6xl">
                 <h1 className="text-4xl font-bold mb-10 text-center">{t('helpTitle')}</h1>
 
-                {/* Quick Navigation for Mobile/Desktop */}
-                <div className="max-w-6xl mx-auto mb-16">
-                    <div className="grid md:grid-cols-3 gap-8">
-                        {/* Devices */}
-                        <div className="bg-card-dark p-6 rounded-xl border border-gray-800">
-                            <h3 className="text-xl font-bold text-blue-400 mb-4 flex items-center gap-2">
-                                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
-                                Setup Guides by Device
-                            </h3>
-                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                                <a href="/best-iptv-firestick" className="block p-3 bg-gray-800/50 hover:bg-blue-900/20 rounded-lg transition-colors border border-gray-700/50 hover:border-blue-500/30">
-                                    <span className="text-gray-200 font-medium">Best IPTV for Firestick</span>
-                                </a>
-                                <a href="/iptv-for-samsung-tv" className="block p-3 bg-gray-800/50 hover:bg-blue-900/20 rounded-lg transition-colors border border-gray-700/50 hover:border-blue-500/30">
-                                    <span className="text-gray-200 font-medium">IPTV for Samsung TV</span>
-                                </a>
-                                <a href="/iptv-for-lg-smart-tv" className="block p-3 bg-gray-800/50 hover:bg-blue-900/20 rounded-lg transition-colors border border-gray-700/50 hover:border-blue-500/30">
-                                    <span className="text-gray-200 font-medium">IPTV for LG TV</span>
-                                </a>
-                                <span className="block p-3 bg-gray-800/30 rounded-lg border border-gray-800 text-gray-500 cursor-not-allowed">
-                                    Apple TV <span className="text-xs ml-1 opacity-60">(Coming Soon)</span>
-                                </span>
-                                <span className="block p-3 bg-gray-800/30 rounded-lg border border-gray-800 text-gray-500 cursor-not-allowed">
-                                    Android TV <span className="text-xs ml-1 opacity-60">(Coming Soon)</span>
-                                </span>
-                            </div>
-                        </div>
 
-                        {/* Regions */}
-                        <div className="bg-card-dark p-6 rounded-xl border border-gray-800">
-                            <h3 className="text-xl font-bold text-blue-400 mb-4 flex items-center gap-2">
-                                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                                Regional Guides
-                            </h3>
-                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                                <a href="/best-iptv-usa" className="block p-3 bg-gray-800/50 hover:bg-blue-900/20 rounded-lg transition-colors border border-gray-700/50 hover:border-blue-500/30">
-                                    <span className="text-gray-200 font-medium">Best IPTV USA</span>
-                                </a>
-                                <a href="/best-iptv-uk" className="block p-3 bg-gray-800/50 hover:bg-blue-900/20 rounded-lg transition-colors border border-gray-700/50 hover:border-blue-500/30">
-                                    <span className="text-gray-200 font-medium">Best IPTV UK</span>
-                                </a>
-                                <span className="block p-3 bg-gray-800/30 rounded-lg border border-gray-800 text-gray-500 cursor-not-allowed">
-                                    Best IPTV Canada <span className="text-xs ml-1 opacity-60">(Coming Soon)</span>
-                                </span>
-                            </div>
-                        </div>
-
-                        {/* Educational Guides */}
-                        <div className="bg-card-dark p-6 rounded-xl border border-gray-800">
-                            <h3 className="text-xl font-bold text-blue-400 mb-4 flex items-center gap-2">
-                                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" /></svg>
-                                Educational Guides
-                            </h3>
-                            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-3">
-                                <a href="/how-to-setup-iptv-on-firestick" className="block p-3 bg-gray-800/50 hover:bg-blue-900/20 rounded-lg transition-colors border border-gray-700/50 hover:border-blue-500/30">
-                                    <span className="text-gray-200 font-medium">How to Setup Firestick</span>
-                                </a>
-                                <a href="/how-to-fix-iptv-buffering" className="block p-3 bg-gray-800/50 hover:bg-blue-900/20 rounded-lg transition-colors border border-gray-700/50 hover:border-blue-500/30">
-                                    <span className="text-gray-200 font-medium">Fix IPTV Buffering</span>
-                                </a>
-                                <span className="block p-3 bg-gray-800/30 rounded-lg border border-gray-800 text-gray-500 cursor-not-allowed">
-                                    VPN Guide for IPTV <span className="text-xs ml-1 opacity-60">(Coming Soon)</span>
-                                </span>
-                                <span className="block p-3 bg-gray-800/30 rounded-lg border border-gray-800 text-gray-500 cursor-not-allowed">
-                                    Legal & Safety FAQ <span className="text-xs ml-1 opacity-60">(Coming Soon)</span>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
                 <div className="max-w-6xl mx-auto mb-16">
                     <div className="bg-gray-900/40 border border-gray-800 rounded-xl p-8 md:p-12 overflow-hidden">
                         <div className="flex flex-col md:flex-row gap-8 items-center">
@@ -152,100 +116,167 @@ const HelpPage: React.FC = () => {
                 </div>
 
                 {/* Module 2: Semantic Glossary - SEO Content */}
-                <div className="max-w-6xl mx-auto mb-16">
-                    <h2 className="text-2xl md:text-3xl font-bold text-blue-400 mb-10 text-center">IPTV Technical Terms: Understanding the Basics</h2>
-
-                    <div className="grid md:grid-cols-2 gap-6">
-                        <div className="bg-gray-900/60 border border-gray-800 rounded-xl p-8 text-center hover:border-blue-500/50 transition-all duration-300">
-                            <div className="w-16 h-16 mx-auto mb-4 bg-blue-500/10 rounded-lg flex items-center justify-center">
-                                <svg className="w-8 h-8 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-                                </svg>
-                            </div>
-                            <h3 className="text-xl font-bold text-white mb-3">Sideloading</h3>
-                            <p className="text-gray-300 text-sm leading-relaxed mb-3">
-                                Sideloading is the process of installing an application on your device from a source outside the official app store. For example, Amazon Firestick users must sideload IPTV player apps because Amazon doesn&apos;t allow them in the official Appstore.
-                            </p>
-                            <p className="text-gray-300 text-sm leading-relaxed mb-3">
-                                This is done using a free tool called &quot;Downloader&quot; and requires enabling a setting called &quot;Apps from Unknown Sources&quot; in your device&apos;s Developer Options menu. Sideloading is completely legal and safe when installing trusted applications from reputable providers.
-                            </p>
-                            <p className="text-gray-300 text-sm leading-relaxed">
-                                It&apos;s called &quot;sideloading&quot; because you&apos;re loading the app from the &quot;side&quot; (an external source) rather than from the front door (the official store). The process takes about 2-3 minutes and only needs to be done once per device. Once sideloaded and installed, the app functions exactly like any other app on your system.
-                            </p>
+                <div className="max-w-6xl mx-auto mb-20 relative">
+                    {/* Header Row */}
+                    <div className="flex flex-col md:flex-row md:justify-between md:items-end mb-6 gap-4 px-2">
+                        <div>
+                            <h2 className="text-3xl md:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400 tracking-tight">IPTV Technical Terms</h2>
+                            <p className="text-gray-400 mt-2 text-sm md:text-base tracking-wide">Understanding the Basics</p>
                         </div>
 
-                        <div className="bg-gray-900/60 border border-gray-800 rounded-xl p-8 text-center hover:border-blue-500/50 transition-all duration-300">
-                            <div className="w-16 h-16 mx-auto mb-4 bg-blue-500/10 rounded-lg flex items-center justify-center">
-                                <svg className="w-8 h-8 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
-                                </svg>
+                        {/* Navigation Arrows */}
+                        <div className="flex items-center gap-3 self-end md:self-auto">
+                            <button
+                                onClick={scrollLeft}
+                                aria-label="Scroll Left"
+                                className={`w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300 border backdrop-blur-md ${scrollProgress <= 1
+                                    ? 'bg-gray-800/20 border-gray-700/30 text-gray-600 cursor-not-allowed'
+                                    : 'bg-gray-800/80 border-gray-600 text-white hover:bg-blue-600 hover:border-blue-400 hover:shadow-[0_0_20px_rgba(37,99,235,0.4)] cursor-pointer'
+                                    }`}
+                                disabled={scrollProgress <= 1}
+                            >
+                                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7" /></svg>
+                            </button>
+                            <button
+                                onClick={scrollRight}
+                                aria-label="Scroll Right"
+                                className={`w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300 border backdrop-blur-md ${scrollProgress >= 99
+                                    ? 'bg-gray-800/20 border-gray-700/30 text-gray-600 cursor-not-allowed'
+                                    : 'bg-gray-800/80 border-gray-600 text-white hover:bg-blue-600 hover:border-blue-400 hover:shadow-[0_0_20px_rgba(37,99,235,0.4)] cursor-pointer'
+                                    }`}
+                                disabled={scrollProgress >= 99}
+                            >
+                                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" /></svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    {/* Progress Bar */}
+                    <div className="w-full h-1 bg-gray-800/50 rounded-full overflow-hidden mb-8 mx-2 max-w-[calc(100%-16px)]">
+                        <div
+                            className="h-full bg-gradient-to-r from-blue-500 to-purple-500 rounded-full transition-all duration-300 ease-out"
+                            style={{ width: `${scrollProgress}%` }}
+                        ></div>
+                    </div>
+
+                    <div
+                        ref={carouselRef}
+                        onScroll={handleScroll}
+                        className="flex overflow-x-auto pb-8 pt-4 gap-6 px-4 -mx-4 md:px-2 md:-mx-2 snap-x snap-mandatory hide-scrollbar scroll-smooth"
+                    >
+                        {/* Card 1 */}
+                        <div className="w-[85vw] md:w-[calc(50%-12px)] flex-shrink-0 snap-center bg-[#0f172a]/90 backdrop-blur-xl border border-gray-800/60 rounded-3xl p-6 md:p-8 hover:bg-[#1e293b]/90 hover:border-blue-500/40 hover:shadow-[0_8px_30px_rgb(0,0,0,0.3)] transition-all duration-300 group relative overflow-hidden flex flex-col">
+                            <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/10 rounded-full blur-[50px] group-hover:bg-blue-500/20 transition-all duration-500 pointer-events-none"></div>
+
+                            <div className="flex items-center gap-4 mb-6 relative z-10">
+                                <div className="w-14 h-14 bg-gray-800/80 rounded-2xl flex items-center justify-center border border-gray-700/50 flex-shrink-0 group-hover:scale-110 group-hover:border-blue-500/50 group-hover:shadow-[0_0_15px_rgba(59,130,246,0.3)] transition-all duration-300 shadow-inner">
+                                    <svg className="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                                    </svg>
+                                </div>
+                                <h3 className="text-xl md:text-2xl font-bold text-gray-100 tracking-tight group-hover:text-blue-300 transition-colors duration-300">Sideloading</h3>
                             </div>
-                            <h3 className="text-xl font-bold text-white mb-3">APK File</h3>
-                            <p className="text-gray-300 text-sm leading-relaxed mb-3">
-                                APK stands for &quot;Android Package Kit,&quot; and it&apos;s the file format used to distribute and install applications on Android-based devices. Since devices like Amazon Firestick, Android TV boxes, and most Smart TVs run on Android operating systems, their apps are distributed as APK files.
-                            </p>
-                            <p className="text-gray-300 text-sm leading-relaxed mb-3">
-                                When you download an IPTV app like IPTV Smarters or TiviMate, you&apos;re downloading an .apk file. Think of it like a .exe file on Windows or a .dmg file on Mac—it&apos;s simply the installation package for the software.
-                            </p>
-                            <p className="text-gray-300 text-sm leading-relaxed">
-                                APK files are completely normal and standard in the Android ecosystem. After you install the APK, you can (and should) delete the APK file itself to free up storage space; the installed app will continue to work perfectly without it.
-                            </p>
+
+                            <div className="relative z-10 space-y-3 flex-1">
+                                <p className="text-gray-400 text-sm md:text-[15px] leading-relaxed">
+                                    The process of installing an application on your device from a source outside the official app store. Amazon Firestick users must sideload IPTV player apps because Amazon doesn&apos;t allow them in the official Appstore.
+                                </p>
+                                <p className="text-gray-400 text-sm md:text-[15px] leading-relaxed">
+                                    Done using a free tool called <strong>&quot;Downloader&quot;</strong> and requires enabling &quot;Apps from Unknown Sources&quot; in Developer Options.
+                                </p>
+                            </div>
                         </div>
 
-                        <div className="bg-gray-900/60 border border-gray-800 rounded-xl p-8 text-center hover:border-blue-500/50 transition-all duration-300">
-                            <div className="w-16 h-16 mx-auto mb-4 bg-blue-500/10 rounded-lg flex items-center justify-center">
-                                <svg className="w-8 h-8 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-                                </svg>
+                        {/* Card 2 */}
+                        <div className="w-[85vw] md:w-[calc(50%-12px)] flex-shrink-0 snap-center bg-[#0f172a]/90 backdrop-blur-xl border border-gray-800/60 rounded-3xl p-6 md:p-8 hover:bg-[#1e293b]/90 hover:border-blue-500/40 hover:shadow-[0_8px_30px_rgb(0,0,0,0.3)] transition-all duration-300 group relative overflow-hidden flex flex-col">
+                            <div className="absolute top-0 right-0 w-32 h-32 bg-purple-500/10 rounded-full blur-[50px] group-hover:bg-purple-500/20 transition-all duration-500 pointer-events-none"></div>
+
+                            <div className="flex items-center gap-4 mb-6 relative z-10">
+                                <div className="w-14 h-14 bg-gray-800/80 rounded-2xl flex items-center justify-center border border-gray-700/50 flex-shrink-0 group-hover:scale-110 group-hover:border-purple-500/50 group-hover:shadow-[0_0_15px_rgba(168,85,247,0.3)] transition-all duration-300 shadow-inner">
+                                    <svg className="w-6 h-6 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+                                    </svg>
+                                </div>
+                                <h3 className="text-xl md:text-2xl font-bold text-gray-100 tracking-tight group-hover:text-purple-300 transition-colors duration-300">APK File</h3>
                             </div>
-                            <h3 className="text-xl font-bold text-white mb-3">M3U Playlist URL</h3>
-                            <p className="text-gray-300 text-sm leading-relaxed mb-3">
-                                An M3U URL is a web link that contains a list of IPTV channels and streams in a specific text format. While StreamVerse primarily uses the more advanced Xtream Codes API for login (which is simpler and includes more features), some older IPTV players or advanced users prefer M3U URLs.
-                            </p>
-                            <p className="text-gray-300 text-sm leading-relaxed mb-3">
-                                The M3U format is essentially a plain text file listing every channel&apos;s stream URL, channel name, and logo. If your IPTV player asks for an &quot;M3U URL&quot; or &quot;playlist link&quot; instead of Xtream Codes credentials, contact our support team and we can provide your account&apos;s M3U link.
-                            </p>
-                            <p className="text-gray-300 text-sm leading-relaxed">
-                                However, we strongly recommend using Xtream Codes when possible because it auto-updates your channel list, integrates the EPG seamlessly, and supports VOD libraries—features that basic M3U playlists lack.
-                            </p>
+
+                            <div className="relative z-10 space-y-3 flex-1">
+                                <p className="text-gray-400 text-sm md:text-[15px] leading-relaxed">
+                                    Stands for &quot;Android Package Kit,&quot; the file format used to distribute and install applications on Android-based devices (including Firestick, Android TV boxes, and Smart TVs).
+                                </p>
+                                <p className="text-gray-400 text-sm md:text-[15px] leading-relaxed">
+                                    When you download IPTV Smarters or TiviMate, you&apos;re downloading an <strong>.apk</strong> file. Think of it like an .exe on Windows or a .dmg on Mac.
+                                </p>
+                            </div>
                         </div>
 
-                        <div className="bg-gray-900/60 border border-gray-800 rounded-xl p-8 text-center hover:border-blue-500/50 transition-all duration-300">
-                            <div className="w-16 h-16 mx-auto mb-4 bg-blue-500/10 rounded-lg flex items-center justify-center">
-                                <svg className="w-8 h-8 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
-                                </svg>
+                        {/* Card 3 */}
+                        <div className="w-[85vw] md:w-[calc(50%-12px)] flex-shrink-0 snap-center bg-[#0f172a]/90 backdrop-blur-xl border border-gray-800/60 rounded-3xl p-6 md:p-8 hover:bg-[#1e293b]/90 hover:border-blue-500/40 hover:shadow-[0_8px_30px_rgb(0,0,0,0.3)] transition-all duration-300 group relative overflow-hidden flex flex-col">
+                            <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/10 rounded-full blur-[50px] group-hover:bg-blue-500/20 transition-all duration-500 pointer-events-none"></div>
+
+                            <div className="flex items-center gap-4 mb-6 relative z-10">
+                                <div className="w-14 h-14 bg-gray-800/80 rounded-2xl flex items-center justify-center border border-gray-700/50 flex-shrink-0 group-hover:scale-110 group-hover:border-blue-500/50 group-hover:shadow-[0_0_15px_rgba(59,130,246,0.3)] transition-all duration-300 shadow-inner">
+                                    <svg className="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                                    </svg>
+                                </div>
+                                <h3 className="text-xl md:text-2xl font-bold text-gray-100 tracking-tight group-hover:text-blue-300 transition-colors duration-300">M3U Playlist URL</h3>
                             </div>
-                            <h3 className="text-xl font-bold text-white mb-3">Buffering</h3>
-                            <p className="text-gray-300 text-sm leading-relaxed mb-3">
-                                Buffering occurs when your video stream pauses to load more data before it can continue playing. You&apos;ll typically see a spinning loading icon or a frozen picture when this happens. Buffering is almost always caused by one of three issues:
-                            </p>
-                            <ul className="list-disc pl-5 text-gray-300 text-sm leading-relaxed mb-3 text-left">
-                                <li>Slow internet speed (IPTV requires a minimum of 25 Mbps for HD and 50+ Mbps for 4K)</li>
-                                <li>Network congestion (too many devices using your internet simultaneously)</li>
-                                <li>ISP throttling (your internet provider intentionally slowing down streaming traffic)</li>
-                            </ul>
-                            <p className="text-gray-300 text-sm leading-relaxed">
-                                To minimize buffering, close bandwidth-heavy applications, connect your streaming device via Ethernet cable instead of Wi-Fi when possible, restart your router periodically, and consider using a VPN if your ISP is known to throttle video streams. Buffering is not typically caused by the IPTV service itself—our servers are robust and high-capacity—but rather by the &quot;last mile&quot; connection between your router and your device.
-                            </p>
+
+                            <div className="relative z-10 space-y-3 flex-1">
+                                <p className="text-gray-400 text-sm md:text-[15px] leading-relaxed">
+                                    A web link that contains a plain text list of IPTV channels, streams, logos, and EPG data.
+                                </p>
+                                <p className="text-gray-400 text-sm md:text-[15px] leading-relaxed">
+                                    While StreamVerse primarily uses the simpler <strong>Xtream Codes API</strong> (username and password), some older players still mandate M3U URLs. We provide both upon request!
+                                </p>
+                            </div>
                         </div>
 
-                        <div className="bg-gray-900/60 border border-gray-800 rounded-xl p-8 text-center hover:border-blue-500/50 transition-all duration-300 md:col-span-2">
-                            <div className="w-16 h-16 mx-auto mb-4 bg-blue-500/10 rounded-lg flex items-center justify-center">
-                                <svg className="w-8 h-8 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
-                                </svg>
+                        {/* Card 4 */}
+                        <div className="w-[85vw] md:w-[calc(50%-12px)] flex-shrink-0 snap-center bg-[#0f172a]/90 backdrop-blur-xl border border-gray-800/60 rounded-3xl p-6 md:p-8 hover:bg-[#1e293b]/90 hover:border-red-500/30 hover:shadow-[0_8px_30px_rgb(0,0,0,0.3)] transition-all duration-300 group relative overflow-hidden flex flex-col">
+                            <div className="absolute top-0 right-0 w-32 h-32 bg-red-500/10 rounded-full blur-[50px] group-hover:bg-red-500/20 transition-all duration-500 pointer-events-none"></div>
+
+                            <div className="flex items-center gap-4 mb-6 relative z-10">
+                                <div className="w-14 h-14 bg-gray-800/80 rounded-2xl flex items-center justify-center border border-gray-700/50 flex-shrink-0 group-hover:scale-110 group-hover:border-red-500/50 group-hover:shadow-[0_0_15px_rgba(239,68,68,0.3)] transition-all duration-300 shadow-inner">
+                                    <svg className="w-6 h-6 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                                    </svg>
+                                </div>
+                                <h3 className="text-xl md:text-2xl font-bold text-gray-100 tracking-tight group-hover:text-red-300 transition-colors duration-300">Buffering</h3>
                             </div>
-                            <h3 className="text-xl font-bold text-white mb-3">ISP Throttling</h3>
-                            <p className="text-gray-300 text-sm leading-relaxed max-w-3xl mx-auto mb-4">
-                                ISP throttling is when your Internet Service Provider (like Comcast, Spectrum, or AT&T) intentionally slows down certain types of internet traffic—most commonly video streaming. ISPs do this to manage network congestion, discourage &quot;cord-cutting&quot; (since many ISPs also sell cable TV packages and view IPTV as competition), or to push customers toward more expensive data plans.
-                            </p>
-                            <p className="text-gray-300 text-sm leading-relaxed max-w-3xl mx-auto mb-4">
-                                You can detect throttling by running speed tests: if your general internet speed is fine but streaming video consistently buffers, throttling is likely the culprit. The most effective solution is using a reputable VPN service, which encrypts your internet traffic so your ISP can&apos;t see that you&apos;re streaming video and therefore can&apos;t selectively slow it down.
-                            </p>
-                            <p className="text-gray-300 text-sm leading-relaxed max-w-3xl mx-auto">
-                                Many StreamVerse customers in the US and Canada report significant improvements in stream quality after enabling a VPN, particularly during peak evening hours when throttling is most aggressive.
-                            </p>
+
+                            <div className="relative z-10 space-y-3 flex-1">
+                                <p className="text-gray-400 text-sm md:text-[15px] leading-relaxed">
+                                    When your video stream pauses to load more data. Almost always caused by local issues: <strong>Slow internet</strong> (Need 25+ Mbps for HD), <strong>Network congestion</strong>, or <strong>ISP throttling</strong>.
+                                </p>
+                                <p className="text-gray-400 text-sm md:text-[15px] leading-relaxed">
+                                    Fixes include using ethernet instead of WiFi, closing bandwidth-heavy apps, restarting your router, or using a VPN.
+                                </p>
+                            </div>
+                        </div>
+
+                        {/* Card 5 */}
+                        <div className="w-[85vw] md:w-[calc(50%-12px)] flex-shrink-0 snap-center bg-[#0f172a]/90 backdrop-blur-xl border border-gray-800/60 rounded-3xl p-6 md:p-8 hover:bg-[#1e293b]/90 hover:border-yellow-500/40 hover:shadow-[0_8px_30px_rgb(0,0,0,0.3)] transition-all duration-300 group relative overflow-hidden flex flex-col">
+                            <div className="absolute top-0 right-0 w-32 h-32 bg-yellow-500/10 rounded-full blur-[50px] group-hover:bg-yellow-500/20 transition-all duration-500 pointer-events-none"></div>
+
+                            <div className="flex items-center gap-4 mb-6 relative z-10">
+                                <div className="w-14 h-14 bg-gray-800/80 rounded-2xl flex items-center justify-center border border-gray-700/50 flex-shrink-0 group-hover:scale-110 group-hover:border-yellow-500/50 group-hover:shadow-[0_0_15px_rgba(234,179,8,0.3)] transition-all duration-300 shadow-inner">
+                                    <svg className="w-6 h-6 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                                    </svg>
+                                </div>
+                                <h3 className="text-xl md:text-2xl font-bold text-gray-100 tracking-tight group-hover:text-yellow-300 transition-colors duration-300">ISP Throttling</h3>
+                            </div>
+
+                            <div className="relative z-10 space-y-3 flex-1">
+                                <p className="text-gray-400 text-sm md:text-[15px] leading-relaxed">
+                                    When your Internet Service Provider intentionally slows down your internet traffic, specifically targeting video streaming. ISPs do this to manage network congestion or curb competition.
+                                </p>
+                                <p className="text-gray-400 text-sm md:text-[15px] leading-relaxed">
+                                    The most effective solution to this is using a reputable <strong>VPN service</strong> which masks your stream traffic.
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -345,7 +376,7 @@ const HelpPage: React.FC = () => {
                 {/* JSON-LD FAQ schema for SEO */}
                 <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLdString }} />
             </div>
-        </section>
+        </section >
     );
 };
 
