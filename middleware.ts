@@ -31,12 +31,12 @@ export function middleware(request: NextRequest) {
     }
   }
 
-  // 2. Password Gate Logic (Disabled)
-  // const authorized = request.cookies.get('authorized')?.value === 'true';
+  // 2. Password Gate Logic
+  const authorized = request.cookies.get('authorized')?.value === 'true';
 
-  // if (!authorized && pathname !== '/access.html') {
-  //   return NextResponse.redirect(new URL('/access.html', request.url));
-  // }
+  if (!authorized && pathname !== '/access.html') {
+    return NextResponse.redirect(new URL('/access.html', request.url));
+  }
 
   return NextResponse.next();
 }
