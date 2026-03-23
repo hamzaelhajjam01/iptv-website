@@ -26,3 +26,7 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ success: false, error: 'Internal Error' }, { status: 200 });
   }
 }
+
+export async function GET(request: Request) {
+  return NextResponse.json({ message: "IndexNow API is active and ready to receive POST requests." }, { status: 200 });
+}
