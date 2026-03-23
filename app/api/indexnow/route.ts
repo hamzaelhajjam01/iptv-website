@@ -27,6 +27,10 @@ export async function POST(request: NextRequest) {
   }
 }
 
-export async function GET(request: Request) {
-  return NextResponse.json({ message: "IndexNow API is active and ready to receive POST requests." }, { status: 200 });
+// Changed from Request to NextRequest to match the POST function and imports
+export async function GET(request: NextRequest) {
+  return NextResponse.json(
+    { message: "IndexNow API is active and ready to receive POST requests." },
+    { status: 200 }
+  );
 }
