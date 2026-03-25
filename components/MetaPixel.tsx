@@ -1,13 +1,33 @@
 "use client";
 
 import Script from "next/script";
+import { usePathname, useSearchParams } from "next/navigation";
+import { useEffect, useState } from "react";
+
+const FB_PIXEL_ID = '922131833929363';
+
+const pageview = () => {
+    if (typeof window !== "undefined" && typeof (window as any).fbq === "function") {
+        (window as any).fbq("track", "PageView");
+    }
+};
 
 const MetaPixel = () => {
+    const pathname = usePathname();
+    const searchParams = useSearchParams();
+    const [loaded, setLoaded] = useState(false);
+
+    useEffect(() => {
+        if (!loaded) return;
+        pageview();
+    }, [pathname, searchParams, loaded]);
+
     return (
         <>
             <Script
                 id="meta-pixel"
                 strategy="afterInteractive"
+                onLoad={() => setLoaded(true)}
                 dangerouslySetInnerHTML={{
                     __html: `
             !function(f,b,e,v,n,t,s)
@@ -18,7 +38,7 @@ const MetaPixel = () => {
             t.src=v;s=b.getElementsByTagName(e)[0];
             s.parentNode.insertBefore(t,s)}(window, document,'script',
             'https://connect.facebook.net/en_US/fbevents.js');
-            fbq('init', '3611179745702817');
+            fbq('init', '${FB_PIXEL_ID}');
             fbq('track', 'PageView');
           `,
                 }}
@@ -28,7 +48,7 @@ const MetaPixel = () => {
                     height="1"
                     width="1"
                     style={{ display: "none" }}
-                    src="https://www.facebook.com/tr?id=3611179745702817&ev=PageView&noscript=1"
+                    src={`https://www.facebook.com/tr?id=${FB_PIXEL_ID}&ev=PageView&noscript=1`}
                     alt="Meta Pixel"
                 />
             </noscript>
