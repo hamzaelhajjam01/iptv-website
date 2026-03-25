@@ -15,6 +15,7 @@ import LiveSalesNotification from "../components/LiveSalesNotification";
 import LiveViewerCount from "../components/LiveViewerCount";
 import WhatsAppWidget from "../components/WhatsAppWidget";
 import MetaPixel from "../components/MetaPixel";
+import MetaPixelTracker from '@/src/components/MetaPixel';
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -89,6 +90,7 @@ export default function RootLayout({
         />
       </head>
       <body className={inter.className}>
+        <MetaPixelTracker />
         <LanguageProvider>
           <Suspense fallback={null}>
             <TopLoadingBar />
