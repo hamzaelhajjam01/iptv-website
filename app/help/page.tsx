@@ -97,7 +97,7 @@ const HelpPage: React.FC = () => {
                                 <div className="relative w-full aspect-square rounded-xl overflow-hidden border-2 border-blue-500/30 shadow-2xl shadow-blue-500/20">
                                     <Image
                                         src="/images/help-support-concept.png"
-                                        alt="StreamVerse Support Resources"
+                                        alt="StreamVerse IPTV Technical Support and Installation Guide 2026"
                                         fill
                                         className="object-cover"
                                     />

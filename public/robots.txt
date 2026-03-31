@@ -1,0 +1,20 @@
+User-agent: *
+Allow: /
+Disallow: /_next/
+Disallow: /static/
+Disallow: /api/
+
+# AI Crawler Rules (GEO Strategy)
+User-agent: GPTBot
+Disallow: /api/
+Allow: /
+
+User-agent: ClaudeBot
+Disallow: /api/
+Allow: /
+
+User-agent: PerplexityBot
+Disallow: /api/
+Allow: /
+
+Sitemap: https://streamversetv.com/sitemap.xml

@@ -482,8 +482,15 @@ const HomePage: React.FC<{ setPage: (page: Page) => void }> = ({ setPage }) => {
                     </div>
                     <p className="mt-12 text-lg text-cyan-400 font-semibold">{t('howItWorksHook')}</p>
                 </div>
-                <div className="relative container mx-auto max-w-2xl mt-12 z-20"> <div className="relative" style={{ paddingBottom: '56.25%' }}> <img src="/images/abonnement-iptv-multi-devices.webp" alt="StreamVerse interface on a television" className="absolute top-0 left-0 w-full h-full object-contain" onError={(e) => { const target = e.target as HTMLImageElement; target.src = 'https://placehold.co/1200x600/0c1427/e5e7eb?text=StreamVerse+UI'; }} />
-                </div>
+                <div className="relative container mx-auto max-w-4xl mt-12 z-20"> 
+                    <div className="relative overflow-hidden rounded-2xl border border-blue-500/10 shadow-2xl shadow-blue-500/5 bg-[#050a19]"> 
+                        <img 
+                            src="/images/multi_device_mockup.png" 
+                            alt="StreamVerse Best IPTV Subscription 2026 Multi-Device Display" 
+                            className="w-full h-auto object-contain" 
+                            onError={(e) => { const target = e.target as HTMLImageElement; target.src = 'https://placehold.co/1200x600/050a19/e5e7eb?text=StreamVerse+Multi-Device+UI'; }} 
+                        />
+                    </div>
                 </div>
             </section>
 

@@ -98,8 +98,68 @@ Please send me the payment details and setup instructions.`;
         }
     };
 
+    const resellerSchema = {
+        "@context": "https://schema.org/",
+        "@type": "Product",
+        "name": "StreamVerse IPTV Reseller Program",
+        "image": "https://streamversetv.com/images/IPTV-banner-1-1.jpg",
+        "description": "Start your own IPTV business with our white-label reseller panel. Credits-based system with 24/7 support and 99.9% uptime.",
+        "brand": {
+            "@type": "Brand",
+            "name": "StreamVerse"
+        },
+        "offers": {
+            "@type": "AggregateOffer",
+            "offerCount": "3",
+            "priceCurrency": "USD",
+            "lowPrice": "340.00",
+            "highPrice": "660.00",
+            "offers": [
+                {
+                    "@type": "Offer",
+                    "name": "Starter Reseller Pack",
+                    "price": "340.00",
+                    "priceCurrency": "USD",
+                    "url": "https://streamversetv.com/reseller"
+                },
+                {
+                    "@type": "Offer",
+                    "name": "Pro Reseller Pack",
+                    "price": "500.00",
+                    "priceCurrency": "USD",
+                    "url": "https://streamversetv.com/reseller"
+                }
+            ]
+        }
+    };
+
+    const faqSchema = {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": t('resellerFaq1Q'),
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": t('resellerFaq1A')
+                }
+            },
+            {
+                "@type": "Question",
+                "name": t('resellerFaq2Q'),
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": t('resellerFaq2A')
+                }
+            }
+        ]
+    };
+
     return (
         <div className="min-h-screen bg-[#050a19] text-white overflow-hidden">
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(resellerSchema) }} />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
             <CheckoutPopup
                 isOpen={isPopupOpen}
                 onClose={() => setIsPopupOpen(false)}
@@ -112,7 +172,13 @@ Please send me the payment details and setup instructions.`;
             {/* Hero Section */}
             <section className="relative py-24 lg:py-32 flex items-center justify-center overflow-hidden">
                 <div className="absolute inset-0 z-0">
-                    <img src="/images/IPTV-banner-1-1.jpg" alt="Background" className="w-full h-full object-cover absolute top-0 left-0" />
+                    <Image 
+                        src="/images/IPTV-banner-1-1.jpg" 
+                        alt="Best IPTV Reseller Program 2026 Admin Dashboard Concept" 
+                        fill 
+                        priority 
+                        className="object-cover" 
+                    />
                     <div className="absolute inset-0 bg-black/60"></div>
                     <div className="absolute inset-0 bg-gradient-to-b from-[#050a19]/30 via-[#050a19]/80 to-[#050a19]"></div>
                 </div>
@@ -121,11 +187,11 @@ Please send me the payment details and setup instructions.`;
                     <div className="inline-block px-4 py-1.5 rounded-full bg-blue-900/30 border border-blue-500/30 text-blue-400 text-sm font-semibold mb-6 animate-fade-in-up">
                         {t('resellerBadge')}
                     </div>
-                    <h1 className="text-4xl md:text-6xl font-extrabold mb-6 leading-tight tracking-tight">
-                        {t('resellerHeroTitle')}
+                    <h1 className="text-4xl md:text-6xl font-extrabold mb-6 leading-tight tracking-tight uppercase">
+                        Best IPTV Reseller Program 2026
                     </h1>
                     <p className="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto mb-10 leading-relaxed">
-                        {t('resellerHeroSubtitle')}
+                        Join the most reliable IPTV Reseller Panel in the world. Gain technical independence, high-profit margins, and an premium-grade white-label solution.
                     </p>
                     <button onClick={scrollToPricing} className="bg-white text-blue-900 hover:bg-blue-50 font-bold py-4 px-10 rounded-full text-lg shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all duration-300">
                         {t('resellerHeroCTA')}
@@ -176,7 +242,7 @@ Please send me the payment details and setup instructions.`;
                 </div>
             </section>
 
-            {/* How It Works Section - NEW */}
+            {/* How It Works Section */}
             <section className="py-20 bg-[#0c1427]">
                 <div className="container mx-auto px-6">
                     <div className="text-center mb-16">
@@ -184,20 +250,60 @@ Please send me the payment details and setup instructions.`;
                         <p className="text-gray-400">{t('resellerHowSubtitle')}</p>
                     </div>
                     <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-                        <div className="text-center p-6 bg-[#050a19] rounded-xl border border-gray-800">
-                            <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-xl font-bold mb-4 mx-auto">1</div>
+                        <div className="text-center p-6 bg-[#050a19] rounded-xl border border-gray-800 transition-all duration-300 hover:border-blue-500/30">
+                            <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-xl font-bold mb-4 mx-auto shadow-lg shadow-blue-600/20">1</div>
                             <h3 className="text-lg font-bold mb-2">{t('resellerHow1Title')}</h3>
-                            <p className="text-gray-400">{t('resellerHow1Desc')}</p>
+                            <p className="text-gray-400 text-sm leading-relaxed">{t('resellerHow1Desc')}</p>
                         </div>
-                        <div className="text-center p-6 bg-[#050a19] rounded-xl border border-gray-800">
-                            <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-xl font-bold mb-4 mx-auto">2</div>
+                        <div className="text-center p-6 bg-[#050a19] rounded-xl border border-gray-800 transition-all duration-300 hover:border-blue-500/30">
+                            <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-xl font-bold mb-4 mx-auto shadow-lg shadow-blue-600/20">2</div>
                             <h3 className="text-lg font-bold mb-2">{t('resellerHow2Title')}</h3>
-                            <p className="text-gray-400">{t('resellerHow2Desc')}</p>
+                            <p className="text-gray-400 text-sm leading-relaxed">{t('resellerHow2Desc')}</p>
                         </div>
-                        <div className="text-center p-6 bg-[#050a19] rounded-xl border border-gray-800">
-                            <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-xl font-bold mb-4 mx-auto">3</div>
+                        <div className="text-center p-6 bg-[#050a19] rounded-xl border border-gray-800 transition-all duration-300 hover:border-blue-500/30">
+                            <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-xl font-bold mb-4 mx-auto shadow-lg shadow-blue-600/20">3</div>
                             <h3 className="text-lg font-bold mb-2">{t('resellerHow3Title')}</h3>
-                            <p className="text-gray-400">{t('resellerHow3Desc')}</p>
+                            <p className="text-gray-400 text-sm leading-relaxed">{t('resellerHow3Desc')}</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Technical Business Context - SEO MODULE */}
+            <section className="py-20 bg-[#050a19] border-y border-gray-800/50">
+                <div className="container mx-auto px-6 max-w-6xl">
+                    <div className="bg-gray-900/20 rounded-3xl p-8 md:p-16 border border-gray-800">
+                        <div className="grid lg:grid-cols-2 gap-12">
+                            <div className="flex flex-col justify-center">
+                                <h2 className="text-3xl md:text-4xl font-bold mb-8 text-blue-400">Technical Insights: Managing Your IPTV Reseller Panel</h2>
+                                <div className="space-y-6 text-gray-300 leading-relaxed text-sm md:text-base">
+                                    <p>
+                                        Our <span className="text-white font-semibold">IPTV Reseller Program 2026</span> is built on a high-availability infrastructure designed for scalability. When you join as a partner, you gain access to a professional <span className="text-white font-semibold">Xtream Codes compatible Dashboard</span> that allows you to automate client onboarding, monitor server status, and manage bandwidth allocation in real-time.
+                                    </p>
+                                    <p>
+                                        The <span className="text-blue-400 font-semibold underline decoration-blue-500/30">Credit-Based Billing System</span> ensures maximum profitability with zero overhead. Unlike traditional business models that require expensive hardware maintenance, our cloud-based panel operates on a "pay-as-you-grow" basis. Each credit equals a specific subscription duration (e.g., 1 credit = 1 month), allowing you to set your own retail prices and keep 100% of the margins.
+                                    </p>
+                                    <p>
+                                        Security and branding are at the core of our solution. All StreamVerse reseller accounts are completely <span className="text-white font-semibold">White-Labelized</span>, meaning your customers will never see our brand. From custom DNS options to unbranded APK apps, you have total control over your digital storefront.
+                                    </p>
+                                </div>
+                            </div>
+                            <div className="relative group min-h-[400px] lg:min-h-full">
+                                <div className="absolute -inset-4 bg-gradient-to-r from-blue-600/20 to-purple-600/20 rounded-2xl blur-2xl group-hover:blur-3xl transition-all duration-500"></div>
+                                <div className="relative bg-gray-900 rounded-2xl overflow-hidden border border-gray-800 h-full">
+                                    <Image 
+                                        src="/images/mockup-network-v2.png" 
+                                        alt="StreamVerse Global IPTV Reseller Infrastructure Graph" 
+                                        fill 
+                                        className="object-cover opacity-80 group-hover:scale-105 transition-transform duration-700" 
+                                    />
+                                    <div className="absolute inset-0 bg-gradient-to-t from-gray-950 via-transparent to-transparent"></div>
+                                    <div className="absolute bottom-6 left-6 right-6">
+                                        <div className="px-3 py-1 bg-blue-600/20 border border-blue-500/30 rounded text-blue-400 text-xs font-mono inline-block mb-2">NETWORK_STATUS: ACTIVE</div>
+                                        <h3 className="text-white font-bold">Global Dashboard Control</h3>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -42,8 +42,49 @@ const PricingPage: React.FC = () => {
         setIsPopupOpen(true);
     };
 
+    // Build JSON-LD for Product/Pricing (Rich Results)
+    const pricingSchema = {
+        "@context": "https://schema.org/",
+        "@type": "Product",
+        "name": "StreamVerse Premium IPTV Subscription",
+        "image": [
+            "https://streamversetv.com/images/boxes/Box_IPTV_MONTH12.png",
+            "https://streamversetv.com/images/boxes/Box_IPTV_MONTH6.png",
+            "https://streamversetv.com/images/boxes/Box_IPTV_MONTH1.png"
+        ],
+        "description": "Premium IPTV subscription with 50,000+ live channels, 4K VOD, and Anti-Freeze 5.0. No contracts, instant activation.",
+        "brand": {
+            "@type": "Brand",
+            "name": "StreamVerse"
+        },
+        "offers": {
+            "@type": "AggregateOffer",
+            "offerCount": "3",
+            "priceCurrency": "USD",
+            "lowPrice": "9.99",
+            "highPrice": "59.99",
+            "offers": [
+                {
+                    "@type": "Offer",
+                    "name": "1 Month Premium IPTV",
+                    "price": "9.99",
+                    "priceCurrency": "USD",
+                    "url": "https://streamversetv.com/pricing"
+                },
+                {
+                    "@type": "Offer",
+                    "name": "12 Month Premium IPTV",
+                    "price": "59.99",
+                    "priceCurrency": "USD",
+                    "url": "https://streamversetv.com/pricing"
+                }
+            ]
+        }
+    };
+
     return (
         <section className="py-20 px-6 bg-section-dark">
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pricingSchema) }} />
             <CheckoutPopup
                 isOpen={isPopupOpen}
                 onClose={() => setIsPopupOpen(false)}
@@ -53,7 +94,7 @@ const PricingPage: React.FC = () => {
                 whatsappNumber={WHATSAPP_NUMBER}
             />
             <div className="container mx-auto text-center">
-                <h1 className="text-3xl md:text-4xl font-bold text-cyan-400 mb-4">{t('pricingTitle')}</h1>
+                <h1 className="text-3xl md:text-4xl font-bold text-cyan-400 mb-4 tracking-tight uppercase">Best IPTV Subscription Pricing 2026</h1>
                 <p className="text-lg font-semibold mb-2">{t('countdownTitle')}</p>
                 <CountdownTimer />
 
@@ -63,12 +104,12 @@ const PricingPage: React.FC = () => {
                         href="#pricing-cards"
                         className="inline-block bg-gradient-to-r from-blue-500 to-violet-600 hover:from-blue-600 hover:to-violet-700 text-white font-bold py-4 px-8 rounded-lg text-lg transition-all duration-300 shadow-lg hover:shadow-xl"
                     >
-                        View Pricing Plans →
+                        View Best Value IPTV Plans →
                     </a>
                 </div>
 
                 <div className="container mx-auto max-w-6xl py-16">
-                    <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">{t('comparisonTitle')}</h2>
+                    <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">Competitive IPTV Subscription Pricing Comparison</h2>
                     <p className="text-gray-400 mb-12 text-center max-w-2xl mx-auto">{t('comparisonSubtitle')}</p>
                     <ComparisonTable />
 
@@ -78,7 +119,7 @@ const PricingPage: React.FC = () => {
                             href="#pricing-cards"
                             className="inline-block bg-gradient-to-r from-blue-500 to-violet-600 hover:from-blue-600 hover:to-violet-700 text-white font-bold py-4 px-8 rounded-lg text-lg transition-all duration-300 shadow-lg hover:shadow-xl"
                         >
-                            See All Plans & Pricing →
+                            See All IPTV Subscription Prices →
                         </a>
                     </div>
                 </div>
@@ -89,7 +130,7 @@ const PricingPage: React.FC = () => {
                         <div className="flex flex-col md:flex-row gap-8 items-center">
                             {/* Text Content - Left Side */}
                             <div className="flex-1 text-left">
-                                <h2 className="text-2xl md:text-3xl font-bold text-blue-400 mb-6">Understanding IPTV Pricing</h2>
+                                <h2 className="text-2xl md:text-3xl font-bold text-blue-400 mb-6">Best IPTV Subscription Pricing 2026: Value & Features</h2>
                                 <p className="text-gray-300 leading-relaxed mb-4">
                                     StreamVerse offers <span className="text-white font-medium">premium IPTV service</span> at significantly lower costs than cable, eliminating expensive hardware rentals and long-term contracts. With plans starting at just <span className="text-white font-medium">$9.99/mo</span>, you gain access to:
                                 </p>
@@ -111,7 +152,7 @@ const PricingPage: React.FC = () => {
                                 <div className="relative w-full aspect-square rounded-xl overflow-hidden border-2 border-blue-500/30 shadow-2xl shadow-blue-500/20">
                                     <Image
                                         src="/images/iptv-pricing-concept.png"
-                                        alt="IPTV Streaming on Multiple Devices"
+                                        alt="StreamVerse Best IPTV Subscription Pricing 2026 Multi-Device Stream"
                                         fill
                                         className="object-cover"
                                     />

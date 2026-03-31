@@ -21,8 +21,8 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://streamversetv.com'),
-  title: "StreamVerse - The Ultimate IPTV Subscription Service",
-  description: "A minimal, fast-loading affiliate website that promotes the StreamVerse IPTV service. It showcases digital products, educates visitors with AI-powered guides, and guides visitors to affiliate links to generate commissions.",
+  title: "StreamVerse - Premium IPTV Subscription | Live TV & 4K Sports",
+  description: "Get the best IPTV subscription service with 50,000+ live channels, 4K sports, and VOD. Experience stable, buffer-free streaming on all devices with 24/7 support.",
   alternates: {
     canonical: '/',
   },
@@ -83,6 +83,26 @@ export default function RootLayout({
                   "publisher": { "@id": "https://streamversetv.com/#organization" },
                   "keywords": "IPTV, Streaming Service, Live TV, 4K Sports, VOD, Entertainment",
                   "inLanguage": "en-US"
+                },
+                {
+                  "@type": "Product",
+                  "name": "StreamVerse IPTV Subscription",
+                  "image": "https://streamversetv.com/images/abonnement-iptv-multi-devices.webp",
+                  "description": "Premium IPTV subscription with over 50,000 live channels, 4K sports, and a massive VOD library.",
+                  "brand": { "@id": "https://streamversetv.com/#organization" },
+                  "aggregateRating": {
+                    "@type": "AggregateRating",
+                    "ratingValue": "4.9",
+                    "bestRating": "5",
+                    "ratingCount": "1250"
+                  },
+                  "offers": {
+                    "@type": "AggregateOffer",
+                    "priceCurrency": "USD",
+                    "lowPrice": "9.99",
+                    "highPrice": "69.99",
+                    "offerCount": "4"
+                  }
                 }
               ]
             })

@@ -15,3 +15,10 @@
 
 # Mac files
 .DS_Store
+
+# SEO Agent temporary files
+.agents/tmp/
+.agents/output/
+.agents/screenshots/
+.agents/pdf_reports/
+tmp_claude_seo/
