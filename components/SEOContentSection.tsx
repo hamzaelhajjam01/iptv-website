@@ -168,7 +168,7 @@ const SEOContentSection: React.FC = () => {
                                 </h2>
                             </div>
                             <p className="text-xl leading-relaxed text-gray-300 mb-8 italic">
-                                "{t('seoGuideDesc')}"
+                                &quot;{t('seoGuideDesc')}&quot;
                             </p>
                             <div className="pt-8 border-t border-gray-800/50 flex flex-col md:flex-row items-center justify-between gap-6">
                                 <p className="text-gray-400 font-medium">Looking for the <strong className="text-blue-400">Best IPTV Subscription in 2026</strong>? StreamVerse is your answer.</p>
