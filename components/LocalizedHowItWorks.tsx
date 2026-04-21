@@ -12,14 +12,14 @@ const LocalizedHowItWorks: React.FC = () => {
             <div className="container mx-auto text-center max-w-4xl relative z-10">
                 <h2 className="text-3xl md:text-4xl font-bold mb-8">{t('howItWorksTitle')}</h2>
                 
-                <div className="relative mx-auto max-w-xl mb-12 z-20"> 
-                    <div className="relative"> 
+                <div className="relative mx-auto max-w-[500px] mb-12 z-20"> 
+                    <div className="relative rounded-2xl overflow-hidden bg-[#0c1427] p-2"> 
                         <Image 
                             src="/images/mockup_devices_transparent.png" 
                             alt="StreamVerse Best IPTV Subscription 2026 Compatible Devices Overview" 
                             width={600}
                             height={300}
-                            className="w-full h-auto object-contain"
+                            className="w-full h-auto object-contain rounded-xl"
                             priority
                         />
                     </div>
