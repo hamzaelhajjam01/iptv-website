@@ -23,7 +23,7 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
     const [lang, setLang] = useState<Language>('en');
 
     const t = useCallback((key: keyof Translations['en']): string => {
-        return translations[lang][key] || translations['en'][key];
+        return (translations as any)[lang][key] || translations['en'][key];
     }, [lang]);
     
     useEffect(() => {
