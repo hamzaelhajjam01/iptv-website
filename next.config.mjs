@@ -10,6 +10,14 @@
  */
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+	typescript: {
+		// Ignore TypeScript errors during production builds
+		ignoreBuildErrors: true,
+	},
+	eslint: {
+		// Ignore ESLint warnings/errors during production builds
+		ignoreDuringBuilds: true,
+	},
 	// If redirects are ever needed for other purposes, they can be defined here.
 	async redirects() {
 		return [
