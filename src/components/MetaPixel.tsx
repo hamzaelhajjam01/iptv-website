@@ -9,8 +9,8 @@ export default function MetaPixel() {
   const searchParams = useSearchParams()
 
   useEffect(() => {
-    if (typeof window !== 'undefined' && window.fbq) {
-      window.fbq('track', 'PageView')
+    if (typeof window !== 'undefined' && (window as any).fbq) {
+      (window as any).fbq('track', 'PageView')
     }
   }, [pathname, searchParams])
 
