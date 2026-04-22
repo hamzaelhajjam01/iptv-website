@@ -1,10 +1,10 @@
 'use client'
 
 import { usePathname, useSearchParams } from 'next/navigation'
-import { useEffect } from 'react'
+import { useEffect, Suspense } from 'react'
 import Script from 'next/script'
 
-export default function MetaPixel() {
+function MetaPixelEvents() {
   const pathname = usePathname()
   const searchParams = useSearchParams()
 
@@ -14,6 +14,10 @@ export default function MetaPixel() {
     }
   }, [pathname, searchParams])
 
+  return null
+}
+
+export default function MetaPixel() {
   return (
     <>
       <Script
@@ -34,12 +38,16 @@ export default function MetaPixel() {
           `,
         }}
       />
+      <Suspense fallback={null}>
+        <MetaPixelEvents />
+      </Suspense>
       <noscript>
         <img
           height="1"
           width="1"
           style={{ display: 'none' }}
           src="https://www.facebook.com/tr?id=922131833929363&ev=PageView&noscript=1"
+          alt=""
         />
       </noscript>
     </>
