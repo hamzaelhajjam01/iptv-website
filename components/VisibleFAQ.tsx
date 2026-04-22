@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
-import { ChevronDown } from 'lucide-react';
+import { FiChevronDown as ChevronDown } from 'react-icons/fi';
 
 const FAQItem: React.FC<{ question: string; answer: string; isOpen: boolean; onClick: () => void }> = ({ question, answer, isOpen, onClick }) => {
     return (
