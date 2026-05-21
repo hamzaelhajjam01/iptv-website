@@ -115,7 +115,7 @@ const ComparisonTable: React.FC = () => {
                         </tr>
                         <tr className="bg-gray-800">
                             <td className="font-extrabold whitespace-normal md:whitespace-nowrap">Average Monthly Cost</td>
-                            <td className="cost text-green-400 highlight whitespace-normal md:whitespace-nowrap">$9.99</td>
+                            <td className="cost text-green-400 highlight whitespace-normal md:whitespace-nowrap">$5.99</td>
                             <td className="cost text-red-400 whitespace-normal md:whitespace-nowrap">$120+</td>
                             <td className="cost text-red-400 whitespace-normal md:whitespace-nowrap">$135+</td>
                             <td className="cost text-red-400 whitespace-normal md:whitespace-nowrap">$75+</td>

@@ -334,7 +334,7 @@ const BestIPTVFirestickPage: React.FC = () => {
                                     <tbody className="text-gray-300">
                                         <tr className="border-b border-gray-800">
                                             <td className="py-4 font-semibold">Monthly Cost</td>
-                                            <td className="py-4 text-green-400 font-bold">$9.99 - $59.99</td>
+                                            <td className="py-4 text-green-400 font-bold">$5.99 - $59.99</td>
                                             <td className="py-4">$80 - $150+</td>
                                             <td className="py-4">$15 - $40</td>
                                         </tr>
@@ -405,7 +405,7 @@ const BestIPTVFirestickPage: React.FC = () => {
                                 <h3 className="text-2xl font-bold mb-2 text-white">Monthly Plan</h3>
                                 <p className="text-gray-400 mb-6">Perfect for testing our service</p>
                                 <p className="text-4xl font-extrabold mb-6 text-white">
-                                    <span className="text-2xl text-gray-400 line-through">$29.99</span> $9.99
+                                    <span className="text-2xl text-gray-400 line-through">$29.99</span> $5.99
                                 </p>
                                 <ul className="text-left space-y-3 mb-8 flex-grow">
                                     <li className="flex items-start text-sm">
@@ -430,7 +430,7 @@ const BestIPTVFirestickPage: React.FC = () => {
                                     </li>
                                 </ul>
                                 <button
-                                    onClick={() => openCheckout('Monthly Plan - 1 Screen', '$9.99', '/images/boxes/Box_IPTV_MONTH1.png')}
+                                    onClick={() => openCheckout('Monthly Plan - 1 Screen', '$5.99', '/images/boxes/Box_IPTV_MONTH1.png')}
                                     className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition-all duration-300"
                                 >
                                     Get Started

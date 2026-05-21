@@ -61,13 +61,13 @@ const PricingPage: React.FC = () => {
             "@type": "AggregateOffer",
             "offerCount": "3",
             "priceCurrency": "USD",
-            "lowPrice": "9.99",
+            "lowPrice": "5.99",
             "highPrice": "59.99",
             "offers": [
                 {
                     "@type": "Offer",
                     "name": "1 Month Premium IPTV",
-                    "price": "9.99",
+                    "price": "5.99",
                     "priceCurrency": "USD",
                     "url": "https://streamversetv.com/pricing"
                 },
@@ -132,7 +132,7 @@ const PricingPage: React.FC = () => {
                             <div className="flex-1 text-left">
                                 <h2 className="text-2xl md:text-3xl font-bold text-blue-400 mb-6">Best IPTV Subscription Pricing 2026: Value & Features</h2>
                                 <p className="text-gray-300 leading-relaxed mb-4">
-                                    StreamVerse offers <span className="text-white font-medium">premium IPTV service</span> at significantly lower costs than cable, eliminating expensive hardware rentals and long-term contracts. With plans starting at just <span className="text-white font-medium">$9.99/mo</span>, you gain access to:
+                                    StreamVerse offers <span className="text-white font-medium">premium IPTV service</span> at significantly lower costs than cable, eliminating expensive hardware rentals and long-term contracts. With plans starting at just <span className="text-white font-medium">$5.99/mo</span>, you gain access to:
                                 </p>
                                 <ul className="list-disc pl-5 text-gray-300 leading-relaxed mb-4">
                                     <li><span className="text-white font-medium">50,000+ live channels</span></li>
@@ -185,7 +185,7 @@ const PricingPage: React.FC = () => {
                         <div className="mb-4 relative w-full h-64">
                             <Image src="/images/boxes/Box_IPTV_MONTH1.png" alt="1 Month Plan" fill className="object-contain" />
                         </div>
-                        <h3 className="text-2xl font-bold mb-2">{t('plan1Title')}</h3><p className="text-gray-400 mb-6">{t('plan1Desc')}</p><p className="text-4xl font-extrabold mb-6"><span className="text-2xl text-gray-400 line-through">${(29.99 + (screens - 1) * 10).toFixed(2)}</span> ${(9.99 + (screens - 1) * 10).toFixed(2)}</p>
+                        <h3 className="text-2xl font-bold mb-2">{t('plan1Title')}</h3><p className="text-gray-400 mb-6">{t('plan1Desc')}</p><p className="text-4xl font-extrabold mb-6"><span className="text-2xl text-gray-400 line-through">${(29.99 + (screens - 1) * 10).toFixed(2)}</span> ${(5.99 + (screens - 1) * 10).toFixed(2)}</p>
                         <ul className="text-left space-y-2 mb-8 flex-grow">
                             {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((num) => (
                                 <li key={num} className="flex items-center text-sm md:text-base">
@@ -194,7 +194,7 @@ const PricingPage: React.FC = () => {
                                 </li>
                             ))}
                         </ul>
-                        <button onClick={() => openCheckout(`${t('plan1Title')} - ${screens} Screen${screens > 1 ? 's' : ''}`, `$${(9.99 + (screens - 1) * 10).toFixed(2)}`, '/images/boxes/Box_IPTV_MONTH1.png')} className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg cta-button text-center">{t('planCTA')}</button>
+                        <button onClick={() => openCheckout(`${t('plan1Title')} - ${screens} Screen${screens > 1 ? 's' : ''}`, `$${(5.99 + (screens - 1) * 10).toFixed(2)}`, '/images/boxes/Box_IPTV_MONTH1.png')} className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg cta-button text-center">{t('planCTA')}</button>
                     </div>
                     {/* 12 Month Plan (Best Value) */}
                     <div className="bg-card-dark p-8 rounded-lg border-2 border-blue-400 glow-border relative flex flex-col scale-105 z-10">

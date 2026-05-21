@@ -77,7 +77,7 @@ function testSheet() {
     '+1234567890',
     'United States',
     '1 Month Plan',
-    '$9.99',
+    '$5.99',
     new Date().toISOString(),
     'test'
   ]);
@@ -241,7 +241,7 @@ GOOGLE_SHEETS_WEBHOOK_URL=https://script.google.com/macros/s/YOUR_DEPLOYMENT_ID/
 ```bash
 curl -X POST "YOUR_WEBHOOK_URL" \
   -H "Content-Type: application/json" \
-  -d '{"email":"test@test.com","phone":"+123","country":"US","plan":"Test","price":"$9.99","timestamp":"2025-11-07","source":"test"}'
+  -d '{"email":"test@test.com","phone":"+123","country":"US","plan":"Test","price":"$5.99","timestamp":"2025-11-07","source":"test"}'
 ```
 
 If you see a success message, it's working! Check your sheet for the new row.

@@ -346,7 +346,7 @@ const ComparisonTable: React.FC = () => (
                 </tr>
                 <tr className="bg-gray-800">
                     <td className="font-extrabold">Average Monthly Cost</td>
-                    <td className="cost text-green-400 highlight">$9.99</td>
+                    <td className="cost text-green-400 highlight">$5.99</td>
                     <td className="cost text-red-400">$120+</td>
                     <td className="cost text-red-400">$135+</td>
                     <td className="cost text-red-400">$75+</td>
@@ -726,7 +726,7 @@ const PricingPage: React.FC = () => {
 
                     <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto mt-12">
                         <div className="bg-card-dark p-8 rounded-lg border-2 border-gray-700 flex flex-col">
-                            <h3 className="text-2xl font-bold mb-2">{t('plan1Title')}</h3><p className="text-gray-400 mb-6">{t('plan1Desc')}</p><p className="text-4xl font-extrabold mb-6"><span className="text-2xl text-gray-400 line-through">${(29.99 + (screens - 1) * 10).toFixed(2)}</span> ${(9.99 + (screens - 1) * 10).toFixed(2)}</p>
+                            <h3 className="text-2xl font-bold mb-2">{t('plan1Title')}</h3><p className="text-gray-400 mb-6">{t('plan1Desc')}</p><p className="text-4xl font-extrabold mb-6"><span className="text-2xl text-gray-400 line-through">${(29.99 + (screens - 1) * 10).toFixed(2)}</span> ${(5.99 + (screens - 1) * 10).toFixed(2)}</p>
                             <ul className="text-left space-y-2 mb-8 flex-grow">
                                 <li className="flex items-center"><svg className="w-5 h-5 text-blue-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>{t('pricingBenefit1')}</li>
                                 <li className="flex items-center"><svg className="w-5 h-5 text-blue-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>{t('pricingBenefit2')}</li>

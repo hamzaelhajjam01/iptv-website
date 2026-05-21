@@ -33,7 +33,7 @@ const LocalizedHero: React.FC<{ src?: string }> = ({ src }) => {
                         {t('heroCTA')}
                     </Link>
                     <a
-                        href="https://wa.me/447537172381?text=Hi!%20I'm%20interested%20in%20the%2024-Hour%20Premium%20Trial%20for%20%241.99.%0A%0A%F0%9F%93%A6%20*Offer%3A*%2024-Hour%20Premium%20Trial%20Access%0A%F0%9F%92%B0%20*Price%3A*%20%241.99%0A%0APlease%20send%20me%20the%20payment%20details%20and%20setup%20instructions%20to%20get%20started%20immediately!"
+                        href="https://wa.me/447537172381?text=Hi!%20I'm%20interested%20in%20the%2024-Hour%20Premium%20Trial%20for%20%240.99.%0A%0A%F0%9F%93%A6%20*Offer%3A*%2024-Hour%20Premium%20Trial%20Access%0A%F0%9F%92%B0%20*Price%3A*%20%240.99%0A%0APlease%20send%20me%20the%20payment%20details%20and%20setup%20instructions%20to%20get%20started%20immediately!"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white font-extrabold py-4 px-10 rounded-lg text-xl cta-button inline-block w-full md:w-auto"
