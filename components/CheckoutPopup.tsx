@@ -96,8 +96,6 @@ const CheckoutPopup: React.FC<CheckoutPopupProps> = ({
 
 📦 *Plan:* ${planTitle}
 💰 *Price:* ${planPrice}
-📧 *Email:* ${email}
-📱 *Phone:* ${phone}
 🌍 *Country:* ${country}
 📺 *Device:* ${deviceType}
 🔞 *Adult Content:* ${adultContent}
