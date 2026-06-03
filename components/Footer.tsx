@@ -11,6 +11,7 @@ const Footer: React.FC = () => {
             <div className="container mx-auto">
                 {/* Footer nav links */}
                 <nav className="mb-6 flex flex-wrap justify-center gap-x-8 gap-y-3 text-sm text-blue-400">
+                    <Link href="/blog" className="hover:text-blue-300 transition-colors">Blog</Link>
                     <Link href="/privacy-policy" className="hover:text-blue-300 transition-colors">Privacy Policy</Link>
                     <Link href="/terms-of-use" className="hover:text-blue-300 transition-colors">Terms of Use</Link>
                 </nav>

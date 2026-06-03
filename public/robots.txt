@@ -1,7 +1,9 @@
 User-agent: *
 Allow: /
-Disallow: /_next/
-Disallow: /static/
+Allow: /_next/static/
+Allow: /_next/image/
+Disallow: /_next/data/
+Disallow: /_next/server/
 Disallow: /api/
 
 # AI Crawler Rules (GEO Strategy)

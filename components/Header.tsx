@@ -38,6 +38,7 @@ const Header: React.FC = () => {
         { href: '/pricing', key: 'navPricing' },
         { href: '/reseller', key: 'navReseller' },
         { href: '/about', key: 'navAbout' },
+        { href: '/blog', key: 'navBlog' },
     ];
 
     const deviceLinks = [
