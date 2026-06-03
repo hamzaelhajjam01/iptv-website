@@ -6,7 +6,7 @@ export async function POST(request: NextRequest) {
     const { deviceType, adultContent, planTitle, planPrice, timestamp, email, country, phone } = body;
 
     // Validate required fields
-    if (!deviceType || !planTitle || !planPrice) {
+    if (!email || !phone || !country || !planTitle || !planPrice) {
       return NextResponse.json(
         { error: 'Missing required fields' },
         { status: 400 }
@@ -21,17 +21,17 @@ export async function POST(request: NextRequest) {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
-            // Fallbacks for the existing Google Sheet script
-            email: email || deviceType || '',
-            country: country || adultContent || '',
-            phone: phone || 'N/A',
+            // Core fields for the Google Sheet script
+            email: email,
+            country: country,
+            phone: phone,
             plan: planTitle,
             price: planPrice,
             timestamp,
             source: 'website_checkout',
-            // Explicit new fields in case the Apps Script is updated
-            deviceType: deviceType || '',
-            adultContent: adultContent || '',
+            // Explicit new fields
+            deviceType: deviceType,
+            adultContent: adultContent,
           }),
         });
       } catch (error) {

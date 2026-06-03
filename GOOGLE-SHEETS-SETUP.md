@@ -13,17 +13,19 @@
    A1: Email
    B1: Phone
    C1: Country
-   D1: Plan
-   E1: Price
-   F1: Timestamp
-   G1: Source
+   D1: Device Type
+   E1: Adult Content
+   F1: Plan
+   G1: Price
+   H1: Timestamp
+   I1: Source
    ```
 
    Your sheet should look like this:
    ```
-   | Email | Phone | Country | Plan | Price | Timestamp | Source |
-   |-------|-------|---------|------|-------|-----------|--------|
-   |       |       |         |      |       |           |        |
+   | Email | Phone | Country | Device Type | Adult Content | Plan | Price | Timestamp | Source |
+   |-------|-------|---------|-------------|---------------|------|-------|-----------|--------|
+   |       |       |         |             |               |      |       |           |        |
    ```
 
 ---
@@ -50,6 +52,8 @@ function doPost(e) {
       data.email,
       data.phone,
       data.country,
+      data.deviceType,
+      data.adultContent,
       data.plan,
       data.price,
       data.timestamp,
@@ -76,6 +80,8 @@ function testSheet() {
     'test@example.com',
     '+1234567890',
     'United States',
+    'Smart TV',
+    'No',
     '1 Month Plan',
     '$5.99',
     new Date().toISOString(),
