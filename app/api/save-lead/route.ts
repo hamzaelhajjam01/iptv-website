@@ -3,10 +3,10 @@ import { NextRequest, NextResponse } from 'next/server';
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-    const { email, country, phone, planTitle, planPrice, timestamp } = body;
+    const { deviceType, adultContent, planTitle, planPrice, timestamp, email, country, phone } = body;
 
     // Validate required fields
-    if (!email || !country || !phone || !planTitle || !planPrice) {
+    if (!deviceType || !planTitle || !planPrice) {
       return NextResponse.json(
         { error: 'Missing required fields' },
         { status: 400 }
@@ -21,13 +21,17 @@ export async function POST(request: NextRequest) {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
-            email,
-            country,
-            phone,
+            // Fallbacks for the existing Google Sheet script
+            email: email || deviceType || '',
+            country: country || adultContent || '',
+            phone: phone || 'N/A',
             plan: planTitle,
             price: planPrice,
             timestamp,
             source: 'website_checkout',
+            // Explicit new fields in case the Apps Script is updated
+            deviceType: deviceType || '',
+            adultContent: adultContent || '',
           }),
         });
       } catch (error) {
@@ -36,7 +40,6 @@ export async function POST(request: NextRequest) {
     }
 
     // OPTION 2: Email notification to yourself
-    // You can set up a service like SendGrid, Mailgun, or Resend
     if (process.env.ADMIN_EMAIL && process.env.RESEND_API_KEY) {
       try {
         await fetch('https://api.resend.com/emails', {
@@ -48,7 +51,7 @@ export async function POST(request: NextRequest) {
           body: JSON.stringify({
             from: 'onboarding@resend.dev', // Resend's free test domain
             to: process.env.ADMIN_EMAIL,
-            subject: `🎉 New Lead: ${planTitle} - ${email}`,
+            subject: `🎉 New Lead: ${planTitle} - ${deviceType}`,
             html: `
               <!DOCTYPE html>
               <html>
@@ -68,26 +71,16 @@ export async function POST(request: NextRequest) {
                 <div class="container">
                   <div class="header">
                     <h1>🎉 New Lead!</h1>
-                    <p>Someone just showed interest in StreamVerse</p>
+                    <p>Someone just clicked to WhatsApp</p>
                   </div>
                   <div class="content">
                     <div class="info-box">
-                      <p><span class="label">📧 Email:</span> <span class="value">${email}</span></p>
-                      <p><span class="label">📱 Phone:</span> <span class="value">${phone}</span></p>
-                      <p><span class="label">🌍 Country:</span> <span class="value">${country}</span></p>
+                      <p><span class="label">📱 Device:</span> <span class="value">${deviceType}</span></p>
+                      <p><span class="label">🔞 Adult Content:</span> <span class="value">${adultContent}</span></p>
                       <p><span class="label">📦 Plan:</span> <span class="value">${planTitle}</span></p>
                       <p><span class="label">💰 Price:</span> <span class="value">${planPrice}</span></p>
                       <p><span class="label">⏰ Time:</span> <span class="value">${new Date(timestamp).toLocaleString()}</span></p>
                     </div>
-                    <p style="margin-top: 20px; color: #666;">
-                      <strong>Next Steps:</strong><br>
-                      1. Follow up on WhatsApp within 5 minutes<br>
-                      2. Send them payment instructions<br>
-                      3. Add them to your email campaign
-                    </p>
-                    <a href="https://wa.me/${phone.replace(/[^0-9]/g, '')}" class="cta">
-                      💬 Contact on WhatsApp
-                    </a>
                   </div>
                 </div>
               </body>
@@ -99,50 +92,6 @@ export async function POST(request: NextRequest) {
         console.error('Email notification failed:', error);
       }
     }
-
-    // OPTION 3: Third-party CRM/Marketing tools
-    // Examples: Mailchimp, ConvertKit, ActiveCampaign, HubSpot
-    if (process.env.MAILCHIMP_API_KEY && process.env.MAILCHIMP_LIST_ID) {
-      try {
-        const mailchimpServer = process.env.MAILCHIMP_API_KEY.split('-')[1];
-        await fetch(
-          `https://${mailchimpServer}.api.mailchimp.com/3.0/lists/${process.env.MAILCHIMP_LIST_ID}/members`,
-          {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-              'Authorization': `Bearer ${process.env.MAILCHIMP_API_KEY}`,
-            },
-            body: JSON.stringify({
-              email_address: email,
-              status: 'subscribed',
-              merge_fields: {
-                PHONE: phone,
-                COUNTRY: country,
-                PLAN: planTitle,
-                PRICE: planPrice,
-              },
-              tags: ['website-lead', planTitle.toLowerCase().replace(/\s+/g, '-')],
-            }),
-          }
-        );
-      } catch (error) {
-        console.error('Mailchimp save failed:', error);
-      }
-    }
-
-    // OPTION 4: Database (for larger scale)
-    // You can use Vercel Postgres, Supabase, MongoDB Atlas, etc.
-    // Example with Vercel Postgres (requires @vercel/postgres package):
-    /*
-    if (process.env.POSTGRES_URL) {
-      const { sql } = await import('@vercel/postgres');
-      await sql`
-        INSERT INTO leads (email, phone, country, plan_title, plan_price, created_at)
-        VALUES (${email}, ${phone}, ${country}, ${planTitle}, ${planPrice}, ${timestamp})
-      `;
-    }
-    */
 
     return NextResponse.json(
       { success: true, message: 'Lead saved successfully' },
