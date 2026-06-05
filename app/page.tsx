@@ -6,6 +6,7 @@ import Image from 'next/image';
 import ComparisonTable from '../components/ComparisonTable';
 import Testimonials from '../components/Testimonials';
 import LocalizedHero from '../components/LocalizedHero';
+import HeroTrustSection from '../components/HeroTrustSection';
 import LocalizedHowItWorks from '../components/LocalizedHowItWorks';
 import LocalizedFinalCTA from '../components/LocalizedFinalCTA';
 import FaqSchema from '../components/FaqSchema';
@@ -33,6 +34,8 @@ const HomePage: React.FC = () => {
                     </div>
                 </div>
             </div>
+
+            <HeroTrustSection />
 
             <LocalizedHowItWorks />
 

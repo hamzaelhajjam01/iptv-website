@@ -8,7 +8,7 @@ const LocalizedHowItWorks: React.FC = () => {
     const { t } = useLanguage();
 
     return (
-        <section className="py-20 px-6 bg-section-dark relative">
+        <section className="py-20 px-6 bg-[#0E182B] relative">
             <div className="container mx-auto text-center max-w-4xl relative z-10">
                 <h2 className="text-3xl md:text-4xl font-bold mb-8">{t('howItWorksTitle')}</h2>
                 

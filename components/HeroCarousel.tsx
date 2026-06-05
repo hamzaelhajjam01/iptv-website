@@ -29,7 +29,7 @@ export default function HeroCarousel() {
     function updateRadius() {
       if (!ring) return;
       const isMobile = window.innerWidth <= 768;
-      const cardWidth = isMobile ? 100 : 150;
+      const cardWidth = isMobile ? 130 : 180;
       const padding = isMobile ? 15 : 40;
       // Calculate radius based on the number of cards and width to form a perfect circle
       const radius = Math.round((cardWidth / 2) / Math.tan(Math.PI / count)) + padding;
