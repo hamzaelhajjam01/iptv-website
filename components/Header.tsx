@@ -152,7 +152,7 @@ const Header: React.FC = () => {
     );
 
     return (
-        <header className="bg-black/50 backdrop-blur-sm sticky top-0 z-50">
+        <header className="bg-[#050a19] sticky top-0 z-50 border-b border-gray-800">
             <div className="container mx-auto px-6 py-4 flex justify-between items-center">
                 <Link href="/" className="flex items-center cursor-pointer">
                     <img src="/images/logo-streamverse.png" alt="StreamVerse Logo" className="h-10 w-auto" />
