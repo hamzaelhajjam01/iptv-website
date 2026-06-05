@@ -36,7 +36,7 @@ const LocalizedHero: React.FC<{ src?: string }> = ({ src }) => {
                 {/* Desktop Background */}
                 <div className="absolute inset-0 hidden sm:block z-0">
                     <Image 
-                        src="/images/Hero/desktop-worldcup-2026-with-text.png" 
+                        src="/images/Hero/mobile-worldcup-2026-with-text.png" 
                         alt="FIFA World Cup 2026 Background" 
                         fill
                         priority
