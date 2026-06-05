@@ -40,7 +40,7 @@ const LocalizedHero: React.FC<{ src?: string }> = ({ src }) => {
                         alt="FIFA World Cup 2026 Background" 
                         fill
                         priority
-                        className="object-cover object-center"
+                        className="object-contain object-center"
                         sizes="100vw"
                     />
                 </div>
@@ -51,7 +51,7 @@ const LocalizedHero: React.FC<{ src?: string }> = ({ src }) => {
                         alt="FIFA World Cup 2026 Background" 
                         fill
                         priority
-                        className="object-cover object-center"
+                        className="object-contain object-center"
                         sizes="100vw"
                     />
                 </div>
