@@ -36,29 +36,27 @@ const LocalizedHero: React.FC<{ src?: string }> = ({ src }) => {
                 {/* Desktop Background */}
                 <div className="absolute inset-0 hidden sm:block z-0">
                     <Image 
-                        src="/images/Hero/desktop-worldcup-2026.png" 
+                        src="/images/Hero/desktop-worldcup-2026-with-text.png" 
                         alt="FIFA World Cup 2026 Background" 
                         fill
                         priority
-                        className="object-cover object-right"
+                        className="object-cover object-center"
                         sizes="100vw"
                     />
                 </div>
                 {/* Mobile Background */}
                 <div className="absolute inset-0 sm:hidden z-0">
                     <Image 
-                        src="/images/Hero/mobile-worldcup-2026.png" 
+                        src="/images/Hero/mobile-worldcup-2026-with-text.png" 
                         alt="FIFA World Cup 2026 Background" 
                         fill
                         priority
-                        className="object-cover object-top"
+                        className="object-cover object-center"
                         sizes="100vw"
                     />
                 </div>
                 
-                {/* Dark Gradient Overlay for text readability (only needed on the left) */}
-                <div className="absolute inset-0 bg-gradient-to-r from-[#050a19] via-[#050a19]/80 to-transparent z-10 hidden sm:block w-3/4"></div>
-                <div className="absolute inset-0 bg-gradient-to-t from-[#050a19] via-[#050a19]/80 to-transparent z-10 sm:hidden h-full"></div>
+                {/* Dark Gradient Overlay removed because text is now baked into the background image */}
                 
                 <div className="relative z-20 container mx-auto px-6 py-16 lg:py-20 max-w-7xl">
                     <div className="max-w-3xl">
@@ -68,6 +66,7 @@ const LocalizedHero: React.FC<{ src?: string }> = ({ src }) => {
                             initial="hidden"
                             animate="visible"
                         >
+                            <div className="opacity-0 select-none pointer-events-none">
                             {/* STREAM VERSE TV */}
                             <motion.div variants={itemVariants} className="mb-2">
                                 <h2 className="text-white font-bold tracking-[0.2em] md:tracking-[0.3em] text-sm md:text-base lg:text-lg uppercase">
@@ -107,6 +106,7 @@ const LocalizedHero: React.FC<{ src?: string }> = ({ src }) => {
                                     THREE NATIONS. ONE WORLD. THE ULTIMATE GOAL.
                                 </p>
                             </motion.div>
+                            </div>
 
                             {/* CTAs */}
                             <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4 items-start mb-8">
