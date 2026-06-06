@@ -48,7 +48,7 @@ const LocalizedHero: React.FC<{ src?: string }> = ({ src }) => {
                 </div>
                 
                 <div className="relative z-20 container mx-auto px-6 py-12 lg:py-20 max-w-7xl">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 xl:gap-28 items-center">
                         
                         {/* Left Side: Text */}
                         <motion.div 
@@ -57,43 +57,27 @@ const LocalizedHero: React.FC<{ src?: string }> = ({ src }) => {
                             initial="hidden"
                             animate="visible"
                         >
-                            {/* STREAM VERSE TV */}
-                            <motion.div variants={itemVariants} className="mb-4">
-                                <h2 className="text-blue-400 font-bold tracking-[0.2em] md:tracking-[0.3em] text-sm md:text-base lg:text-lg uppercase">
-                                    STREAM VERSE TV
-                                </h2>
-                            </motion.div>
-                            
-                            {/* WATCH THE FIFA WORLD CUP */}
+
+                            {/* WATCH WORLD CUP */}
                             <motion.div variants={itemVariants} className="mb-2">
                                 <h1 className="text-white font-black uppercase text-5xl md:text-6xl lg:text-7xl xl:text-7xl leading-[1.05] tracking-tight">
-                                    WATCH THE <br />
-                                    FIFA WORLD CUP
+                                    WATCH WORLD CUP
                                 </h1>
                             </motion.div>
 
-                            {/* 2026 */}
+                            {/* WITH NO BUFFERING */}
                             <motion.div variants={itemVariants} className="mb-6 relative">
                                 <div style={{ filter: 'drop-shadow(0px 10px 10px rgba(0,0,0,0.5))' }}>
-                                    <h1 className="font-black text-7xl sm:text-8xl md:text-9xl lg:text-[140px] xl:text-[180px] leading-[0.8] tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-violet-500 pb-2">
-                                        2026
+                                    <h1 className="font-black text-5xl sm:text-6xl md:text-7xl lg:text-[75px] xl:text-[85px] leading-[0.9] tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-violet-500 pb-2 uppercase">
+                                        WITH NO BUFFERING
                                     </h1>
                                 </div>
                             </motion.div>
                             
-                            {/* UNITED STATES | CANADA | MEXICO */}
-                            <motion.div variants={itemVariants} className="flex flex-wrap items-center gap-2 md:gap-3 mb-6 font-black uppercase text-xl md:text-2xl lg:text-3xl tracking-widest text-shadow-lg">
-                                <span className="text-white">USA</span>
-                                <span className="text-gray-400 font-normal">|</span>
-                                <span className="text-blue-500">CAN</span>
-                                <span className="text-gray-400 font-normal">|</span>
-                                <span className="text-violet-400">MEX</span>
-                            </motion.div>
-
-                            {/* THREE NATIONS. ONE WORLD. THE ULTIMATE GOAL. */}
+                            {/* Paragraph */}
                             <motion.div variants={itemVariants} className="mb-10">
-                                <p className="text-gray-300 font-medium tracking-[0.1em] md:tracking-[0.15em] text-sm md:text-base uppercase max-w-md">
-                                    THREE NATIONS. ONE WORLD. THE ULTIMATE GOAL.
+                                <p className="text-gray-300 font-medium text-base md:text-lg max-w-lg leading-relaxed">
+                                    Don't miss a single goal. Our premium anti-freeze technology and ultra-fast 10Gbps servers guarantee an uninterrupted, crystal-clear 4K streaming experience for every match.
                                 </p>
                             </motion.div>
 
@@ -117,8 +101,8 @@ const LocalizedHero: React.FC<{ src?: string }> = ({ src }) => {
                         >
                             <div className="absolute inset-0 bg-gradient-to-bl from-blue-500/20 to-violet-500/10 rounded-full blur-[100px] mix-blend-screen opacity-50"></div>
                             <Image 
-                                src="/images/Hero/hero-elements-wc.png" 
-                                alt="FIFA World Cup 2026 Elements" 
+                                src="/images/Hero/png-hero-wc.png" 
+                                alt="FIFA World Cup 2026" 
                                 fill
                                 priority
                                 className="object-contain object-center drop-shadow-2xl z-10 scale-105 lg:scale-110 xl:scale-125"

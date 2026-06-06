@@ -11,9 +11,9 @@ export default function HeroTrustSection() {
     };
 
     return (
-        <section className="relative w-full pb-16 pt-8 z-20 overflow-hidden flex flex-col items-center bg-[#02050B]">
+        <section className="relative w-full py-[20px] z-20 overflow-hidden flex flex-col items-center bg-[#02050B]">
             {/* Carousel container */}
-            <div className="w-full relative mt-4 md:mt-8 px-4 z-20">
+            <div className="w-full relative px-4 z-20">
                 <HeroCarousel />
             </div>
         </section>
