@@ -4,14 +4,13 @@ import { useEffect, useRef } from 'react';
 
 // Replace these with actual image paths in your project
 const COVER_IMAGES = [
-  '/images/movies/efc10d_58769540c3af46e4b1b8373d25053dce_mv2-1.webp',
-  '/images/movies/efc10d_82f6ea18c2494be98c46c59b9e55cf71_mv2-1.webp',
-  '/images/movies/efc10d_c4763bc9523c4fc89ba4e9f22e5ce52d_mv2-1.webp',
-  '/images/movies/efc10d_cf5918f2dcf64cf39fcefe135495cc43_mv2-1.webp',
-  '/images/movies/efc10d_d0631c9b9c3f4be9bd6caef12c4d0694_mv2-1.webp',
-  '/images/movies/efc10d_e83995fe1b33435a982de93f05c82c29_mv2-1.webp',
-  '/images/movies/efc10d_58769540c3af46e4b1b8373d25053dce_mv2-1.webp',
-  '/images/movies/efc10d_c4763bc9523c4fc89ba4e9f22e5ce52d_mv2-1.webp',
+  '/images/covers/download 1 (10) 1.png',
+  '/images/covers/download 1 (10) 2.png',
+  '/images/covers/download 1 (10) 3.png',
+  '/images/covers/download 1 (10) 4.png',
+  '/images/covers/download 1 (10) 5.png',
+  '/images/covers/download 1 (10) 6.png',
+  '/images/covers/download 1 (10) 7.png',
 ];
 
 export default function HeroCarousel() {

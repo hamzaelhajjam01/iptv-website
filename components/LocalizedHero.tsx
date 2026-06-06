@@ -111,9 +111,6 @@ const LocalizedHero: React.FC<{ src?: string }> = ({ src }) => {
                         </motion.div>
                     </div>
                 </div>
-                
-                {/* Bottom Gradient overlay for smooth transition */}
-                <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#050a19] to-transparent pointer-events-none z-10"></div>
             </section>
         </div>
     );
