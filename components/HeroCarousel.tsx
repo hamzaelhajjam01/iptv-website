@@ -11,6 +11,7 @@ const COVER_IMAGES = [
   '/images/covers/download 1 (10) 5.png',
   '/images/covers/download 1 (10) 6.png',
   '/images/covers/download 1 (10) 7.png',
+  '/images/covers/download 1 (10) 8.png',
 ];
 
 export default function HeroCarousel() {
