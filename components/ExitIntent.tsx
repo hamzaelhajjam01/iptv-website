@@ -11,7 +11,7 @@ const ExitModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isOpen,
     useEffect(() => setMounted(true), []);
 
     // Get WhatsApp number from environment
-    const WHATSAPP_NUMBER = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '1234567890';
+    const WHATSAPP_NUMBER = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '18042804332';
 
     const handleFreeTrial = () => {
         // Create WhatsApp message for free trial

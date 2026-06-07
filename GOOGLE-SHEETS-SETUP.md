@@ -78,7 +78,7 @@ function testSheet() {
   const sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
   sheet.appendRow([
     'test@example.com',
-    '+1234567890',
+    '+18042804332',
     'United States',
     'Smart TV',
     'No',
@@ -163,7 +163,7 @@ SITE_URL=https://yourdomain.com
 4. **Fill in the popup form:**
    - Email: test@example.com
    - Country: United States
-   - Phone: +1234567890
+   - Phone: +18042804332
 
 5. **Click "Continue to WhatsApp"**
 

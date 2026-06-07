@@ -76,7 +76,7 @@ export default function ResellerPage() {
     const [isPopupOpen, setIsPopupOpen] = useState(false);
     const [selectedPlan, setSelectedPlan] = useState({ title: '', price: '', credits: '' });
 
-    const WHATSAPP_NUMBER = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '1234567890'; // Use env variable
+    const WHATSAPP_NUMBER = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '18042804332'; // Use env variable
 
     const handleOrder = (title: string, price: string, credits: string) => {
         setSelectedPlan({ title, price, credits });

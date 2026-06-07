@@ -35,7 +35,7 @@ const PricingPage: React.FC = () => {
     const [screens, setScreens] = useState(1);
 
     // Get WhatsApp number from environment variable
-    const WHATSAPP_NUMBER = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '1234567890';
+    const WHATSAPP_NUMBER = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '18042804332';
 
     const openCheckout = (planTitle: string, planPrice: string, planImage: string) => {
         setSelectedPlan({ title: planTitle, price: planPrice, image: planImage });

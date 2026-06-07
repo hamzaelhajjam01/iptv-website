@@ -6,7 +6,7 @@ export default function WhatsAppWidget() {
     const [isOpen, setIsOpen] = useState(false);
 
     // Replace with your actual WhatsApp number (format: country code + number, no + or spaces)
-    const whatsappNumber = '447537172381'; // UK number
+    const whatsappNumber = '18042804332'; // UK number
     const message = encodeURIComponent('Hi! I\'m interested in StreamVerse IPTV subscription. Can you help me?');
     const whatsappLink = `https://wa.me/${whatsappNumber}?text=${message}`;
 

@@ -29,7 +29,7 @@ const BestIPTVUSAPage: React.FC = () => {
     const [isPopupOpen, setIsPopupOpen] = useState(false);
     const [selectedPlan, setSelectedPlan] = useState({ title: '', price: '', image: '' });
 
-    const WHATSAPP_NUMBER = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '1234567890';
+    const WHATSAPP_NUMBER = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '18042804332';
 
     const openCheckout = (planTitle: string, planPrice: string, planImage: string) => {
         setSelectedPlan({ title: planTitle, price: planPrice, image: planImage });

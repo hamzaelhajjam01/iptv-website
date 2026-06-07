@@ -51,7 +51,7 @@ export default function ReferralTopBar() {
     const offer = offers[currentOfferIndex];
     if (offer.action === 'whatsapp') {
       const message = encodeURIComponent(offer.whatsappMessage);
-      window.open(`https://wa.me/447537172381?text=${message}`, '_blank');
+      window.open(`https://wa.me/18042804332?text=${message}`, '_blank');
     } else if (offer.action === 'popup') {
       setIsPopupOpen(true);
     }
@@ -133,7 +133,7 @@ export default function ReferralTopBar() {
         planTitle="12 Months + 3 Months FREE - 1 Screen"
         planPrice="$59.99"
         planImage="/images/boxes/Box_IPTV_MONTH12.png"
-        whatsappNumber="447537172381"
+        whatsappNumber="18042804332"
         customMessage="Hi! I am interested in the limited time offer: 12 Months + 3 Months FREE for $59.99."
       />
     </>

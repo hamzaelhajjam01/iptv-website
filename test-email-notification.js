@@ -6,7 +6,7 @@ async function testEmailNotification() {
 
   const testData = {
     email: 'test@example.com',
-    phone: '+1234567890',
+    phone: '+18042804332',
     country: 'United States',
     planTitle: '1 Month Plan (TEST)',
     planPrice: '$9.99',

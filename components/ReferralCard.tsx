@@ -3,7 +3,7 @@
 export default function ReferralCard() {
   const handleWhatsAppClick = () => {
     const message = encodeURIComponent('Hi! I want to refer someone for the 30% OFF discount program.');
-    window.open(`https://wa.me/447537172381?text=${message}`, '_blank');
+    window.open(`https://wa.me/18042804332?text=${message}`, '_blank');
   };
 
   return (

@@ -174,7 +174,7 @@ POSTGRES_URL=...
 ```bash
 TWILIO_ACCOUNT_SID=ACxxxxxxxxxxxxx
 TWILIO_AUTH_TOKEN=your-auth-token
-TWILIO_PHONE_NUMBER=+1234567890
+TWILIO_PHONE_NUMBER=+18042804332
 ```
 
 4. **Add SMS endpoint** (create `app/api/send-sms/route.ts`):
@@ -221,7 +221,7 @@ export async function POST(request: NextRequest) {
 # .env.local and .env.production
 
 # WhatsApp
-WHATSAPP_NUMBER=1234567890
+WHATSAPP_NUMBER=18042804332
 
 # Google Sheets (required)
 GOOGLE_SHEETS_WEBHOOK_URL=https://script.google.com/macros/s/YOUR_ID/exec
@@ -237,7 +237,7 @@ MAILCHIMP_LIST_ID=xxxxxxxxxx
 # Twilio SMS (optional - for SMS campaigns)
 TWILIO_ACCOUNT_SID=ACxxxxxxxxxxxxx
 TWILIO_AUTH_TOKEN=xxxxxxxxxxxxx
-TWILIO_PHONE_NUMBER=+1234567890
+TWILIO_PHONE_NUMBER=+18042804332
 ```
 
 ---
