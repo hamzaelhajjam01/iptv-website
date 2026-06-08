@@ -99,7 +99,7 @@ export default function RootLayout({
                   "offers": {
                     "@type": "AggregateOffer",
                     "priceCurrency": "USD",
-                    "lowPrice": "5.99",
+                    "lowPrice": "19.99",
                     "highPrice": "69.99",
                     "offerCount": "4"
                   }

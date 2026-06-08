@@ -334,7 +334,7 @@ const BestIPTVFirestickPage: React.FC = () => {
                                     <tbody className="text-gray-300">
                                         <tr className="border-b border-gray-800">
                                             <td className="py-4 font-semibold">Monthly Cost</td>
-                                            <td className="py-4 text-green-400 font-bold">$5.99 - $59.99</td>
+                                            <td className="py-4 text-green-400 font-bold">$19.99 - $59.99</td>
                                             <td className="py-4">$80 - $150+</td>
                                             <td className="py-4">$15 - $40</td>
                                         </tr>
@@ -397,15 +397,15 @@ const BestIPTVFirestickPage: React.FC = () => {
                         </p>
 
                         <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-                            {/* 1 Month Plan */}
+                            {/* 3 Months Plan */}
                             <div className="bg-card-dark p-8 rounded-lg border-2 border-gray-700 flex flex-col hover:border-blue-500/50 transition-all duration-300">
                                 <div className="mb-4 relative w-full h-48">
-                                    <Image src="/images/boxes/Box_IPTV_MONTH1.png" alt="1 Month IPTV Plan for Firestick" fill className="object-contain" />
+                                    <Image src="/images/boxes/Box_IPTV_MONTH3.png" alt="3 Months IPTV Plan for Firestick" fill className="object-contain" />
                                 </div>
-                                <h3 className="text-2xl font-bold mb-2 text-white">Monthly Plan</h3>
+                                <h3 className="text-2xl font-bold mb-2 text-white">3 Months Plan</h3>
                                 <p className="text-gray-400 mb-6">Perfect for testing our service</p>
                                 <p className="text-4xl font-extrabold mb-6 text-white">
-                                    <span className="text-2xl text-gray-400 line-through">$29.99</span> $5.99
+                                    <span className="text-2xl text-gray-400 line-through">$39.99</span> $19.99
                                 </p>
                                 <ul className="text-left space-y-3 mb-8 flex-grow">
                                     <li className="flex items-start text-sm">
@@ -430,7 +430,7 @@ const BestIPTVFirestickPage: React.FC = () => {
                                     </li>
                                 </ul>
                                 <button
-                                    onClick={() => openCheckout('Monthly Plan - 1 Screen', '$5.99', '/images/boxes/Box_IPTV_MONTH1.png')}
+                                    onClick={() => openCheckout('3 Months Plan - 1 Screen', '$19.99', '/images/boxes/Box_IPTV_MONTH3.png')}
                                     className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition-all duration-300"
                                 >
                                     Get Started
@@ -453,7 +453,7 @@ const BestIPTVFirestickPage: React.FC = () => {
                                 <ul className="text-left space-y-3 mb-8 flex-grow">
                                     <li className="flex items-start text-sm">
                                         <CheckIcon className="w-5 h-5 text-blue-400 mr-2 flex-shrink-0 mt-0.5" />
-                                        <span className="text-gray-300">Everything in Monthly Plan</span>
+                                        <span className="text-gray-300">Everything in 3 Months Plan</span>
                                     </li>
                                     <li className="flex items-start text-sm">
                                         <CheckIcon className="w-5 h-5 text-blue-400 mr-2 flex-shrink-0 mt-0.5" />
